@@ -14,6 +14,16 @@
 
 title:    Wearable Track
 
+# Header image that replaces the site banner on this page only.
+# Path is relative to the conference root (see <base href=".."> in chrome).
+header:   assets/WearableTrack_header.png
+
+# Vertical offset for the header image. Used to push the image
+# down so the white "IEEE CEEUS 2026" overlay (.top-left, ~103 px
+# tall) sits ABOVE the image instead of covering its top. Any CSS
+# length: "0", "103px", "1rem", "10%" etc. Leave empty for none.
+headerOffsetTop: 103px
+
 tagline:  Wearable ultrasound from transducers and acoustic stacks to
           embedded signal processing, system integration, and clinical
           translation. Three days of scientific talks, hands-on workshops,

@@ -55,6 +55,11 @@
 /* ============================================================
    Wearable Track — scoped styles. Everything under .wt-track.
    ============================================================ */
+
+/* Constrain the site chrome's banner img on this page only.
+   The wearable header (1717×916) overflows the 1000 px body
+   at its natural size; this caps it to the container width. */
+.banner img { max-width: 100%; height: auto; display: block; }
 .wt-track {
     --wt-fg:        #1a1a1a;
     --wt-muted:     #5f6368;
@@ -560,6 +565,22 @@ html { scroll-behavior: smooth; }
             if (c.affiliation) label += ' (' + esc(c.affiliation) + ')';
             return label;
         }).join(' · ');
+        // Swap the site chrome's banner image for this page only — keeps
+        // the chrome HTML untouched (it's shared across all pages) but
+        // shows the wearable-track-specific header here.
+        if (t.header) {
+            var bannerImg = document.querySelector('.banner img');
+            if (bannerImg) bannerImg.src = t.header;
+        }
+        // Push the banner image down by headerOffsetTop so the .top-left
+        // overlay (the white "IEEE CEEUS 2026" strip) sits above the
+        // image instead of covering its top. The overlay is absolutely
+        // positioned at top:0, so padding the .banner container shifts
+        // only the image, not the overlay.
+        if (t.headerOffsetTop) {
+            var bannerEl = document.querySelector('.banner');
+            if (bannerEl) bannerEl.style.paddingTop = t.headerOffsetTop;
+        }
         q('wt-hero').innerHTML =
             '<h1>' + esc(t.title || 'Wearable Track') + '</h1>' +
             '<div class="wt-hero__meta">' +
