@@ -1,0 +1,28 @@
+# ============================================================================
+# Workshops. One list item per workshop.
+# Lab Secrets is a separate session — see lab-secret.yml.
+# ============================================================================
+
+- title: Transducer Workshop — PolyCMUTs
+  organizer: Moritz Herzog, Erik Kaiser
+  day: Mon 22 Jun
+  duration: 100 min · 13:00–14:40
+  capacity: TBA
+  description: Walk-through of polymer-CMUT fabrication, characterization, and integration into wearable form factors. Bring questions.
+  registrationUrl: "#"
+
+- title: From Electrical Signals to Sound Fields — Experimental Physics with EPIQ
+  organizer: TBA
+  day: Tue 23 Jun
+  duration: 100 min · 13:40–15:20
+  capacity: TBA
+  description: Live experiments mapping drive electronics to acoustic field structure using the EPIQ platform. Hands-on encouraged.
+  registrationUrl: "#"
+
+- title: Hands-on Ultrasound
+  organizer: TBA
+  day: Wed 24 Jun
+  duration: 100 min · 13:40–15:20
+  capacity: TBA
+  description: Workshop closing session — open bench, attendees pair up to record signals on conference hardware.
+  registrationUrl: "#"

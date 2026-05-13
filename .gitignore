@@ -1,0 +1,64 @@
+# ============================================================================
+# CEEUS 2026 — repository ignore rules
+# Static HTML/CSS/JS site. Keep this file lean; add patterns only when they
+# actually clutter `git status`.
+# ============================================================================
+
+# ----- Operating systems --------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ----- Editors / IDEs -----------------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.#*
+
+# ----- Logs ---------------------------------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ----- Secrets / local config --------------------------------------------
+.env
+.env.local
+.env.*.local
+
+# ----- Backups & temp files ----------------------------------------------
+*.bak
+*.tmp
+*.temp
+*.orig
+*.old
+*_OLD
+*_OLD.*
+
+# ----- Node / build artefacts (in case tooling is added later) -----------
+node_modules/
+dist/
+build/
+_site/
+.cache/
+.parcel-cache/
+
+# ----- Archives produced locally -----------------------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar

@@ -1,0 +1,50 @@
+# ============================================================================
+# Bring Your Own Device (BYOD) demo session.
+# Top-level intro/submission text + a list of confirmed demos.
+# ============================================================================
+
+intro: >
+  Bring Your Own Device (BYOD) is a hands-on demo session for working
+  wearable ultrasound hardware. Presenters bring functional systems;
+  attendees interact with each one directly. Two slots: a shorter Part 1
+  (2 demos) and a longer Part 2 (6 demos) on Monday afternoon.
+
+submission: >
+  Submission deadline: 31 March 2026. Submit a one-page demo abstract
+  (device description, demo plan, space and power requirements).
+  Acceptance notifications by 30 April 2026.
+
+submissionUrl: "#"
+
+demos:
+  - title: PMUT/CMUT live demo — plug-&-play MUT demo for ToF systems and different phantoms
+    presenters: Chris Stoeckel
+    affiliation: Fraunhofer Institute for Electronic Nano Systems (ENAS), Chemnitz, Germany
+
+  - title: Non-invasive Human-Machine Interfaces
+    presenters: Bruno Grandi Sgambato
+    affiliation: Imperial College London, UK
+
+  - title: ModulUS — Real-Time Ultrasound Signal Acquisition and Bandwidth Reduction in a Water Bath Setup
+    presenters: Marco Giordano, Marc-André Wessner, Michele Magno, Luca Benini, Christoph Leitner
+    affiliation: D-ITET, ETH Zürich · DEI, Univ. of Bologna
+
+  - title: Coded Excitation on Commercial Off-The-Shelf Microcontroller Platforms for Ultrasound Wearables
+    presenters: Nele Kirsch, Alessandra Vignoli, Franz Richter, Richard Nauber, Erik Kaiser, Tönnis Trittler, Moritz Herzog
+    affiliation: Vodafone Chair Mobile Communications Systems, TU Dresden, Germany
+
+  - title: WULPUS — Real-Time Wearable Ultrasound for Virtual Reality Interaction
+    presenters: Giusy Spacone, Sebastian Frey, Luca Benini, Andrea Cossettini
+    affiliation: Integrated Systems Lab, ETH Zürich · DEI, Univ. of Bologna
+
+  - title: TinyProbe — Real-time Data Visualization in an Open, Wearable, 32-channel, Wireless Ultrasound Probe
+    presenters: Cedric Hirschi, Federico Villani, Luca Benini, Andrea Cossettini
+    affiliation: Integrated Systems Lab, ETH Zürich · DEI, Univ. of Bologna
+
+  - title: SonoTrak
+    presenters: Erica L. King, Ahmed Bashatah, Abhishek Aher, Rahul Kaliki, Siddhartha Sikdar, Parag V. Chitnis
+    affiliation: Dept. of Bioengineering · Center for MedTech Innovation, George Mason University · Myokinetics, Inc.
+
+  - title: Hybrid Single Crystal – CMUT Stack for Wearable Ultrasound Applications
+    presenters: Tönnis Trittler
+    affiliation: TUD Dresden University of Technology, Germany

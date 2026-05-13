@@ -1,0 +1,30 @@
+# ============================================================================
+# Wearable Track — top-level metadata.
+# Edit values, save, refresh the page. No build step.
+# ----------------------------------------------------------------------------
+# YAML conventions used in this folder:
+#   * 2-space indent. Tabs are forbidden (YAML rule).
+#   * Strings are unquoted unless they start with a special char or contain
+#     a YAML metacharacter (':', '#', '&', '*', '?', '|', '>', '!', '%', '@').
+#   * Lists use block style  ( - item )  for readability, flow style ([a, b])
+#     only for very short pairs.
+#   * Use '|' for multi-line text where line breaks should be preserved,
+#     and '>' where they should be folded into spaces.
+# ============================================================================
+
+title:    Wearable Track
+
+tagline:  Ultrasound wearables — from transducers and acoustic stacks to
+          embedded signal processing, system integration, and clinical
+          translation.
+
+dates:    22–24 June 2026
+location: Warsaw, Poland
+
+chairs:
+  - Moritz Herzog (TU Dresden)
+  - Erik Kaiser (TU Dresden)
+
+cta:
+  label: Register
+  url:   "../#register"   # quoted: '#' would otherwise start a YAML comment

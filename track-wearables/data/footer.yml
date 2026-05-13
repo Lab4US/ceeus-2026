@@ -1,0 +1,20 @@
+# ============================================================================
+# Track-specific footer: organizers, contact, sponsors.
+# 'sponsors' is an empty list for now — fill in like:
+#   sponsors:
+#     - Sponsor Name 1
+#     - Sponsor Name 2
+# ============================================================================
+
+organizers:
+  - name: Moritz Herzog
+    affiliation: TU Dresden — EKFZ
+  - name: Erik Kaiser
+    affiliation: TU Dresden — EKFZ
+  - name: Christoph Leitner
+    affiliation: ETH Zürich — IIS
+
+contact:     wearable-track@ceeus2026.org
+mainSiteUrl: "."
+
+sponsors: []

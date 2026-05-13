@@ -1,0 +1,93 @@
+# ============================================================================
+# Program grid for the Wearable Track. Top-level is a list of days.
+# Each day has a list of sessions. Field 'type' must match a key in
+# session-types.yml (talk | byod | workshop | sig | pwsswp | labsecret | break).
+# ============================================================================
+
+- day:  Monday
+  date: 22 June 2026
+  sessions:
+    - time: 11:00–12:00
+      type: talk
+      title: Scientific Presentation — Transducers
+      room: TBA
+    - time: 12:00–13:00
+      type: break
+      title: Lunch
+      room: ""
+    - time: 13:00–14:40
+      type: workshop
+      title: Transducer Workshop — PolyCMUTs
+      room: TBA
+    - time: 14:40–15:00
+      type: break
+      title: Coffee
+      room: ""
+    - time: 15:00–16:00
+      type: talk
+      title: Scientific Presentation — Transducers
+      room: TBA
+    - time: 16:00–16:40
+      type: byod
+      title: BYOD Part 1 (2 demos)
+      room: TBA
+    - time: 16:40–17:00
+      type: break
+      title: Coffee
+      room: ""
+    - time: 17:00–18:40
+      type: byod
+      title: BYOD Part 2 (6 demos)
+      room: TBA
+
+- day:  Tuesday
+  date: 23 June 2026
+  sessions:
+    - time: 11:40–12:40
+      type: labsecret
+      title: Lab Secrets
+      room: TBA
+    - time: 12:40–13:40
+      type: break
+      title: Lunch
+      room: ""
+    - time: 13:40–15:20
+      type: workshop
+      title: From Electrical Signals to Sound Fields — experimental physics with EPIQ
+      room: TBA
+    - time: 15:20–15:40
+      type: break
+      title: Coffee
+      room: ""
+    - time: 15:40–17:20
+      type: talk
+      title: Scientific Presentation — Signals & Systems
+      room: TBA
+    - time: 17:20–17:40
+      type: break
+      title: Coffee
+      room: ""
+    - time: 17:40–18:20
+      type: pwsswp
+      title: Problems Without Solutions / Solutions Without Problems
+      room: TBA
+    - time: 18:20–19:00
+      type: sig
+      title: SIG Discussion (hybrid)
+      room: TBA
+
+- day:  Wednesday
+  date: 24 June 2026
+  sessions:
+    - time: 11:40–12:40
+      type: talk
+      title: Scientific Presentation — Applications
+      room: TBA
+    - time: 12:40–13:40
+      type: break
+      title: Lunch
+      room: ""
+    - time: 13:40–15:20
+      type: workshop
+      title: Hands-on Ultrasound
+      room: TBA

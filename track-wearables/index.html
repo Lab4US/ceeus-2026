@@ -51,299 +51,591 @@
 
 <!-- DO NOT MODIFY BEFORE THIS LINE ------------------------------------------>
 
-<h1>Program of the TRACK WEARABLES</h1>
+<style>
+/* ============================================================
+   Wearable Track — scoped styles. Everything under .wt-track.
+   ============================================================ */
+.wt-track {
+    --wt-fg:        #1a1a1a;
+    --wt-muted:     #5f6368;
+    --wt-bg:        #ffffff;
+    --wt-card:      #fafafa;
+    --wt-border:    #e3e3e3;
+    --wt-accent:    #1d4e89;
+    --wt-accent-fg: #ffffff;
+    --wt-type-talk:      #4a7bb7;
+    --wt-type-byod:      #c6802e;
+    --wt-type-workshop:  #5a8a4a;
+    --wt-type-sig:       #8a4a8c;
+    --wt-type-pwsswp:    #b04545;
+    --wt-type-labsecret: #3a3a3a;
+    --wt-type-break:     #b0b0b0;
+    --wt-sp-1: .5rem; --wt-sp-2: 1rem; --wt-sp-3: 1.5rem;
+    --wt-sp-4: 2rem;  --wt-sp-5: 3rem; --wt-sp-6: 4rem;
+    --wt-fs-sm:  .875rem; --wt-fs-md: 1rem;
+    --wt-fs-lg:  1.25rem; --wt-fs-xl: 1.75rem; --wt-fs-2xl: 2.5rem;
+    --wt-radius: 6px;
+    --wt-nav-h:  56px;
 
-<h2>MON (22 JUN 2026)</h2>
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--wt-fg);
+    background: var(--wt-bg);
+    -webkit-font-smoothing: antialiased;
+}
+.wt-track *, .wt-track *::before, .wt-track *::after { box-sizing: border-box; }
 
-<h3>Session: Scientific Presentation (Transducer) [11:00–12:00]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
+.wt-track h1, .wt-track h2, .wt-track h3, .wt-track h4 {
+    font-family: inherit; font-weight: 700; color: var(--wt-fg);
+    margin: 0 0 var(--wt-sp-2); line-height: 1.25;
+}
+.wt-track h1 { font-size: var(--wt-fs-2xl); letter-spacing: -.02em; }
+.wt-track h2 { font-size: var(--wt-fs-xl);  letter-spacing: -.01em; margin-bottom: var(--wt-sp-3); }
+.wt-track h3 { font-size: var(--wt-fs-lg); }
+.wt-track h4 { font-size: var(--wt-fs-md); }
+.wt-track p  { margin: 0 0 var(--wt-sp-2); }
+.wt-track a  { color: var(--wt-accent); text-decoration: none; }
+.wt-track a:hover, .wt-track a:focus-visible { text-decoration: underline; }
+.wt-track ul { margin: 0 0 var(--wt-sp-2); padding-left: 1.25rem; }
+.wt-track .wt-muted { color: var(--wt-muted); font-size: var(--wt-fs-sm); }
 
-    <table id="WEARABLES-1">
-        <tr>
-            <td class="date" rowspan="3">
-                11:00 - 11:20
-            </td>
-            <td class="title">
-            _
-            </td>
-        </tr>
-        <tr>
-            <td class="speaker">
-            _
-            </td>
-        </tr>
-    </table>
+.wt-visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.wt-skiplink {
+    position: absolute; left: -9999px; top: 0; padding: var(--wt-sp-1) var(--wt-sp-2);
+    background: var(--wt-fg); color: #fff; z-index: 1000;
+}
+.wt-skiplink:focus { left: var(--wt-sp-2); top: var(--wt-sp-2); }
 
-<h3>Session: Transducer Workshop (PloyCMUTs) [13:00–14:40]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
+/* ---------- Sticky in-page nav ---------- */
+.wt-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--wt-bg); border-bottom: 1px solid var(--wt-border);
+}
+.wt-nav__inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 var(--wt-sp-3);
+    display: flex; align-items: center; gap: var(--wt-sp-3); min-height: var(--wt-nav-h);
+}
+.wt-nav__list {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; gap: var(--wt-sp-1); flex-wrap: wrap;
+    align-items: center;
+}
+.wt-nav__list a {
+    display: block;
+    padding: .5rem .75rem;
+    color: var(--wt-fg);
+    font-size: var(--wt-fs-md);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    white-space: nowrap;
+    border-radius: var(--wt-radius);
+    border: 1px solid transparent;
+}
+.wt-nav__list a:hover {
+    background: var(--wt-card); border-color: var(--wt-border); text-decoration: none;
+}
+.wt-nav__list a.is-active {
+    background: var(--wt-accent); color: var(--wt-accent-fg); border-color: var(--wt-accent);
+}
+.wt-nav__toggle {
+    display: none; background: none; border: 1px solid var(--wt-border);
+    border-radius: var(--wt-radius); padding: var(--wt-sp-1) var(--wt-sp-2);
+    cursor: pointer; margin-left: auto;
+}
+.wt-nav__hamburger, .wt-nav__hamburger::before, .wt-nav__hamburger::after {
+    display: block; width: 20px; height: 2px; background: var(--wt-fg); position: relative;
+}
+.wt-nav__hamburger::before, .wt-nav__hamburger::after {
+    content: ""; position: absolute; left: 0;
+}
+.wt-nav__hamburger::before { top: -6px; }
+.wt-nav__hamburger::after  { top:  6px; }
 
+/* ---------- Main / sections ---------- */
+.wt-main { max-width: 1100px; margin: 0 auto; padding: 0 var(--wt-sp-3); }
+.wt-section {
+    padding: var(--wt-sp-5) 0;
+    scroll-margin-top: calc(var(--wt-nav-h) + 8px);
+    border-top: 1px solid var(--wt-border);
+}
+.wt-section:first-of-type { border-top: 0; }
+.wt-section__head { margin-bottom: var(--wt-sp-4); max-width: 70ch; }
+.wt-section__head .wt-muted { margin-top: -.25rem; }
 
-<!-- COFFEE BREAK -->
+/* ---------- Hero ---------- */
+.wt-hero { padding-top: var(--wt-sp-5); }
+.wt-hero__meta {
+    display: flex; flex-wrap: wrap; gap: var(--wt-sp-3);
+    color: var(--wt-muted); font-size: var(--wt-fs-sm);
+    margin-bottom: var(--wt-sp-3);
+}
+.wt-hero__meta span::before { content: "—"; margin-right: .5em; color: var(--wt-border); }
+.wt-hero__meta span:first-child::before { content: ""; margin: 0; }
+.wt-hero__tagline { font-size: var(--wt-fs-lg); max-width: 60ch; color: var(--wt-muted); }
+.wt-track a.wt-hero__cta {
+    display: inline-block; margin-top: var(--wt-sp-3);
+    padding: .75rem 1.5rem; background: var(--wt-accent); color: var(--wt-accent-fg);
+    border-radius: var(--wt-radius); font-weight: 600;
+}
+.wt-track a.wt-hero__cta:hover { text-decoration: none; opacity: .9; color: var(--wt-accent-fg); }
+.wt-hero__chairs { margin-top: var(--wt-sp-3); font-size: var(--wt-fs-sm); }
 
-<h3>Session: Scientific Presentation (Transducer) [15:00–16:00]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
+/* ---------- Session-type pill ---------- */
+.wt-pill {
+    display: inline-block; padding: .15rem .5rem; border-radius: 999px;
+    font-size: .75rem; font-weight: 600; color: #fff;
+    text-transform: uppercase; letter-spacing: .05em; white-space: nowrap;
+}
 
+/* ---------- Schedule ---------- */
+.wt-day { margin-bottom: var(--wt-sp-4); }
+.wt-day__title {
+    font-size: var(--wt-fs-md); font-weight: 700; text-transform: uppercase;
+    letter-spacing: .05em; color: var(--wt-muted); margin-bottom: var(--wt-sp-1);
+}
+.wt-schedule-table {
+    width: 100%; border-collapse: collapse; font-size: var(--wt-fs-sm);
+    background: var(--wt-bg); border: 1px solid var(--wt-border); border-radius: var(--wt-radius);
+    overflow: hidden;
+}
+.wt-schedule-table th, .wt-schedule-table td {
+    padding: var(--wt-sp-2); text-align: left; border-bottom: 1px solid var(--wt-border);
+    vertical-align: top;
+}
+.wt-schedule-table th {
+    background: var(--wt-card); font-weight: 600; font-size: .75rem;
+    text-transform: uppercase; letter-spacing: .05em; color: var(--wt-muted);
+}
+.wt-schedule-table tr:last-child td { border-bottom: 0; }
+.wt-schedule-table tr.is-break td { color: var(--wt-muted); background: #fcfcfc; }
+.wt-schedule-table td.wt-col-time { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.wt-schedule-table td.wt-col-room { color: var(--wt-muted); white-space: nowrap; }
+.wt-schedule-wrap { overflow-x: auto; }
 
-<h3>Session: BYD [Part 1] (40 min, 2 Demos) [16:00–16:40]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
+/* ---------- Card grids ---------- */
+.wt-grid { display: grid; gap: var(--wt-sp-3); grid-template-columns: 1fr; }
+@media (min-width: 640px) { .wt-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .wt-grid.wt-grid--3 { grid-template-columns: repeat(3, 1fr); } }
+.wt-card {
+    background: var(--wt-card); border: 1px solid var(--wt-border);
+    border-radius: var(--wt-radius); padding: var(--wt-sp-3);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.wt-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+.wt-card__time { font-size: var(--wt-fs-sm); color: var(--wt-muted); font-variant-numeric: tabular-nums; }
+.wt-card__title { margin: var(--wt-sp-1) 0; font-size: var(--wt-fs-md); font-weight: 700; line-height: 1.35; }
+.wt-card__speaker { font-size: var(--wt-fs-sm); }
+.wt-card__affil { font-size: var(--wt-fs-sm); color: var(--wt-muted); margin-top: .25rem; }
+.wt-card__abstract-toggle {
+    margin-top: var(--wt-sp-2); background: none; border: 0; padding: 0;
+    color: var(--wt-accent); font: inherit; font-size: var(--wt-fs-sm);
+    cursor: pointer; text-decoration: underline;
+}
+.wt-card__abstract { display: none; margin-top: var(--wt-sp-2); font-size: var(--wt-fs-sm); }
+.wt-card.is-open .wt-card__abstract { display: block; }
+.wt-card.is-open .wt-card__abstract-toggle::after { content: " ▴"; }
+.wt-card__abstract-toggle::after { content: " ▾"; }
+.wt-card--demo { padding: var(--wt-sp-2) var(--wt-sp-3); }
 
-<!-- COFFEE BREAK -->
+/* ---------- Workshop / SIG / PWS-SWP blocks ---------- */
+.wt-block {
+    background: var(--wt-card); border: 1px solid var(--wt-border);
+    border-radius: var(--wt-radius); padding: var(--wt-sp-3);
+    margin-bottom: var(--wt-sp-3);
+}
+.wt-block dl { display: grid; grid-template-columns: max-content 1fr; gap: .25rem var(--wt-sp-2); margin: var(--wt-sp-2) 0; }
+.wt-block dt { font-weight: 600; color: var(--wt-muted); font-size: var(--wt-fs-sm); }
+.wt-block dd { margin: 0; font-size: var(--wt-fs-sm); }
+.wt-block__cta {
+    display: inline-block; margin-top: var(--wt-sp-2);
+    padding: .4rem 1rem; border: 1px solid var(--wt-accent); border-radius: var(--wt-radius);
+    color: var(--wt-accent); font-size: var(--wt-fs-sm);
+}
+.wt-block__cta:hover { background: var(--wt-accent); color: var(--wt-accent-fg); text-decoration: none; }
 
-<h3>Session: BYD [Part 2] (120 min, 6 Demos) [17:00–18:40]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
+/* ---------- Track footer ---------- */
+.wt-track-footer { background: var(--wt-card); margin-top: var(--wt-sp-5); }
+.wt-track-footer__grid {
+    display: grid; gap: var(--wt-sp-3);
+    grid-template-columns: 1fr;
+}
+@media (min-width: 768px) { .wt-track-footer__grid { grid-template-columns: 2fr 1fr 1fr; } }
+.wt-track-footer h3 { font-size: var(--wt-fs-md); }
+.wt-track-footer ul { list-style: none; padding: 0; font-size: var(--wt-fs-sm); }
+.wt-track-footer li { margin-bottom: .25rem; }
 
-<ol>
-<li>
-    <b>PMUT/CMUT live demo — Plug-&-play MUT Demo for ToF-systems and different phantoms.</b><br>
-    — Chris Stoeckel @ Fraunhofer Institute for Electronic Nano Systems, Chemnitz, Germany.
-</li>
-<li>
-    <b>Non-invasive Human-Machine Interfaces.</b><br>
-    — Bruno Grandi Sgambato @ Imperial College London.
-</li>
-<li>
-    <b>ModulUS Demo Real-Time Ultrasound Signal Acquisition and Bandwidth Reduction in a Water Bath Setup.</b><br>
-    — Marco Giordano (1), Marc-André Wessner (1), Michele Magno (1), Luca Benini (1,2), Christoph Leitner (1) @ 1. Department of Information Technology and Electrical Engineering, ETH Zurich, Zurich, Switzerland; 2. Department of Electrical, Electronic, and Information Engineering, University Bologna, Bologna, Italy.
-</li>
-<li>
-    <b>Coded Excitation on Commercial Off-The-Shelf Microcontroller Platforms for Ultrasound Wearables.</b><br>
-    — Nele Kirsch, Alessandra Vignoli, Franz Richter, Richard Nauber, Erik Kaiser, Tönnis Trittler, Moritz Herzog, Richard Nauber @ TU Dresden Vodafone Chair Mobile Communications Systems, Technische Universität Dresden, Germany.
-</li>
-<li>
-    <b>WULPUS live demo: Real-Time Wearable Ultrasound for Virtual Reality Interaction.</b><br>
-    — Giusy Spacone (1), Sebastian Frey (1), Luca Benini (1,2), Andrea Cossettini (1) @ 1. Integrated Systems Laboratory of ETH Zurich, Zurich, Switzerland; 2. Department of Electrical, Electronic and Information Engineering (DEI), University of Bologna, Bologna, Italy.
-</li>
-<li>
-    <b>TinyProbe Live Demo Real-time Data Visualization in an Open, Wearable, 32-channel, Wireless Ultrasound Probe.</b><br>
-    — Cedric Hirschi (1), Federico Villani (1), Luca Benini (1,2), Andrea Cossettini (1) @ 1. Integrated Systems Laboratory of ETH Zurich, Zurich, Switzerland, 2. Department of Electrical, Electronic and Information Engineering (DEI), University of Bologna, Bologna, Italy.
-</li>
-<li>
-    <b>SonoTrak.</b><br>
-    — Erica L. King (1,2), Ahmed Bashatah (1), Abhishek Aher (1), Rahul Kaliki (3), Siddhartha Sikdar (1,2,3), Parag V. Chitnis (1,2,3) @ 1. Department of Bioengineering, George Mason University, Fairfax VA, USA; 2. Center for MedTech Innovation, George Mason University, Fairfax VA, USA; 3. Myokinetics, Inc., Baltimore MD, USA.
-</li>
-<li>
-    <b>Hybrid Single Crystal – CMUT Stack for Wearable Ultrasound Applications.</b><br>
-    – Tönnis Trittler @ TUD Dresden University of Technology, Dresden, Germany.
-</li>
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+    .wt-track h1 { font-size: 2rem; }
+    .wt-track h2 { font-size: 1.5rem; }
+    .wt-section { padding: var(--wt-sp-4) 0; }
+    .wt-nav__toggle { display: inline-flex; }
+    .wt-nav__list {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; gap: 0; background: var(--wt-bg);
+        border-bottom: 1px solid var(--wt-border); padding: var(--wt-sp-2);
+        margin: 0;
+    }
+    .wt-nav__list.is-open { display: flex; }
+    .wt-nav__list a { border-radius: 0; padding: var(--wt-sp-2); }
+}
 
-</ol>
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .wt-track * { transition: none !important; animation: none !important; }
+    html { scroll-behavior: auto; }
+}
+html { scroll-behavior: smooth; }
 
-<!-- PIZZA BREAK -->
+/* ---------- Print ---------- */
+@media print {
+    .wt-nav, .wt-hero__cta, .wt-card__abstract-toggle, .wt-block__cta,
+    .banner, table.navigation, footer { display: none !important; }
+    .wt-track { font-size: 11pt; }
+    .wt-section { padding: 1rem 0; page-break-inside: avoid; border-top: 1px solid #ccc; }
+    .wt-card, .wt-block { background: #fff; border: 1px solid #ccc; break-inside: avoid; }
+    .wt-card__abstract { display: block !important; }
+    .wt-schedule-table { font-size: 9pt; }
+    a { color: inherit; text-decoration: none; }
+}
+</style>
 
-<hr> <!-- ======================================================================================= -->
+<div class="wt-track">
+  <a class="wt-skiplink" href="#wt-hero">Skip to content</a>
 
-<h2>TUE (23 JUN 2026)</h2>
+  <nav class="wt-nav" aria-label="Wearable track sections">
+    <div class="wt-nav__inner">
+      <button class="wt-nav__toggle" type="button"
+              aria-expanded="false" aria-controls="wt-nav-list" aria-label="Toggle section menu">
+        <span class="wt-nav__hamburger" aria-hidden="true"></span>
+      </button>
+      <ul class="wt-nav__list" id="wt-nav-list">
+        <li><a href="#wt-schedule">Schedule</a></li>
+        <li><a href="#wt-talks">Talks</a></li>
+        <li><a href="#wt-byod">BYO Device</a></li>
+        <li><a href="#wt-workshops">Workshops</a></li>
+        <li><a href="#wt-sig">Special Interest Group</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h3>Session: Lab Secrets [11:40–12:40]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
+  <main class="wt-main" id="wt-main">
+    <section id="wt-hero"      class="wt-section wt-hero"></section>
+    <section id="wt-schedule"  class="wt-section" aria-labelledby="wt-schedule-h"></section>
+    <section id="wt-talks"     class="wt-section" aria-labelledby="wt-talks-h"></section>
+    <section id="wt-byod"      class="wt-section" aria-labelledby="wt-byod-h"></section>
+    <section id="wt-workshops" class="wt-section" aria-labelledby="wt-workshops-h"></section>
+    <section id="wt-sig"       class="wt-section" aria-labelledby="wt-sig-h"></section>
+    <section id="wt-track-footer" class="wt-section wt-track-footer" aria-label="Track contacts"></section>
+  </main>
+</div>
 
-    <table id="WEARABLES-1">
-        <tr>
-            <td class="date" rowspan="3">
-                11:00 - 11:20
-            </td>
-            <td class="title">
-            _
-            </td>
-        </tr>
-        <tr>
-            <td class="speaker">
-            _
-            </td>
-        </tr>
-    </table>
+<!-- YAML parser (vendored, MIT). Loaded before the renderer below. -->
+<script src="track-wearables/vendor/js-yaml.min.js"></script>
 
-<!-- LUNCH BREAK -->
+<script>
+(function () {
+    'use strict';
 
-<h3>Session: From electrical signals to sound fields (experimental physics with EPIQ) [13:40–15:20]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
+    /* ----------------------------------------------------------------
+       Content loader. All content lives in track-wearables/data/*.yml.
+       Files are fetched in parallel; failures are caught per-file and
+       surfaced as a visible banner in the corresponding section so the
+       rest of the page still renders.
+       Note on path prefix: <base href=".."> in <head> makes relative
+       URLs resolve from the parent directory, so we prefix with
+       "track-wearables/data/" rather than just "data/".
+       ---------------------------------------------------------------- */
+    var BASE  = 'track-wearables/data/';
+    var FILES = [
+        ['track.yml',         'track'],
+        ['session-types.yml', 'sessionTypes'],
+        ['schedule.yml',      'schedule'],
+        ['talks.yml',         'talks'],
+        ['byod.yml',          'byod'],
+        ['workshops.yml',     'workshops'],
+        ['lab-secret.yml',    'labSecret'],
+        ['sig.yml',           'sig'],
+        ['footer.yml',        'footer']
+    ];
+    var data   = {};
+    var errors = {};
 
-    <table id="WEARABLES-1">
-        <tr>
-            <td class="date" rowspan="3">
-                13:40 - 14:00
-            </td>
-            <td class="title">
-            _
-            </td>
-        </tr>
-        <tr>
-            <td class="speaker">
-            _
-            </td>
-        </tr>
-    </table>
+    var esc = function (s) {
+        return String(s == null ? '' : s)
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    };
+    var q = function (id) { return document.getElementById(id); };
+    var errorBanner = function (msg) {
+        return '<div role="alert" style="border:1px solid #b04545;background:#fff4f4;' +
+               'color:#b04545;padding:1rem;border-radius:6px;font-size:.875rem">' +
+               '<strong>Content failed to load.</strong> ' + esc(msg) + '</div>';
+    };
+    var pill;  /* assigned after data loads; uses data.sessionTypes */
 
-<h3>Session: Scientific Presentation (Signals & Systems) [15:40–17:20]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
+    /* ---- Hero ---- */
+    function renderHero() {
+        var t = data.track || {};
+        var chairs = (t.chairs || []).map(esc).join(' · ');
+        q('wt-hero').innerHTML =
+            '<h1>' + esc(t.title || 'Wearable Track') + '</h1>' +
+            '<div class="wt-hero__meta">' +
+                '<span>' + esc(t.dates || '') + '</span>' +
+                '<span>' + esc(t.location || '') + '</span>' +
+            '</div>' +
+            '<p class="wt-hero__tagline">' + esc(t.tagline || '') + '</p>' +
+            (t.cta ? '<a class="wt-hero__cta" href="' + esc(t.cta.url) + '">' + esc(t.cta.label) + '</a>' : '') +
+            (chairs ? '<div class="wt-hero__chairs"><strong>Track chairs:</strong> ' + chairs + '</div>' : '');
+    }
 
-    <table id="WEARABLES-1">
-        <tr>
-            <td class="date" rowspan="3">
-                11:00 - 11:20
-            </td>
-            <td class="title">
-            _
-            </td>
-        </tr>
-        <tr>
-            <td class="speaker">
-            _
-            </td>
-        </tr>
-    </table>
+    /* ---- Schedule ---- */
+    function renderSchedule() {
+        var html = '<header class="wt-section__head">' +
+                     '<h2 id="wt-schedule-h">Program Schedule</h2>' +
+                     '<p class="wt-muted">Three days, mixed format: talks, hands-on workshops, BYOD demos, lab secrets, SIG, and a problems-vs-solutions matching session.</p>' +
+                   '</header>';
+        (data.schedule || []).forEach(function (day) {
+            html += '<div class="wt-day">' +
+                      '<div class="wt-day__title">' + esc(day.day) + ' · ' + esc(day.date) + '</div>' +
+                      '<div class="wt-schedule-wrap"><table class="wt-schedule-table">' +
+                        '<thead><tr><th scope="col">Time</th><th scope="col">Type</th><th scope="col">Title</th><th scope="col">Room</th></tr></thead><tbody>';
+            (day.sessions || []).forEach(function (s) {
+                html += '<tr class="' + (s.type === 'break' ? 'is-break' : '') + '">' +
+                          '<td class="wt-col-time">' + esc(s.time) + '</td>' +
+                          '<td>' + pill(s.type) + '</td>' +
+                          '<td>' + esc(s.title) + '</td>' +
+                          '<td class="wt-col-room">' + esc(s.room) + '</td>' +
+                        '</tr>';
+            });
+            html += '</tbody></table></div></div>';
+        });
+        q('wt-schedule').innerHTML = html;
+    }
 
+    /* ---- Talks ---- */
+    function renderTalks() {
+        var html = '<header class="wt-section__head">' +
+                     '<h2 id="wt-talks-h">Scientific Talks</h2>' +
+                     '<p class="wt-muted">Click a card to expand the abstract. Abstracts will be filled in as authors submit camera-ready material.</p>' +
+                   '</header><div class="wt-grid">';
+        (data.talks || []).forEach(function (t, i) {
+            html += '<article class="wt-card" data-card="' + i + '">' +
+                      '<div class="wt-card__time">' + esc(t.day || '') + (t.time && t.time !== 'TBA' ? ' · ' + esc(t.time) : '') + '</div>' +
+                      '<h3 class="wt-card__title">' + esc(t.title) + '</h3>' +
+                      '<div class="wt-card__speaker">' + esc(t.speaker) + '</div>' +
+                      '<div class="wt-card__affil">' + esc(t.affiliation) + '</div>' +
+                      '<button class="wt-card__abstract-toggle" type="button" aria-expanded="false">Abstract</button>' +
+                      '<div class="wt-card__abstract">' + (t.abstract ? esc(t.abstract) : '<em class="wt-muted">Abstract not yet available.</em>') + '</div>' +
+                    '</article>';
+        });
+        html += '</div>';
+        q('wt-talks').innerHTML = html;
+    }
 
-<h3>Session: Problems Session [17:40–18:20]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
+    /* ---- BYOD ---- */
+    function renderByod() {
+        var b = data.byod || {};
+        var html = '<header class="wt-section__head">' +
+                     '<h2 id="wt-byod-h">Bring Your Own Device — Demo Session</h2>' +
+                     '<p>' + esc(b.intro || '') + '</p>' +
+                     '<p class="wt-muted">' + esc(b.submission || '') + '</p>' +
+                     (b.submissionUrl ? '<a class="wt-block__cta" href="' + esc(b.submissionUrl) + '">Submit a demo</a>' : '') +
+                   '</header>' +
+                   '<h3>Confirmed demos</h3><div class="wt-grid wt-grid--3">';
+        (b.demos || []).forEach(function (d) {
+            html += '<article class="wt-card wt-card--demo">' +
+                      '<h4 class="wt-card__title">' + esc(d.title) + '</h4>' +
+                      '<div class="wt-card__speaker">' + esc(d.presenters) + '</div>' +
+                      '<div class="wt-card__affil">' + esc(d.affiliation) + '</div>' +
+                    '</article>';
+        });
+        html += '</div>';
+        q('wt-byod').innerHTML = html;
+    }
 
-    <table id="WEARABLES-1">
-        <tr>
-            <td class="date" rowspan="3">
-                11:00 - 11:20
-            </td>
-            <td class="title">
-            _
-            </td>
-        </tr>
-        <tr>
-            <td class="speaker">
-            _
-            </td>
-        </tr>
-    </table>
+    /* ---- Workshops + Lab Secret ---- */
+    function renderWorkshops() {
+        var html = '<header class="wt-section__head">' +
+                     '<h2 id="wt-workshops-h">Workshops & Lab Secrets</h2>' +
+                     '<p class="wt-muted">Three workshops across the track + an informal Lab Secrets exchange.</p>' +
+                   '</header>';
+        (data.workshops || []).forEach(function (w) {
+            html += '<article class="wt-block">' +
+                      '<h3>' + esc(w.title) + '</h3>' +
+                      (w.description ? '<p>' + esc(w.description) + '</p>' : '') +
+                      '<dl>' +
+                        '<dt>Organizer</dt><dd>' + esc(w.organizer) + '</dd>' +
+                        '<dt>When</dt><dd>' + esc(w.day) + ' · ' + esc(w.duration) + '</dd>' +
+                        '<dt>Capacity</dt><dd>' + esc(w.capacity) + '</dd>' +
+                      '</dl>' +
+                      (w.registrationUrl ? '<a class="wt-block__cta" href="' + esc(w.registrationUrl) + '">Register</a>' : '') +
+                    '</article>';
+        });
+        var ls = data.labSecret || {};
+        if (ls.title) {
+            html += '<article class="wt-block">' +
+                      '<h3>' + esc(ls.title) + ' <span class="wt-pill" style="background:' + esc(((data.sessionTypes || {}).labsecret || {}).color || '#3a3a3a') + '">Teaser</span></h3>' +
+                      '<div class="wt-muted">' + esc(ls.when || '') + '</div>' +
+                      '<p>' + esc(ls.teaser || '') + '</p>' +
+                      '<p class="wt-muted"><strong>How to participate:</strong> ' + esc(ls.howToParticipate || '') + '</p>' +
+                    '</article>';
+        }
+        q('wt-workshops').innerHTML = html;
+    }
 
-<h3>Session: SIG Discussion (* hybrid *) [18:20–19:00]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
+    /* ---- SIG ---- */
+    function renderSig() {
+        var s = data.sig || {};
+        var topics = (s.topics || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
+        q('wt-sig').innerHTML =
+            '<header class="wt-section__head">' +
+              '<h2 id="wt-sig-h">Special Interest Group</h2>' +
+              '<p class="wt-muted">' + esc(s.when || '') + '</p>' +
+            '</header>' +
+            '<article class="wt-block">' +
+              '<h3>' + esc(s.title || '') + '</h3>' +
+              '<dl><dt>Format</dt><dd>' + esc(s.format || '') + '</dd></dl>' +
+              (topics ? '<h4 style="margin-top:1rem">Seed topics</h4><ul>' + topics + '</ul>' : '') +
+              '<p class="wt-muted"><strong>Propose a topic:</strong> ' + esc(s.howToPropose || '') + '</p>' +
+            '</article>';
+    }
 
-<hr> <!-- ======================================================================================= -->
+    /* ---- Track footer ---- */
+    function renderTrackFooter() {
+        var f = data.footer || {};
+        var orgs = (f.organizers || []).map(function (o) {
+            return '<li><strong>' + esc(o.name) + '</strong><br><span class="wt-muted">' + esc(o.affiliation) + '</span></li>';
+        }).join('');
+        var sponsors = (f.sponsors && f.sponsors.length)
+            ? f.sponsors.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('')
+            : '<li class="wt-muted">Sponsor slots available — contact the chairs.</li>';
+        q('wt-track-footer').innerHTML =
+            '<div class="wt-track-footer__grid">' +
+              '<div><h3>Track organizers</h3><ul>' + orgs + '</ul></div>' +
+              '<div><h3>Contact</h3>' +
+                (f.contact ? '<p><a href="mailto:' + esc(f.contact) + '">' + esc(f.contact) + '</a></p>' : '') +
+                (f.mainSiteUrl ? '<p><a href="' + esc(f.mainSiteUrl) + '">← Back to CEEUS 2026</a></p>' : '') +
+              '</div>' +
+              '<div><h3>Sponsors</h3><ul>' + sponsors + '</ul></div>' +
+            '</div>';
+    }
 
-<h2>WED (24 JUN 2026)</h2>
+    /* ---- Talk-card abstract toggle (delegated) ---- */
+    document.getElementById('wt-talks').addEventListener('click', function (e) {
+        var btn = e.target.closest('.wt-card__abstract-toggle');
+        if (!btn) return;
+        var card = btn.closest('.wt-card');
+        var open = card.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
 
-<h3>Session: Scientific Presentation (3x Presentations – Applications) [11:40–12:40]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
+    /* ---- Mobile nav toggle ---- */
+    var navList = document.getElementById('wt-nav-list');
+    var navToggle = document.querySelector('.wt-nav__toggle');
+    if (navToggle && navList) {
+        navToggle.addEventListener('click', function () {
+            var open = navList.classList.toggle('is-open');
+            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        navList.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') {
+                navList.classList.remove('is-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 
-    <table id="WEARABLES-1">
-        <tr>
-            <td class="date" rowspan="3">
-                11:00 - 11:20
-            </td>
-            <td class="title">
-            _
-            </td>
-        </tr>
-        <tr>
-            <td class="speaker">
-            _
-            </td>
-        </tr>
-    </table>
+    /* ---- Smooth scroll respecting reduced-motion ---- */
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.wt-nav__list a[href^="#"], .wt-nav__brand[href^="#"], .wt-skiplink').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+            var id = a.getAttribute('href').slice(1);
+            var target = document.getElementById(id);
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+            history.replaceState(null, '', '#' + id);
+        });
+    });
 
-<!-- LUNCH BREAK -->
+    /* ---- Scroll-spy: highlight current section in nav ---- */
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll('.wt-nav__list a[href^="#"]'));
+    var sectionMap = {};
+    navLinks.forEach(function (a) {
+        var id = a.getAttribute('href').slice(1);
+        var sec = document.getElementById(id);
+        if (sec) sectionMap[id] = a;
+    });
+    if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                var link = sectionMap[entry.target.id];
+                if (!link) return;
+                if (entry.isIntersecting) {
+                    navLinks.forEach(function (l) { l.classList.remove('is-active'); });
+                    link.classList.add('is-active');
+                }
+            });
+        }, { rootMargin: '-60px 0px -55% 0px', threshold: 0 });
+        Object.keys(sectionMap).forEach(function (id) {
+            obs.observe(document.getElementById(id));
+        });
+    }
 
-<h3>Session: Hands-on Ultrasound [13:40–15:20]</h3>
-<h4>Chairs: Moritz Herzog, Erik Kaiser </h4>
-
-    <table id="WEARABLES-1">
-        <tr>
-            <td class="date" rowspan="3">
-                13:40 - 14:00
-            </td>
-            <td class="title">
-            _
-            </td>
-        </tr>
-        <tr>
-            <td class="speaker">
-            _
-            </td>
-        </tr>
-    </table>
-
-
-
-<h3>PRESENTATIONS:</h3>
-<ol>
-<li>
-    <b>Towards Ultrasound-Based Blood Pressure Monitoring A Hybrid Array Enabling Continuous Chirp Excitation for Increased Axial Resolution.</b><br>
-    — Erik Kaiser (1), Julian Kober (1), Tönnis Trittler (1), Nele Kirsch (2), Franz Richter (2), Richard Nauber (2), Gerhard Fettweis (2), Jochen Hampe (1), Moritz Herzog (1) @ 1. Else Kröner Fresenius Center for Digital Health, Dresden, Germany; 2. Vodafone Chair for Mobile Communications Systems, Dresden, Germany.
-</li>
-<li>
-    <b>Investigating Binary Coded Excitation Schemes for US Wearables with Low-Complexity Electronics.</b><br>
-    — Nele Kirsch (1, 2), Franz Richter (1), Alessandra Vignoli (3), Edgar Dorausch (1), Cornelius Kühnöl (1), Pascal Stöver (1), Erik Kaiser (2), Merit Städler (2), Moritz Herzog (2), Gerhard Fettweiss (1), Richard Nauber (1) @ 1. Vodafone Chair for Mobile Communications Systems, TU Dresden, Germany; 2. EKFZ (Else Kröner Fresenius Center for Digital Health), Dresden, Germany; 3. Department of Information Engineering, University of Florence, Florence, Italy.
-</li>
-<li>
-    <b>Energy Efficient Implementations of Mismatched Filtering for Wearable Ultrasound on the ARM Ethos-U55.</b><br>
-    — Franz Richter (1), Nele Kirsch (1), Erik Kaiser (2), Edgar Dorausch (1), Cornelius Kühnöl (1), Pascal Stöver (1), Tönnis Trittler (2), Moritz Herzog (2), Gerhard Fettweiß (1), Richard Nauber (1) @ 1. Vodafone Chair for Mobile Communications Systems, TU Dresden, Germany; 2. EKFZ (Else Kröner Fresenius Center) for Digital Health, Dresden, Germany.
-</li>
-<li>
-    <b>Hybrid CMUT and Single Crystal Ultrasonic Transducer Sensor Stack for Muscle Monitoring.</b><br>
-    — Tönnis Trittler (1), Paul Dekan (1), Julian Kober (1), Cornelius Kühnöl (2), Merit Städler (1), Erik Kaiser (1), Erhard Landgraf (3), Richard Nauber (2), Henning Heuer (4), Moritz Herzog (1) @ 1. Else Kröner Fresenius Center for Digital Health, Dresden, Germany; 2. Vodafone Chair for Mobile Communications Systems, Dresden, Germany; 3. Infineon Technologies Dresden AG & Co. KG, 4. Fraunhofer Institute for Ceramic Technologies and Systems, Dresden, Germany.
-</li>
-<li>
-    <b>Leveraging a Low-Cost RISC-V Microcontroller Board as Wearable Ultrasound Front End</b><br>
-    — A. Vignoli (1), N. Kirsch (2), E. Kaiser (2), T. Trittler (2), V. Meacci (1), A. Ramalli (1), E. Boni (1), M. Herzog (2), R. Nauber (3) @ 1. Department of Information Engineering, University of Florence, Florence, Italy; 2. Else Kröner Fresenius Center for Digital Health, TU Dresden Faculty of Medicine Carl Gustav Carus, Dresden, Germany; 3. Vodafone Chair Mobile Communications Systems, Department of Electrical Engineering, TU Dresden, Dresden, Germany.
-</li>
-<li>
-    <b>32ch portable system as flexible platform for research in biomedical ultrasound.</b><br>
-    — Marc Fournelle, Daniel Speicher, Christoph Risser, Holger Hewener, Steffen Tretbar @ Fraunhofer IBMT, Sulzbach, Germany.
-</li>
-<li>
-    <b>CMUT Array for Deep Vein Thrombosis.</b><br>
-    — Sören Köble, Nicolas Lange, Marco Kircher, Uwe Völz, Sandro G. Koch @ Fraunhofer Institute for Photonic Microsystems (IPMS), Dresden, Germany.
-</li>
-<li>
-    <b>Array Selection for Wearable Ultrasound Dysphagia Biofeedback Monitor Device.</b><br>
-    — Alessia Bruno (1), Xanthe Miller (1), Ourania Varsou (2), Emma Harris (3), Sandy Cochran (1) @ 1. James Watt School of Engineering, University of Glasgow, Glasgow, UK; 2. Anatomy Facility, School of Medicine, Dentistry and Nursing, University of Glasgow, UK; 3. Imaging for Radiotherapy Adaptation, Institute of Cancer Research, Sutton, UK.
-</li>
-<li>
-    <b>Automated Feature Extraction of Distributed Wearable Ultrasound Signals During Highly Dynamic Physical Activity.</b><br>
-    — Erica L. King (1,2), Qi Wei (1,2), Margaret T. Jones (1,2,4), Siddhartha Sikdar (1,2,3), Parag V. Chitnis (1,2,3) @ 1. Department of Bioengineering, George Mason University, Fairfax VA, USA; 2. Center for MedTech Innovation, George Mason University, Fairfax VA, USA; 3. Myokinetics, Inc., Baltimore MD, USA; 4.Patriot Performance Lab, George Mason University, Fairfax VA, USA.
-</li>
-<li>
-    <b>Monitoring Bone Fracture Healing Using Guided Acoustic Waves Towards a Wearable Ultrasound System.</b><br>
-    — Jan Lützelberger, Eric N. Link, Klaus Stefan Drese @ ISAT - Institute of Sensor and Actuator Technology, Coburg University of Applied Sciences and Arts, Coburg, Germany. 
-</li>
-<li>
-    <b>Acoustic Stack Optimization and Clinical Validation Preparation of a Flexible PMN-PT Ultrasonic Transducer Array for Wearable Blood Pressure Monitoring.</b><br>
-    — Syed Turab Haider Zaidi (1,2), Jinsoo Park (3), Lee Youngjin (1), Byung Chul Lee (2,3), Shin Hur (1,2) @ 1. Korea Institute of Machinery and Materials, Daejeon Metropolitan City, South Korea, University of Science and Technology; 2. Daejeon Metropolitan City, South Korea, Korea; 3. Institute of Science and Technology, Seoul, South Korea.
-</li>
-<li>
-    <b>Towards Practical Ultrasound-Based Hand Motion Analysis Efficient Reference Acquisition and Motion Modeling.</b><br>
-    — Christian Kupsch, Nico Schurig, Robert Kunz, Lennart Schierling, David Weik @ Measurement, Sensor and Embedded Systems Laboratory (MSE Lab), TU Bergakademie Freiberg, Freiberg, Germany.
-</li>
-<li>
-    <b>Automated Filter Design Tool for Impedance Matching of Wearable PVDF Ultrasound Transducers.</b><br>
-    — Stephan Thurner, Christoph Leitner, Debkalpa Goswami, Jörg Schröttner, Christian Baumgartner @ Institute of Health Care Engineering, Graz University of Technology, Graz, Austria, Integrated Systems Laboratory, ETH Zurich, Zurich, Switzerland.
-</li>
-<li>
-    <b>Towards Affordable Ultrasound Wearables with Polymer-Based CMUTs.</b><br>
-    — Martin Angerer, Jinhao Lu, Jonas Welsch, Edmond Cretu, Robert Rohling @ Department of Electrical and Computer Engineering, The University of British Columbia (UBC), Vancouver, Canada.
-</li>
-<li>
-    <b>Towards Optimized Hybrid Sparse Arrays for Wearable Ultrasonic Systems.</b><br>
-    — Edgar Dorausch (1), Cornelius Kühnöl (1), Nele Kirsch (1), Tönnis Trittler (2), Gerhard Fettweis (1), Alessandro Ramalli (3), Moritz Herzog (2), Richard Nauber (1) @ 1. Vodafone Chair for Mobile Communications Systems, Dresden, Germany; 2. Else Kröner Fresenius Center for Digital Health, Dresden, Germany; 3. Department of Information Engineering, University of Florence, Florence, Italy.
-</li>
-<li>
-    <b>Low-Resource Embedded DAS Beamformer for Medical Ultrasound.</b><br>
-    — Federico Villani (1), Milos Hirsl (1), Luca Benini (1,2), Andrea Cossettini (1) @ 1. Integrated Systems Laboratory of ETH Zurich, Zurich, Switzerland; 2. Department of Electrical, Electronic and Information Engineering (DEI), University of Bologna, Bologna, Italy.
-</li>
-<li>
-    <b>Toward Reliable Cuffless Blood Pressure monitoring Using a Multimodal Ultrasound–ECG Wearable Platform.</b><br>
-    — Syed Turab Haider Zaidi (1,2), Lee Youngjin (1), Shin Hur (1,2) @ 1. Korea Institute of Machinery and Materials, Daejeon Metropolitan City, South Korea; 2. University of Science and Technology, Daejeon Metropolitan City, South Korea.
-</li>
-</ol>
-
+    /* ----------------------------------------------------------------
+       Load every YAML file in parallel, then dispatch the renderers.
+       Each load failure or render error is contained to its section
+       and surfaced as an inline banner.
+       ---------------------------------------------------------------- */
+    Promise.all(FILES.map(function (pair) {
+        return fetch(BASE + pair[0])
+            .then(function (r) {
+                if (!r.ok) throw new Error('HTTP ' + r.status + ' ' + r.statusText);
+                return r.text();
+            })
+            .then(function (txt) { data[pair[1]] = jsyaml.load(txt); })
+            .catch(function (e) { errors[pair[1]] = pair[0] + ' — ' + e.message; });
+    })).then(function () {
+        pill = function (typeKey) {
+            var t = (data.sessionTypes || {})[typeKey] || { label: typeKey, color: '#888' };
+            return '<span class="wt-pill" style="background:' + esc(t.color) +
+                   '">' + esc(t.label) + '</span>';
+        };
+        var dispatch = [
+            ['wt-hero',         renderHero,         'track'],
+            ['wt-schedule',     renderSchedule,     'schedule'],
+            ['wt-talks',        renderTalks,        'talks'],
+            ['wt-byod',         renderByod,         'byod'],
+            ['wt-workshops',    renderWorkshops,    'workshops'],
+            ['wt-sig',          renderSig,          'sig'],
+            ['wt-track-footer', renderTrackFooter,  'footer']
+        ];
+        dispatch.forEach(function (d) {
+            var sec = q(d[0]);
+            if (!sec) return;
+            if (errors[d[2]]) { sec.innerHTML = errorBanner(errors[d[2]]); return; }
+            try { d[1](); }
+            catch (e) { sec.innerHTML = errorBanner('Renderer error in ' + d[2] + ': ' + e.message); }
+        });
+    });
+})();
+</script>
 
 <!-- DO NOT MODIFY PAST THIS LINE -------------------------------------------->
 
     <footer>
-        &copy; Lab4US 2026 &nbsp;|&nbsp; 
+        &copy; Lab4US 2026 &nbsp;|&nbsp;
         Based on template by <a href="https://github.com/mikepierce">Mike Pierce</a>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@3.6.4/js/iframeResizer.contentWindow.min.js"
         integrity="sha256-guWM6me37H/j6pgT6W3HZNC8N1kezYf05xAK4FkfZ8o=" crossorigin="anonymous"></script>
 </body>
 </html>
-
