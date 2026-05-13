@@ -16,7 +16,7 @@ title:    Wearable Track
 
 # Header image that replaces the site banner on this page only.
 # Path is relative to the conference root (see <base href=".."> in chrome).
-header:   assets/WearableTrack_header.png
+header:   assets/wearable/WearableTrack_header.png
 
 # Vertical offset for the header image. Used to push the image
 # down so the white "IEEE CEEUS 2026" overlay (.top-left, ~103 px

@@ -35,11 +35,11 @@
     - name: Martin Angerer
       title: Dr.
       # affiliation: University of British Columbia, Vancouver, Canada
-      photo: assets/WS-MartinAngerer.jpg
+      photo: assets/wearable/WS-MartinAngerer.jpg
     - name: Dr. Jonas Welsch
       title: ""
       affiliation: University of British Columbia, Vancouver, Canada
-      photo: assets/WS-JonasWelsch.jpg
+      photo: assets/wearable/WS-JonasWelsch.jpg
 
 - title: Anatomy of a Wearable Ultrasound System — From Components to Signals
   day: Tue 23 Jun
@@ -49,7 +49,7 @@
     - name: Christoph Leitner
       title: Dr.
       affiliation: Integrated Systems Laboratory, ETH Zürich, Switzerland
-      photo: assets/WS-ChristophLeitner.jpg
+      photo: assets/wearable/WS-ChristophLeitner.jpg
 
 - title: Live Imaging — Hands-on Medical Ultrasound
   day: Wed 24 Jun
@@ -59,4 +59,4 @@
     - name: Moritz Herzog
       title: Dr.
       affiliation: University Hospital Dresden, Germany
-      photo: assets/WS-MoritzHerzog.jpg
+      photo: assets/wearable/WS-MoritzHerzog.jpg
