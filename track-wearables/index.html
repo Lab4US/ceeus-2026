@@ -335,6 +335,54 @@
 }
 .wt-block__cta:hover { background: var(--wt-accent); color: var(--wt-accent-fg); text-decoration: none; }
 
+/* ---------- Workshop block details (expandable) ---------- */
+.wt-workshop__details-toggle {
+    margin-top: var(--wt-sp-2);
+    background: none; border: 0; padding: 0;
+    color: var(--wt-accent); font: inherit; font-size: var(--wt-fs-sm);
+    font-weight: 600; cursor: pointer; text-decoration: underline;
+}
+.wt-workshop__details-toggle::after { content: " ▾"; }
+.wt-block.is-open .wt-workshop__details-toggle::after { content: " ▴"; }
+.wt-workshop__details { display: none; margin-top: var(--wt-sp-3); padding-top: var(--wt-sp-3); border-top: 1px solid var(--wt-border); }
+.wt-block.is-open .wt-workshop__details { display: block; }
+.wt-workshop__abstract p { margin: 0 0 var(--wt-sp-2); font-size: var(--wt-fs-sm); }
+.wt-workshop__abstract p:last-child { margin-bottom: 0; }
+
+.wt-workshop__speakers {
+    display: flex; flex-wrap: wrap; gap: var(--wt-sp-3);
+    margin-top: var(--wt-sp-3); padding-top: var(--wt-sp-3);
+    border-top: 1px solid var(--wt-border);
+}
+.wt-workshop__speaker { display: flex; align-items: center; gap: var(--wt-sp-2); }
+.wt-workshop__speaker-photo {
+    width: 72px; height: 72px; border-radius: 50%;
+    object-fit: cover; flex-shrink: 0; display: block;
+    background: var(--wt-card); border: 1px solid var(--wt-border);
+}
+.wt-workshop__speaker-info { font-size: var(--wt-fs-sm); }
+.wt-workshop__speaker-name { font-weight: 700; color: var(--wt-fg); }
+.wt-workshop__speaker-affil { color: var(--wt-muted); margin-top: .15rem; }
+
+/* ---------- Lab Secret expanded list (3 mini-talks) ---------- */
+.wt-labsecret__list { display: flex; flex-direction: column; gap: var(--wt-sp-3); margin-top: 0; }
+.wt-labsecret__item { display: flex; gap: var(--wt-sp-2); align-items: flex-start; }
+.wt-labsecret__num {
+    font-weight: 700; color: var(--wt-muted);
+    min-width: 1.5em; font-size: var(--wt-fs-md);
+    flex-shrink: 0;
+}
+.wt-labsecret__body { flex: 1; min-width: 0; }
+.wt-labsecret__title {
+    margin: 0 0 var(--wt-sp-1); font-size: var(--wt-fs-md);
+    color: var(--wt-fg);
+}
+.wt-labsecret__teaser {
+    margin: 0 0 var(--wt-sp-2);
+    font-size: var(--wt-fs-sm);
+    color: var(--wt-muted);
+}
+
 /* ---------- Track footer ---------- */
 .wt-track-footer { background: var(--wt-card); margin-top: var(--wt-sp-5); }
 .wt-track-footer__grid {
@@ -608,28 +656,104 @@ html { scroll-behavior: smooth; }
     function renderWorkshops() {
         var html = '<header class="wt-section__head">' +
                      '<h2 id="wt-workshops-h">Workshops & Lab Secrets</h2>' +
-                     '<p class="wt-muted">Three workshops across the track + Lab Secrets session.</p>' +
+                     '<p class="wt-muted"><strong>How to participate:</strong> Open to all registered conference attendees.</p>' +
                    '</header>';
-        (data.workshops || []).forEach(function (w) {
-            html += '<article class="wt-block">' +
+        (data.workshops || []).forEach(function (w, wi) {
+            var hasAbstract = w.abstract && String(w.abstract).trim().length > 0;
+            var hasSpeakers = Array.isArray(w.speakers) && w.speakers.length > 0;
+            var hasDetails  = hasAbstract || hasSpeakers;
+
+            html += '<article class="wt-block" data-workshop="' + wi + '">' +
                       '<h3>' + esc(w.title) + '</h3>' +
                       (w.description ? '<p>' + esc(w.description) + '</p>' : '') +
                       '<dl>' +
-                        '<dt>Organizer</dt><dd>' + esc(w.organizer) + '</dd>' +
                         '<dt>When</dt><dd>' + esc(w.day) + ' · ' + esc(w.duration) + '</dd>' +
-                        '<dt>Capacity</dt><dd>' + esc(w.capacity) + '</dd>' +
-                      '</dl>' +
-                      (w.registrationUrl ? '<a class="wt-block__cta" href="' + esc(w.registrationUrl) + '">Register</a>' : '') +
-                    '</article>';
+                      '</dl>';
+
+            if (hasSpeakers) {
+                html += '<div class="wt-muted" style="font-size:var(--wt-fs-sm);margin-top:.25rem">' +
+                          w.speakers.map(function (s) {
+                              return esc(((s.title ? s.title + ' ' : '') + s.name + (s.affiliation ? ' (' + s.affiliation + ')' : '')));
+                          }).join(' · ') +
+                        '</div>';
+            }
+
+            if (hasDetails) {
+                html += '<button class="wt-workshop__details-toggle" type="button" aria-expanded="false">Details</button>' +
+                        '<div class="wt-workshop__details">';
+
+                if (hasAbstract) {
+                    var paragraphs = String(w.abstract).split(/\n\s*\n/).map(function (p) {
+                        return '<p>' + esc(p.trim()) + '</p>';
+                    }).join('');
+                    html += '<div class="wt-workshop__abstract">' + paragraphs + '</div>';
+                }
+
+                if (hasSpeakers) {
+                    html += '<div class="wt-workshop__speakers">';
+                    w.speakers.forEach(function (s) {
+                        html += '<div class="wt-workshop__speaker">';
+                        if (s.photo) {
+                            html += '<img class="wt-workshop__speaker-photo" src="' + esc(s.photo) +
+                                    '" alt="' + esc(s.name || '') + '" onerror="this.style.display=\'none\'" />';
+                        }
+                        html += '<div class="wt-workshop__speaker-info">' +
+                                  '<div class="wt-workshop__speaker-name">' +
+                                    esc((s.title ? s.title + ' ' : '') + (s.name || '')) +
+                                  '</div>' +
+                                  (s.affiliation ? '<div class="wt-workshop__speaker-affil">' + esc(s.affiliation) + '</div>' : '') +
+                                '</div>' +
+                                '</div>';
+                    });
+                    html += '</div>';
+                }
+
+                html += '</div>';
+            }
+
+            html += '</article>';
         });
         var ls = data.labSecret || {};
         if (ls.title) {
+            var hasSecrets = Array.isArray(ls.secrets) && ls.secrets.length > 0;
             html += '<article class="wt-block">' +
-                      '<h3>' + esc(ls.title) + ' <span class="wt-pill" style="background:' + esc(((data.sessionTypes || {}).labsecret || {}).color || '#3a3a3a') + '">Teaser</span></h3>' +
+                      '<h3>' + esc(ls.title) +
+                        ' <span class="wt-pill" style="background:' + esc(((data.sessionTypes || {}).labsecret || {}).color || '#3a3a3a') + '">Lab Secret</span>' +
+                      '</h3>' +
                       '<div class="wt-muted">' + esc(ls.when || '') + '</div>' +
                       '<p>' + esc(ls.teaser || '') + '</p>' +
-                      '<p class="wt-muted"><strong>How to participate:</strong> ' + esc(ls.howToParticipate || '') + '</p>' +
-                    '</article>';
+                      (ls.howToParticipate ? '<p class="wt-muted"><strong>How to participate:</strong> ' + esc(ls.howToParticipate) + '</p>' : '');
+
+            if (hasSecrets) {
+                html += '<button class="wt-workshop__details-toggle" type="button" aria-expanded="false">Details</button>' +
+                        '<div class="wt-workshop__details">' +
+                          '<div class="wt-labsecret__list">';
+                ls.secrets.forEach(function (s, i) {
+                    html += '<div class="wt-labsecret__item">' +
+                              '<div class="wt-labsecret__num">' + (i + 1) + '.</div>' +
+                              '<div class="wt-labsecret__body">' +
+                                '<h4 class="wt-labsecret__title">' + esc(s.title || '') + '</h4>' +
+                                (s.teaser ? '<p class="wt-labsecret__teaser">' + esc(s.teaser) + '</p>' : '') +
+                                '<div class="wt-workshop__speaker">' +
+                                  (s.photo
+                                    ? '<img class="wt-workshop__speaker-photo" src="' + esc(s.photo) +
+                                      '" alt="' + esc(s.presenter || '') +
+                                      '" onerror="this.style.display=\'none\'" />'
+                                    : '') +
+                                  '<div class="wt-workshop__speaker-info">' +
+                                    '<div class="wt-workshop__speaker-name">' + esc(s.presenter || '') + '</div>' +
+                                    (s.affiliation
+                                      ? '<div class="wt-workshop__speaker-affil">' + esc(s.affiliation) + '</div>'
+                                      : '') +
+                                  '</div>' +
+                                '</div>' +
+                              '</div>' +
+                            '</div>';
+                });
+                html += '</div></div>';
+            }
+
+            html += '</article>';
         }
         q('wt-workshops').innerHTML = html;
     }
@@ -692,6 +816,15 @@ html { scroll-behavior: smooth; }
         if (!btn) return;
         var card = btn.closest('.wt-card');
         var open = card.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    /* ---- Workshop details toggle (delegated) ---- */
+    document.getElementById('wt-workshops').addEventListener('click', function (e) {
+        var btn = e.target.closest('.wt-workshop__details-toggle');
+        if (!btn) return;
+        var block = btn.closest('.wt-block');
+        var open = block.classList.toggle('is-open');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 

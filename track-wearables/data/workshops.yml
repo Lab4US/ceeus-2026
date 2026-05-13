@@ -1,28 +1,62 @@
 # ============================================================================
 # Workshops. One list item per workshop.
 # Lab Secrets is a separate session — see lab-secret.yml.
+# ----------------------------------------------------------------------------
+# Schema:
+#   title      — full workshop title (will appear on the card)
+#   day        — short day label (Mon 22 Jun)
+#   duration   — display string (e.g. "100 min · 13:00–14:40")
+#   abstract   — multi-paragraph description (use '|' to preserve line
+#                breaks between paragraphs, or '>' for folded prose)
+#   speakers   — list of speakers; each entry: name, title, affiliation,
+#                photo (optional, relative to conference root)
 # ============================================================================
 
-- title: Transducer Workshop — PolyCMUTs
-  organizer: Moritz Herzog, Erik Kaiser
+- title: "Polymer-Based Micromachined Transducers for Wearable Ultrasound: Design, Integration, and Performance Evaluation"
   day: Mon 22 Jun
   duration: 100 min · 13:00–14:40
-  capacity: TBA
-  description: Walk-through of polymer-CMUT fabrication, characterization, and integration into wearable form factors. Bring questions.
-  registrationUrl: "#"
+  abstract: |
+    Wearable ultrasound enables continuous, non-invasive monitoring but is
+    often constrained by transducer size, power consumption, and integration
+    complexity. Polymer-based micromachined ultrasonic transducers (polyCMUTs)
+    can address these challenges through miniaturization, design versatility,
+    power efficiency and scalable fabrication.
 
-- title: From Electrical Signals to Sound Fields — Experimental Physics with EPIQ
-  organizer: TBA
+    This workshop covers the design, integration, and evaluation of polyCMUTs
+    for wearable systems, including acoustic field simulations, fabrication,
+    packaging, and performance analysis. Emphasis is placed on the
+    interpretation of impedance spectroscopy and hydrophone data, closing the
+    loop to the initial predictions.
+
+    Examples of current applications and associated challenges will be
+    presented and discussed to provide attendees with a comprehensive
+    overview of in-house ultrasound wearable design.
+  speakers:
+    - name: Martin Angerer
+      title: Dr.
+      affiliation: University of British Columbia (UBC), Vancouver, Canada
+      photo: assets/WS-MartinAngerer.jpg
+    - name: Jonas Welsch
+      title: ""
+      affiliation: University of British Columbia (UBC), Vancouver, Canada
+      photo: assets/WS-JonasWelsch.jpg
+
+- title: Wearable Ultrasound System Design
   day: Tue 23 Jun
-  duration: 100 min · 13:40–15:20
-  capacity: TBA
-  description: Live experiments mapping drive electronics to acoustic field structure using the EPIQ platform. Hands-on encouraged.
-  registrationUrl: "#"
+  duration: 100 min · 13:00–14:40
+  abstract: ""   # TODO — fill in abstract
+  speakers:
+    - name: Christoph Leitner
+      title: Dr.
+      affiliation: Integrated Systems Laboratory, ETH Zürich, Switzerland
+      photo: assets/WS-ChristophLeitner.jpg
 
 - title: Hands-on Ultrasound
-  organizer: TBA
   day: Wed 24 Jun
-  duration: 100 min · 13:40–15:20
-  capacity: TBA
-  description: Workshop closing session — open bench, attendees pair up to record signals on conference hardware.
-  registrationUrl: "#"
+  duration: 100 min · 13:00–14:40
+  abstract: ""   # TODO — fill in abstract
+  speakers:
+    - name: Moritz Herzog
+      title: Dr.
+      affiliation: University Hospital Dresden, Germany
+      photo: assets/WS-MoritzHerzog.jpg
