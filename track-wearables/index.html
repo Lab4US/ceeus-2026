@@ -165,7 +165,7 @@
     border-top: 1px solid var(--wt-border);
 }
 .wt-section:first-of-type { border-top: 0; }
-.wt-section__head { margin-bottom: var(--wt-sp-4); max-width: 70ch; }
+.wt-section__head { margin-bottom: var(--wt-sp-4); }
 .wt-section__head .wt-muted { margin-top: -.25rem; }
 
 /* ---------- Hero ---------- */
@@ -177,7 +177,7 @@
 }
 .wt-hero__meta span::before { content: "—"; margin-right: .5em; color: var(--wt-border); }
 .wt-hero__meta span:first-child::before { content: ""; margin: 0; }
-.wt-hero__tagline { font-size: var(--wt-fs-lg); max-width: 60ch; color: var(--wt-muted); }
+.wt-hero__tagline { font-size: var(--wt-fs-lg); color: var(--wt-muted); }
 .wt-track a.wt-hero__cta {
     display: inline-block; margin-top: var(--wt-sp-3);
     padding: .75rem 1.5rem; background: var(--wt-accent); color: var(--wt-accent-fg);
@@ -383,6 +383,31 @@
     color: var(--wt-muted);
 }
 
+/* ---------- SIG focus areas (3-up card grid) ---------- */
+.wt-sig-focus {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--wt-sp-3);
+    margin: var(--wt-sp-2) 0 var(--wt-sp-3);
+}
+.wt-sig-focus__item {
+    padding: var(--wt-sp-2) var(--wt-sp-3);
+    border-left: 3px solid var(--wt-accent);
+    background: var(--wt-bg);
+    border-radius: var(--wt-radius);
+}
+.wt-sig-focus__title {
+    margin: 0 0 .25rem;
+    font-size: var(--wt-fs-md);
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    color: var(--wt-accent);
+}
+.wt-sig-focus__desc {
+    margin: 0;
+    font-size: var(--wt-fs-sm);
+}
+
 /* ---------- Track footer ---------- */
 .wt-track-footer { background: var(--wt-card); margin-top: var(--wt-sp-5); }
 .wt-track-footer__grid {
@@ -528,7 +553,13 @@ html { scroll-behavior: smooth; }
     /* ---- Hero ---- */
     function renderHero() {
         var t = data.track || {};
-        var chairs = (t.chairs || []).map(esc).join(' · ');
+        var chairs = (t.chairs || []).map(function (c) {
+            if (typeof c === 'string') return esc(c);
+            var label = esc(c.name || '');
+            if (c.email) label = '<a href="mailto:' + esc(c.email) + '">' + label + '</a>';
+            if (c.affiliation) label += ' (' + esc(c.affiliation) + ')';
+            return label;
+        }).join(' · ');
         q('wt-hero').innerHTML =
             '<h1>' + esc(t.title || 'Wearable Track') + '</h1>' +
             '<div class="wt-hero__meta">' +
@@ -761,7 +792,12 @@ html { scroll-behavior: smooth; }
     /* ---- SIG ---- */
     function renderSig() {
         var s = data.sig || {};
-        var topics = (s.topics || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
+        var focusHtml = (s.focusAreas || []).map(function (a) {
+            return '<div class="wt-sig-focus__item">' +
+                     '<h4 class="wt-sig-focus__title">' + esc(a.title || '') + '</h4>' +
+                     '<p class="wt-sig-focus__desc">' + esc(a.description || '') + '</p>' +
+                   '</div>';
+        }).join('');
         q('wt-sig').innerHTML =
             '<header class="wt-section__head">' +
               '<h2 id="wt-sig-h">Special Interest Group</h2>' +
@@ -769,9 +805,11 @@ html { scroll-behavior: smooth; }
             '</header>' +
             '<article class="wt-block">' +
               '<h3>' + esc(s.title || '') + '</h3>' +
-              '<dl><dt>Format</dt><dd>' + esc(s.format || '') + '</dd></dl>' +
-              (topics ? '<h4 style="margin-top:1rem">Seed topics</h4><ul>' + topics + '</ul>' : '') +
-              '<p class="wt-muted"><strong>Propose a topic:</strong> ' + esc(s.howToPropose || '') + '</p>' +
+              (s.intro ? '<p>' + esc(s.intro) + '</p>' : '') +
+              (focusHtml ? '<h4 style="margin-top:1.25rem">Focus areas</h4>' +
+                           '<div class="wt-sig-focus">' + focusHtml + '</div>' : '') +
+              (s.format ? '<dl><dt>Format</dt><dd>' + esc(s.format) + '</dd></dl>' : '') +
+              (s.howToJoin ? '<p class="wt-muted"><strong>How to join:</strong> ' + esc(s.howToJoin) + '</p>' : '') +
             '</article>';
     }
 
@@ -779,7 +817,11 @@ html { scroll-behavior: smooth; }
     function renderTrackFooter() {
         var f = data.footer || {};
         var orgs = (f.organizers || []).map(function (o) {
-            return '<li><strong>' + esc(o.name) + '</strong><br><span class="wt-muted">' + esc(o.affiliation) + '</span></li>';
+            var nameHtml = o.email
+                ? '<a href="mailto:' + esc(o.email) + '"><strong>' + esc(o.name) + '</strong></a>'
+                : '<strong>' + esc(o.name) + '</strong>';
+            return '<li>' + nameHtml +
+                   '<br><span class="wt-muted">' + esc(o.affiliation || '') + '</span></li>';
         }).join('');
         var sponsors = (f.sponsors && f.sponsors.length)
             ? f.sponsors.map(function (s) {

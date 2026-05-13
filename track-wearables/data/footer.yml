@@ -7,12 +7,15 @@
 # ============================================================================
 
 organizers:
-  - name: Moritz Herzog
+  - name:        Moritz Herzog
     affiliation: University Hospital Dresden
-  - name: Erik Kaiser
+    email:       moritz.herzog@tu-dresden.de
+  - name:        Erik Kaiser
     affiliation: TU Dresden
-  - name: Christoph Leitner
+    email:       erik.kaiser@tu-dresden.de
+  - name:        Christoph Leitner
     affiliation: ETH Zurich
+    email:       christoph.leitner@iis.ee.ethz.ch
 
 contact:     wearable-track@ceeus2026.org
 mainSiteUrl: "."

@@ -1,22 +1,40 @@
 # ============================================================================
-# Special Interest Group (SIG) — hybrid roundtable.
-# 'topics' is a starter list shown on the page; live additions also welcome.
+# Special Interest Group (SIG) — Wearable Ultrasound.
+# Lean copy compiled from internal discussions / e-mails.
 # ============================================================================
 
 title: Special Interest Group — Wearable Ultrasound
-when:  Tue 23 Jun · 18:20–19:00 · hybrid (in-room + remote join)
+when:  Tue 23 Jun · 17:00–18:40 · hybrid (in-room + remote join)
+
+intro: >
+  Wearable ultrasound is currently underrepresented at IEEE. The field has
+  unique requirements compared with conventional ultrasound, developments
+  are scattered across separate labs, and the emerging market opens
+  opportunities beyond high-end medical systems — into consumer-grade
+  devices. A dedicated IEEE Special Interest Group can connect the
+  community, train new talent, and shape the regulatory and funding
+  landscape.
+
+focusAreas:
+  - title: Connect
+    description: >
+      Bring the wearable-ultrasound community together within IEEE
+      — sharing platforms, datasets, and tools to reduce duplicated
+      effort across labs.
+  - title: Educate
+    description: >
+      Build dedicated entry paths into the field — interdisciplinary
+      spring schools, exchange programs — so the small community can
+      grow with skilled new researchers.
+  - title: Guide
+    description: >
+      Drive guidelines, safety norms, and dedicated grant calls. Engage
+      funding agencies and industry to support translation into products.
 
 format: >
-  Roundtable with open mic. The room sets the agenda in the first 5 minutes;
+  Roundtable + open mic. The room sets the agenda in the first 5 minutes;
   chairs facilitate but do not present.
 
-topics:
-  - Standardization of evaluation phantoms
-  - Open hardware platforms — what's missing?
-  - Power budgets for always-on wearables
-  - Clinical translation — regulatory pathways
-
-howToPropose: >
-  Propose discussion items via the conference Slack (#wearable-sig) or
-  e-mail the chairs up to 24 h before the session. Live additions also
-  welcome.
+howToJoin: >
+  To join the discussion or propose a topic, e-mail the track chairs
+  ahead of the session. Live additions during the session are also welcome.

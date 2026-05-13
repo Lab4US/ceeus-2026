@@ -14,17 +14,25 @@
 
 title:    Wearable Track
 
-tagline:  Ultrasound wearables — from transducers and acoustic stacks to
+tagline:  Wearable ultrasound from transducers and acoustic stacks to
           embedded signal processing, system integration, and clinical
-          translation.
+          translation. Three days of scientific talks, hands-on workshops,
+          live BYO Device demos, lab secrets, and a discussion on
+          forming a Special Interest Group for the field.
 
 dates:    22–24 June 2026
 location: Warsaw, Poland
 
 chairs:
-  - Moritz Herzog (University Hospital Dresden)
-  - Erik Kaiser (TU Dresden)
-  - Christoph Leitner (ETH Zurich)
+  - name:        Moritz Herzog
+    affiliation: University Hospital Dresden
+    email:       moritz.herzog@tu-dresden.de
+  - name:        Erik Kaiser
+    affiliation: TU Dresden
+    email:       erik.kaiser@tu-dresden.de
+  - name:        Christoph Leitner
+    affiliation: ETH Zurich
+    email:       christoph.leitner@iis.ee.ethz.ch
 
 cta:
   label: Register

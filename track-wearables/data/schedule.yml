@@ -67,7 +67,7 @@
       room: ""
     - time: 13:00–14:40
       type: workshop
-      title: Wearable Ultrasound System Design (Dr. Christoph Leitner, ETHZ)
+      title: Anatomy of a Wearable Ultrasound System — From Components to Signals (Dr. Christoph Leitner, ETHZ)
       room: TBA
     - time: 14:40–15:00
       type: break
@@ -111,7 +111,7 @@
       room: ""
     - time: 13:00–14:40
       type: workshop
-      title: Hands-on Ultrasound (Dr. Moritz Herzog, University Hospital Dresden)
+      title: Live Imaging — Hands-on Medical Ultrasound (Dr. Moritz Herzog, University Hospital Dresden)
       room: TBA
     - time: 14:40–15:00
       type: break

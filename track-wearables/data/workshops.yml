@@ -34,14 +34,14 @@
   speakers:
     - name: Martin Angerer
       title: Dr.
-      affiliation: University of British Columbia (UBC), Vancouver, Canada
+      # affiliation: University of British Columbia, Vancouver, Canada
       photo: assets/WS-MartinAngerer.jpg
-    - name: Jonas Welsch
+    - name: Dr. Jonas Welsch
       title: ""
-      affiliation: University of British Columbia (UBC), Vancouver, Canada
+      affiliation: University of British Columbia, Vancouver, Canada
       photo: assets/WS-JonasWelsch.jpg
 
-- title: Wearable Ultrasound System Design
+- title: Anatomy of a Wearable Ultrasound System — From Components to Signals
   day: Tue 23 Jun
   duration: 100 min · 13:00–14:40
   abstract: ""   # TODO — fill in abstract
@@ -51,7 +51,7 @@
       affiliation: Integrated Systems Laboratory, ETH Zürich, Switzerland
       photo: assets/WS-ChristophLeitner.jpg
 
-- title: Hands-on Ultrasound
+- title: Live Imaging — Hands-on Medical Ultrasound
   day: Wed 24 Jun
   duration: 100 min · 13:00–14:40
   abstract: ""   # TODO — fill in abstract
