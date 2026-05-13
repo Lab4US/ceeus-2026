@@ -95,10 +95,10 @@
 .wt-track h2 { font-size: var(--wt-fs-xl);  letter-spacing: -.01em; margin-bottom: var(--wt-sp-3); }
 .wt-track h3 { font-size: var(--wt-fs-lg); }
 .wt-track h4 { font-size: var(--wt-fs-md); }
-.wt-track p  { margin: 0 0 var(--wt-sp-2); }
+.wt-track p  { margin: 0 0 var(--wt-sp-2); width: auto; }
 .wt-track a  { color: var(--wt-accent); text-decoration: none; }
 .wt-track a:hover, .wt-track a:focus-visible { text-decoration: underline; }
-.wt-track ul { margin: 0 0 var(--wt-sp-2); padding-left: 1.25rem; }
+.wt-track ul { margin: 0 0 var(--wt-sp-2); padding-left: 1.25rem; width: auto; }
 .wt-track .wt-muted { color: var(--wt-muted); font-size: var(--wt-fs-sm); }
 
 .wt-visually-hidden {
@@ -243,6 +243,82 @@
 .wt-card__abstract-toggle::after { content: " ▾"; }
 .wt-card--demo { padding: var(--wt-sp-2) var(--wt-sp-3); }
 
+/* ---------- BYOD session sponsor ---------- */
+.wt-byod-sponsor {
+    margin-top: var(--wt-sp-4);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--wt-sp-3);
+}
+.wt-byod-sponsor__label {
+    color: var(--wt-muted);
+    font-size: var(--wt-fs-sm);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-weight: 600;
+}
+.wt-byod-sponsor__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wt-sp-2);
+}
+.wt-byod-sponsor__link:hover { text-decoration: none; }
+.wt-byod-sponsor__logo {
+    max-height: 56px;
+    width: auto;
+    display: block;
+}
+.wt-byod-sponsor__name {
+    font-weight: 700;
+    color: var(--wt-fg);
+}
+
+/* ---------- Talks: day groups + jump strip ---------- */
+.wt-talks-jump {
+    display: flex; gap: var(--wt-sp-1);
+    align-items: center; flex-wrap: wrap;
+    padding: var(--wt-sp-2) 0;
+    margin-bottom: var(--wt-sp-4);
+    border-top: 1px solid var(--wt-border);
+    border-bottom: 1px solid var(--wt-border);
+}
+.wt-talks-jump__label {
+    color: var(--wt-muted); font-size: var(--wt-fs-sm);
+    margin-right: var(--wt-sp-2); font-weight: 600;
+    text-transform: uppercase; letter-spacing: .05em;
+}
+.wt-talks-jump a {
+    color: var(--wt-fg);
+    font-size: var(--wt-fs-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    padding: .25rem .6rem;
+    border-radius: var(--wt-radius);
+    border: 1px solid var(--wt-border);
+}
+.wt-talks-jump a:hover {
+    background: var(--wt-accent); color: var(--wt-accent-fg);
+    border-color: var(--wt-accent); text-decoration: none;
+}
+.wt-talks-day {
+    margin-bottom: var(--wt-sp-5);
+    scroll-margin-top: calc(var(--wt-nav-h) + 8px);
+}
+.wt-talks-day:last-child { margin-bottom: 0; }
+.wt-talks-day__title {
+    font-size: var(--wt-fs-lg);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--wt-muted);
+    margin: 0 0 var(--wt-sp-3);
+    padding-bottom: var(--wt-sp-1);
+    border-bottom: 2px solid var(--wt-accent);
+}
+.wt-talks-day__count { color: var(--wt-muted); font-size: var(--wt-fs-sm); font-weight: 400; margin-left: .5em; }
+
 /* ---------- Workshop / SIG / PWS-SWP blocks ---------- */
 .wt-block {
     background: var(--wt-card); border: 1px solid var(--wt-border);
@@ -264,11 +340,32 @@
 .wt-track-footer__grid {
     display: grid; gap: var(--wt-sp-3);
     grid-template-columns: 1fr;
+    align-items: start;
 }
-@media (min-width: 768px) { .wt-track-footer__grid { grid-template-columns: 2fr 1fr 1fr; } }
+@media (min-width: 768px) { .wt-track-footer__grid { grid-template-columns: 1fr 1fr 1fr; } }
 .wt-track-footer h3 { font-size: var(--wt-fs-md); }
-.wt-track-footer ul { list-style: none; padding: 0; font-size: var(--wt-fs-sm); }
+.wt-track-footer ul { list-style: none; padding: 0; font-size: var(--wt-fs-sm); margin: 0; }
 .wt-track-footer li { margin-bottom: .25rem; }
+.wt-track-footer__sponsors,
+.wt-track-footer__sponsors ul,
+.wt-track-footer__sponsors li { text-align: center; }
+.wt-track-footer__contact,
+.wt-track-footer__contact p,
+.wt-track-footer__contact ul,
+.wt-track-footer__contact li { text-align: right; }
+.wt-track-footer__sponsors ul { padding: 0; margin: 0; }
+.wt-track-footer__sponsors li { margin: 0 0 var(--wt-sp-2) 0; }
+.wt-track-footer__sponsors li:last-child { margin-bottom: 0; }
+.wt-track-footer__sponsors a { display: inline-block; }
+.wt-track-footer__sponsors a:hover { text-decoration: none; }
+.wt-track-footer__sponsor-logo { max-height: 72px; max-width: 220px; width: auto; display: block; margin: 0 auto; }
+.wt-track-footer__sponsor-name { display: block; margin-top: .25rem; font-size: var(--wt-fs-sm); color: var(--wt-muted); }
+
+/* Defensive: let grid columns shrink below their content's intrinsic width
+   and break long unbreakable strings (e.g. email addresses) when needed. */
+.wt-track-footer__grid > div { min-width: 0; }
+.wt-track-footer__grid,
+.wt-track-footer__grid a { overflow-wrap: anywhere; word-break: break-word; }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 767px) {
@@ -399,7 +496,7 @@ html { scroll-behavior: smooth; }
     function renderSchedule() {
         var html = '<header class="wt-section__head">' +
                      '<h2 id="wt-schedule-h">Program Schedule</h2>' +
-                     '<p class="wt-muted">Three days, mixed format: talks, hands-on workshops, BYOD demos, lab secrets, SIG, and a problems-vs-solutions matching session.</p>' +
+                    //  '<p class="wt-muted">Three days, mixed format: talks, hands-on workshops, BYOD demos, lab secrets, SIG, and a problems-vs-solutions matching session.</p>' +
                    '</header>';
         (data.schedule || []).forEach(function (day) {
             html += '<div class="wt-day">' +
@@ -419,23 +516,60 @@ html { scroll-behavior: smooth; }
         q('wt-schedule').innerHTML = html;
     }
 
-    /* ---- Talks ---- */
+    /* ---- Talks (grouped by day, with jump strip) ---- */
     function renderTalks() {
+        var DAY_ORDER  = ['Mon', 'Tue', 'Wed'];
+        var DAY_LABEL  = { Mon: 'Monday', Tue: 'Tuesday', Wed: 'Wednesday' };
+        var DAY_ANCHOR = { Mon: 'wt-talks-mon', Tue: 'wt-talks-tue', Wed: 'wt-talks-wed' };
+
+        var groups = { Mon: [], Tue: [], Wed: [] };
+        (data.talks || []).forEach(function (t) {
+            var d = (t.day && groups[t.day]) ? t.day : 'Wed';
+            groups[d].push(t);
+        });
+        DAY_ORDER.forEach(function (d) {
+            groups[d].sort(function (a, b) {
+                var at = (a.time && a.time !== 'TBA') ? a.time : '99:99';
+                var bt = (b.time && b.time !== 'TBA') ? b.time : '99:99';
+                return at < bt ? -1 : at > bt ? 1 : 0;
+            });
+        });
+        var activeDays = DAY_ORDER.filter(function (d) { return groups[d].length > 0; });
+
         var html = '<header class="wt-section__head">' +
                      '<h2 id="wt-talks-h">Scientific Talks</h2>' +
-                     '<p class="wt-muted">Click a card to expand the abstract. Abstracts will be filled in as authors submit camera-ready material.</p>' +
-                   '</header><div class="wt-grid">';
-        (data.talks || []).forEach(function (t, i) {
-            html += '<article class="wt-card" data-card="' + i + '">' +
-                      '<div class="wt-card__time">' + esc(t.day || '') + (t.time && t.time !== 'TBA' ? ' · ' + esc(t.time) : '') + '</div>' +
-                      '<h3 class="wt-card__title">' + esc(t.title) + '</h3>' +
-                      '<div class="wt-card__speaker">' + esc(t.speaker) + '</div>' +
-                      '<div class="wt-card__affil">' + esc(t.affiliation) + '</div>' +
-                      '<button class="wt-card__abstract-toggle" type="button" aria-expanded="false">Abstract</button>' +
-                      '<div class="wt-card__abstract">' + (t.abstract ? esc(t.abstract) : '<em class="wt-muted">Abstract not yet available.</em>') + '</div>' +
-                    '</article>';
+                   '</header>';
+
+        if (activeDays.length > 1) {
+            html += '<nav class="wt-talks-jump" aria-label="Jump to day">' +
+                      '<span class="wt-talks-jump__label">Jump to:</span>';
+            activeDays.forEach(function (d) {
+                html += '<a href="#' + DAY_ANCHOR[d] + '">' + esc(DAY_LABEL[d]) + '</a>';
+            });
+            html += '</nav>';
+        }
+
+        activeDays.forEach(function (d) {
+            html += '<section class="wt-talks-day" id="' + DAY_ANCHOR[d] + '" aria-labelledby="' + DAY_ANCHOR[d] + '-h">' +
+                      '<h3 id="' + DAY_ANCHOR[d] + '-h" class="wt-talks-day__title">' +
+                        esc(DAY_LABEL[d]) +
+                        '<span class="wt-talks-day__count">' + groups[d].length + ' talk' + (groups[d].length === 1 ? '' : 's') + '</span>' +
+                      '</h3>' +
+                      '<div class="wt-grid">';
+            groups[d].forEach(function (t, i) {
+                var when = esc(t.day || '') + ((t.time && t.time !== 'TBA') ? ' · ' + esc(t.time) : '');
+                html += '<article class="wt-card" data-card="' + d + '-' + i + '">' +
+                          '<div class="wt-card__time">' + when + '</div>' +
+                          '<h4 class="wt-card__title">' + esc(t.title) + '</h4>' +
+                          '<div class="wt-card__speaker">' + esc(t.speaker) + '</div>' +
+                          '<div class="wt-card__affil">' + esc(t.affiliation) + '</div>' +
+                          '<button class="wt-card__abstract-toggle" type="button" aria-expanded="false">Abstract</button>' +
+                          '<div class="wt-card__abstract">' + (t.abstract ? esc(t.abstract) : '<em class="wt-muted">Abstract not yet available.</em>') + '</div>' +
+                        '</article>';
+            });
+            html += '</div></section>';
         });
-        html += '</div>';
+
         q('wt-talks').innerHTML = html;
     }
 
@@ -445,8 +579,6 @@ html { scroll-behavior: smooth; }
         var html = '<header class="wt-section__head">' +
                      '<h2 id="wt-byod-h">Bring Your Own Device — Demo Session</h2>' +
                      '<p>' + esc(b.intro || '') + '</p>' +
-                     '<p class="wt-muted">' + esc(b.submission || '') + '</p>' +
-                     (b.submissionUrl ? '<a class="wt-block__cta" href="' + esc(b.submissionUrl) + '">Submit a demo</a>' : '') +
                    '</header>' +
                    '<h3>Confirmed demos</h3><div class="wt-grid wt-grid--3">';
         (b.demos || []).forEach(function (d) {
@@ -457,6 +589,18 @@ html { scroll-behavior: smooth; }
                     '</article>';
         });
         html += '</div>';
+
+        if (b.sponsor && b.sponsor.logo) {
+            var sp = b.sponsor;
+            html += '<aside class="wt-byod-sponsor">' +
+                      '<span class="wt-byod-sponsor__label">' + esc(sp.label || 'Sponsored by') + '</span>' +
+                      '<a class="wt-byod-sponsor__link" href="' + esc(sp.url || '#') + '" target="_blank" rel="noopener">' +
+                        '<img class="wt-byod-sponsor__logo" src="' + esc(sp.logo) + '" alt="' + esc(sp.name || '') + ' logo" />' +
+                        (sp.name ? '<span class="wt-byod-sponsor__name">' + esc(sp.name) + '</span>' : '') +
+                      '</a>' +
+                    '</aside>';
+        }
+
         q('wt-byod').innerHTML = html;
     }
 
@@ -464,7 +608,7 @@ html { scroll-behavior: smooth; }
     function renderWorkshops() {
         var html = '<header class="wt-section__head">' +
                      '<h2 id="wt-workshops-h">Workshops & Lab Secrets</h2>' +
-                     '<p class="wt-muted">Three workshops across the track + an informal Lab Secrets exchange.</p>' +
+                     '<p class="wt-muted">Three workshops across the track + Lab Secrets session.</p>' +
                    '</header>';
         (data.workshops || []).forEach(function (w) {
             html += '<article class="wt-block">' +
@@ -514,16 +658,31 @@ html { scroll-behavior: smooth; }
             return '<li><strong>' + esc(o.name) + '</strong><br><span class="wt-muted">' + esc(o.affiliation) + '</span></li>';
         }).join('');
         var sponsors = (f.sponsors && f.sponsors.length)
-            ? f.sponsors.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('')
+            ? f.sponsors.map(function (s) {
+                if (s && typeof s === 'object') {
+                    var inner = '';
+                    if (s.logo) {
+                        inner += '<img class="wt-track-footer__sponsor-logo" src="' + esc(s.logo) +
+                                 '" alt="' + esc(s.name || '') + ' logo" />';
+                    }
+                    if (s.name) {
+                        inner += '<span class="wt-track-footer__sponsor-name">' + esc(s.name) + '</span>';
+                    }
+                    return '<li>' + (s.url
+                        ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + inner + '</a>'
+                        : inner) + '</li>';
+                }
+                return '<li>' + esc(s) + '</li>';
+            }).join('')
             : '<li class="wt-muted">Sponsor slots available — contact the chairs.</li>';
         q('wt-track-footer').innerHTML =
             '<div class="wt-track-footer__grid">' +
               '<div><h3>Track organizers</h3><ul>' + orgs + '</ul></div>' +
-              '<div><h3>Contact</h3>' +
+              '<div class="wt-track-footer__sponsors"><h3>Sponsors</h3><ul>' + sponsors + '</ul></div>' +
+              '<div class="wt-track-footer__contact"><h3>Contact</h3>' +
                 (f.contact ? '<p><a href="mailto:' + esc(f.contact) + '">' + esc(f.contact) + '</a></p>' : '') +
                 (f.mainSiteUrl ? '<p><a href="' + esc(f.mainSiteUrl) + '">← Back to CEEUS 2026</a></p>' : '') +
               '</div>' +
-              '<div><h3>Sponsors</h3><ul>' + sponsors + '</ul></div>' +
             '</div>';
     }
 
@@ -552,18 +711,29 @@ html { scroll-behavior: smooth; }
         });
     }
 
-    /* ---- Smooth scroll respecting reduced-motion ---- */
+    /* ---- Smooth scroll respecting reduced-motion ---------------------
+       Event delegation on .wt-track so it catches anchors that exist at
+       page-load (top nav, skiplink) AND anchors injected later by
+       renderers (e.g. the Talks day-jump strip).
+       Necessary because <base href=".."> in the page chrome would
+       otherwise resolve "#foo" against the parent directory and
+       navigate away from this page.
+       ------------------------------------------------------------------ */
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    document.querySelectorAll('.wt-nav__list a[href^="#"], .wt-nav__brand[href^="#"], .wt-skiplink').forEach(function (a) {
-        a.addEventListener('click', function (e) {
+    var trackRoot = document.querySelector('.wt-track');
+    if (trackRoot) {
+        trackRoot.addEventListener('click', function (e) {
+            var a = e.target.closest('a[href^="#"]');
+            if (!a || !trackRoot.contains(a)) return;
             var id = a.getAttribute('href').slice(1);
+            if (!id) return;
             var target = document.getElementById(id);
             if (!target) return;
             e.preventDefault();
             target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
             history.replaceState(null, '', '#' + id);
         });
-    });
+    }
 
     /* ---- Scroll-spy: highlight current section in nav ---- */
     var navLinks = Array.prototype.slice.call(document.querySelectorAll('.wt-nav__list a[href^="#"]'));

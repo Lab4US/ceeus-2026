@@ -1,6 +1,6 @@
 # ============================================================================
 # Bring Your Own Device (BYOD) demo session.
-# Top-level intro/submission text + a list of confirmed demos.
+# Top-level intro + a list of confirmed demos.
 # ============================================================================
 
 intro: >
@@ -9,12 +9,13 @@ intro: >
   attendees interact with each one directly. Two slots: a shorter Part 1
   (2 demos) and a longer Part 2 (6 demos) on Monday afternoon.
 
-submission: >
-  Submission deadline: 31 March 2026. Submit a one-page demo abstract
-  (device description, demo plan, space and power requirements).
-  Acceptance notifications by 30 April 2026.
-
-submissionUrl: "#"
+# Session sponsor. Logo path is relative to the conference root
+# because the page sets <base href=".."> in the chrome <head>.
+sponsor:
+  label: BYO Device session sponsored by
+  name:  ETH Zurich Future Computing Lab
+  logo:  assets/logo-efcl-400.png
+  url:   https://efcl.ethz.ch/
 
 demos:
   - title: PMUT/CMUT live demo — plug-&-play MUT demo for ToF systems and different phantoms

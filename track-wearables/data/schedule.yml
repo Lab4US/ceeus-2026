@@ -7,9 +7,16 @@
 - day:  Monday
   date: 22 June 2026
   sessions:
+    - time: 09:00-10:40
+      type: talk
+      title: Keynotes - Prof. Sheng Xu (Stanford, USA) 
+      room: TBA
+    - time: 10:40–11:00
+      type: break
+      title: Coffee Break
     - time: 11:00–12:00
       type: talk
-      title: Scientific Presentation — Transducers
+      title: Scientific Presentations — Transducers
       room: TBA
     - time: 12:00–13:00
       type: break
@@ -17,7 +24,7 @@
       room: ""
     - time: 13:00–14:40
       type: workshop
-      title: Transducer Workshop — PolyCMUTs
+      title: Polymer-Based Micromachined Transducers for Wearable Ultrasound (Dr. M. Angerer, UBC)
       room: TBA
     - time: 14:40–15:00
       type: break
@@ -25,7 +32,7 @@
       room: ""
     - time: 15:00–16:00
       type: talk
-      title: Scientific Presentation — Transducers
+      title: Scientific Presentations — Transducers
       room: TBA
     - time: 16:00–16:40
       type: byod
@@ -43,51 +50,77 @@
 - day:  Tuesday
   date: 23 June 2026
   sessions:
-    - time: 11:40–12:40
-      type: labsecret
-      title: Lab Secrets
+    - time: 09:00-10:40
+      type: talk
+      title: Keynotes - Dr. Sergei Vostrikov (Rheonics, CH) 
       room: TBA
-    - time: 12:40–13:40
+    - time: 10:40–11:00
+      type: break
+      title: Coffee Break
+    - time: 11:00–12:00
+      type: labsecret
+      title: Lab Secrets (Coded Signals, ML Depolyment on the Edge, S11 Measurments)
+      room: TBA
+    - time: 12:00–13:00
       type: break
       title: Lunch
       room: ""
-    - time: 13:40–15:20
+    - time: 13:00–14:40
       type: workshop
-      title: From Electrical Signals to Sound Fields — experimental physics with EPIQ
+      title: Wearable Ultrasound System Design (Dr. Christoph Leitner, ETHZ)
       room: TBA
-    - time: 15:20–15:40
+    - time: 14:40–15:00
       type: break
       title: Coffee
       room: ""
-    - time: 15:40–17:20
+    - time: 15:00–16:40
       type: talk
       title: Scientific Presentation — Signals & Systems
       room: TBA
-    - time: 17:20–17:40
+    - time: 16:40–17:00
       type: break
       title: Coffee
       room: ""
-    - time: 17:40–18:20
-      type: pwsswp
-      title: Problems Without Solutions / Solutions Without Problems
-      room: TBA
-    - time: 18:20–19:00
+    - time: 17:00–18:40
       type: sig
-      title: SIG Discussion (hybrid)
+      title: Special Interest Group - Wearable Ultrasound (Discussion, hybrid)
       room: TBA
+    - time: 19:00–open
+      type: break
+      title: GALA Dinner
+      room: ""
+
 
 - day:  Wednesday
   date: 24 June 2026
   sessions:
-    - time: 11:40–12:40
+    - time: 09:00-10:40
+      type: talk
+      title: Keynotes - Prof. Ahmed El Kaffas (University of California San Diego, USA) 
+      room: TBA
+    - time: 10:40–11:00
+      type: break
+      title: Coffee Break
+    - time: 11:00–12:00
       type: talk
       title: Scientific Presentation — Applications
       room: TBA
-    - time: 12:40–13:40
+    - time: 12:00–13:00
       type: break
       title: Lunch
       room: ""
-    - time: 13:40–15:20
+    - time: 13:00–14:40
       type: workshop
-      title: Hands-on Ultrasound
+      title: Hands-on Ultrasound (Dr. Moritz Herzog, University Hospital Dresden)
       room: TBA
+    - time: 14:40–15:00
+      type: break
+      title: Coffee Break
+    - time: 15:00–16:00
+      type: talk
+      title: Scientific Presentation — Applications
+      room: TBA
+    - time: 16:00–16:20
+      type: break
+      title: Closing and Farewell
+      room: ""

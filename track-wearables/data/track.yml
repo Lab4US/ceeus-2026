@@ -22,9 +22,10 @@ dates:    22–24 June 2026
 location: Warsaw, Poland
 
 chairs:
-  - Moritz Herzog (TU Dresden)
+  - Moritz Herzog (University Hospital Dresden)
   - Erik Kaiser (TU Dresden)
+  - Christoph Leitner (ETH Zurich)
 
 cta:
   label: Register
-  url:   "../#register"   # quoted: '#' would otherwise start a YAML comment
+  url:   "https://live.eventtia.com/en/ceeus/"   # quoted: '#' would otherwise start a YAML comment
