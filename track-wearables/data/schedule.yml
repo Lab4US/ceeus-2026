@@ -1,7 +1,18 @@
 # ============================================================================
 # Program grid for the Wearable Track. Top-level is a list of days.
 # Each day has a list of sessions. Field 'type' must match a key in
-# session-types.yml (talk | byod | workshop | sig | pwsswp | labsecret | break).
+# session-types.yml (talk | byod | workshop | sig | labsecret | break).
+#
+# Scientific-talk sessions may have a `chairs:` list (1-2 entries). Shape
+# matches track.yml chairs:
+#   chairs:
+#     - name:        Alice Example
+#       affiliation: ETH Zurich     # optional
+#       email:       alice@x.org    # optional, becomes mailto link
+# The full title "Scientific Presentations - X" is shown in this grid.
+# In the Talks section the prefix is stripped automatically, so the
+# session: field in talks.yml only needs to carry the bare topic
+# (e.g. "Transducers 1").
 # ============================================================================
 
 - day:  Monday
@@ -9,15 +20,21 @@
   sessions:
     - time: 09:00-10:40
       type: talk
-      title: Keynotes - Prof. Sheng Xu (Stanford, USA) 
+      title: Plenary Talks
       room: TBA
+      note: "Wearable-focused speaker: Prof. Sheng Xu (Stanford, USA)"
     - time: 10:40–11:00
       type: break
       title: Coffee Break
     - time: 11:00–12:00
       type: talk
-      title: Scientific Presentations — Transducers
+      title: Scientific Presentations - Transducers 1
       room: TBA
+      chairs:
+        - name: TBA
+          affiliation: ""
+        - name: TBA
+          affiliation: ""
     - time: 12:00–13:00
       type: break
       title: Lunch
@@ -28,63 +45,79 @@
       room: TBA
     - time: 14:40–15:00
       type: break
-      title: Coffee
+      title: Coffee Break
       room: ""
     - time: 15:00–16:00
       type: talk
-      title: Scientific Presentations — Transducers
+      title: Scientific Presentations - Transducers 2
       room: TBA
+      chairs:
+        - name: TBA
+          affiliation: ""
+        - name: TBA
+          affiliation: ""
     - time: 16:00–16:40
       type: byod
-      title: BYOD Part 1 (2 demos)
+      title: Bring Your Own Device Part 1 (2 demos)
       room: TBA
     - time: 16:40–17:00
       type: break
-      title: Coffee
+      title: Coffee Break
       room: ""
     - time: 17:00–18:40
       type: byod
-      title: BYOD Part 2 (6 demos)
+      title: Bring Your Own Device Part 2 (6 demos)
       room: TBA
+    - time: 18:40-open
+      type: break
+      title: Pizza Social
+      room: ""
 
 - day:  Tuesday
   date: 23 June 2026
   sessions:
-    - time: 09:00-10:40
+    - time: 09:00-11:20
       type: talk
-      title: Keynotes - Dr. Sergei Vostrikov (Rheonics, CH) 
+      title: Plenary Talks
       room: TBA
-    - time: 10:40–11:00
+      note: "Wearable-focused speaker: Dr. Sergei Vostrikov (Rheonics, CH)"
+    - time: 11:20–11:40
       type: break
       title: Coffee Break
-    - time: 11:00–12:00
+    - time: 11:40–12:40
       type: labsecret
-      title: Lab Secrets (Coded Signals, ML Depolyment on the Edge, S11 Measurments)
+      title: Lab Secrets (Coded Signals, ML Deployment on the Edge, S11 Measurements)
       room: TBA
-    - time: 12:00–13:00
+    - time: 12:40–13:40
       type: break
       title: Lunch
       room: ""
-    - time: 13:00–14:40
+    - time: 13:40–14:40
       type: workshop
-      title: Anatomy of a Wearable Ultrasound System — From Components to Signals (Dr. Christoph Leitner, ETHZ)
+      title: Anatomy of a Wearable Ultrasound System - From Components to Signals (Dr. Christoph Leitner, ETH Zurich)
       room: TBA
     - time: 14:40–15:00
       type: break
-      title: Coffee
+      title: Coffee Break
       room: ""
     - time: 15:00–16:40
       type: talk
-      title: Scientific Presentation — Signals & Systems
+      title: Scientific Presentations - Signals & Systems
       room: TBA
+      chairs:
+        - name: Prof. Dr. Christian Kupsch
+          affiliation: Freiberg University of Mining and Technology
+        - name: Dr. Richard Nauber
+          affiliation: Dresden University of Technology
     - time: 16:40–17:00
       type: break
-      title: Coffee
+      title: Coffee Break
       room: ""
     - time: 17:00–18:40
       type: sig
-      title: Special Interest Group - Wearable Ultrasound (Discussion, hybrid)
+      title: Special Interest Group - Wearable Ultrasound
       room: TBA
+      note: "Discussion · hybrid · free and open to the public"
     - time: 19:00–open
       type: break
       title: GALA Dinner
@@ -94,32 +127,43 @@
 - day:  Wednesday
   date: 24 June 2026
   sessions:
-    - time: 09:00-10:40
+    - time: 09:00-11:20
       type: talk
-      title: Keynotes - Prof. Ahmed El Kaffas (University of California San Diego, USA) 
+      title: Plenary Talks
       room: TBA
-    - time: 10:40–11:00
+      note: "Wearable-focused speakers: Dr. Tiago L. Costa (TU Delft, NL); Prof. Ahmed El Kaffas (UC San Diego, USA)"
+    - time: 11:20–11:40
       type: break
       title: Coffee Break
-    - time: 11:00–12:00
+    - time: 11:40–12:40
       type: talk
-      title: Scientific Presentation — Applications
+      title: Scientific Presentations - Applications 1
       room: TBA
-    - time: 12:00–13:00
+      chairs:
+        - name: Dr. Erica L. King
+          affiliation: George Mason University
+        - name: TBA
+          affiliation: ""
+    - time: 12:40–13:40
       type: break
       title: Lunch
       room: ""
-    - time: 13:00–14:40
+    - time: 13:40–14:40
       type: workshop
-      title: Live Imaging — Hands-on Medical Ultrasound (Dr. Moritz Herzog, University Hospital Dresden)
+      title: Live Imaging - Hands-on Medical Ultrasound (Dr. Moritz Herzog, University Hospital Dresden)
       room: TBA
     - time: 14:40–15:00
       type: break
       title: Coffee Break
     - time: 15:00–16:00
       type: talk
-      title: Scientific Presentation — Applications
+      title: Scientific Presentations - Applications 2
       room: TBA
+      chairs:
+        - name: Dr. Moritz Herzog
+          affiliation: University Hospital Dresden
+        - name: TBA
+          affiliation: ""
     - time: 16:00–16:20
       type: break
       title: Closing and Farewell

@@ -1,5 +1,5 @@
 # ============================================================================
-# Wearable Track — top-level metadata.
+# Wearable Track - top-level metadata.
 # Edit values, save, refresh the page. No build step.
 # ----------------------------------------------------------------------------
 # YAML conventions used in this folder:
@@ -27,11 +27,16 @@ headerOffsetTop: 103px
 tagline:  Wearable ultrasound from transducers and acoustic stacks to
           embedded signal processing, system integration, and clinical
           translation. Three days of scientific talks, hands-on workshops,
-          live BYO Device demos, lab secrets, and a discussion on
+          live BYD demos, lab secrets, and a discussion on
           forming a Special Interest Group for the field.
 
 dates:    22–24 June 2026
 location: Warsaw, Poland
+
+# Program status. Rendered as a muted pill under both the Program Schedule
+# and Scientific Talks headings. Set to an empty string ("") when the
+# program is finalised to hide the pill in one place.
+status: Preliminary · subject to change
 
 chairs:
   - name:        Moritz Herzog

@@ -1,7 +1,7 @@
 # ============================================================================
 # Session-type palette. Each top-level key is referenced by 'type:' in
 # schedule.yml and rendered as a colored pill in the program table.
-# Hex colors MUST be quoted — an unquoted '#' starts a YAML comment.
+# Hex colors MUST be quoted - an unquoted '#' starts a YAML comment.
 # ============================================================================
 
 talk:
@@ -9,7 +9,7 @@ talk:
   color: "#4a7bb7"
 
 byod:
-  label: BYOD
+  label: BYD
   color: "#c6802e"
 
 workshop:
@@ -19,10 +19,6 @@ workshop:
 sig:
   label: SIG
   color: "#8a4a8c"
-
-pwsswp:
-  label: PWS-SWP
-  color: "#b04545"
 
 labsecret:
   label: Lab Secret

@@ -53,7 +53,7 @@
 
 <style>
 /* ============================================================
-   Wearable Track — scoped styles. Everything under .wt-track.
+   Wearable Track - scoped styles. Everything under .wt-track.
    ============================================================ */
 
 /* Constrain the site chrome's banner img on this page only.
@@ -72,7 +72,6 @@
     --wt-type-byod:      #c6802e;
     --wt-type-workshop:  #5a8a4a;
     --wt-type-sig:       #8a4a8c;
-    --wt-type-pwsswp:    #b04545;
     --wt-type-labsecret: #3a3a3a;
     --wt-type-break:     #b0b0b0;
     --wt-sp-1: .5rem; --wt-sp-2: 1rem; --wt-sp-3: 1.5rem;
@@ -180,7 +179,7 @@
     color: var(--wt-muted); font-size: var(--wt-fs-sm);
     margin-bottom: var(--wt-sp-3);
 }
-.wt-hero__meta span::before { content: "—"; margin-right: .5em; color: var(--wt-border); }
+.wt-hero__meta span::before { content: "-"; margin-right: .5em; color: var(--wt-border); }
 .wt-hero__meta span:first-child::before { content: ""; margin: 0; }
 .wt-hero__tagline { font-size: var(--wt-fs-lg); color: var(--wt-muted); }
 .wt-track a.wt-hero__cta {
@@ -248,7 +247,7 @@
 .wt-card__abstract-toggle::after { content: " ▾"; }
 .wt-card--demo { padding: var(--wt-sp-2) var(--wt-sp-3); }
 
-/* ---------- BYOD session sponsor ---------- */
+/* ---------- BYD session sponsor ---------- */
 .wt-byod-sponsor {
     margin-top: var(--wt-sp-4);
     display: flex;
@@ -323,6 +322,60 @@
     border-bottom: 2px solid var(--wt-accent);
 }
 .wt-talks-day__count { color: var(--wt-muted); font-size: var(--wt-fs-sm); font-weight: 400; margin-left: .5em; }
+
+/* Session sub-grouping inside a day (e.g. "Transducers 1") */
+.wt-talks-session { margin-bottom: var(--wt-sp-4); }
+.wt-talks-session:last-child { margin-bottom: 0; }
+.wt-talks-session__title {
+    font-size: var(--wt-fs-md);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--wt-fg);
+    margin: 0 0 var(--wt-sp-2);
+    padding-bottom: .25rem;
+    border-bottom: 1px solid var(--wt-border);
+}
+.wt-talks-session__count {
+    color: var(--wt-muted);
+    font-size: var(--wt-fs-sm);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: .5em;
+}
+.wt-talks-session__chairs {
+    margin: -.25rem 0 var(--wt-sp-2);
+    font-size: var(--wt-fs-sm);
+    color: var(--wt-muted);
+}
+.wt-schedule-chairs {
+    margin-top: .25rem;
+    font-size: .75rem;
+    color: var(--wt-muted);
+    line-height: 1.4;
+}
+.wt-schedule-note {
+    margin-top: .25rem;
+    font-size: .75rem;
+    color: var(--wt-muted);
+    line-height: 1.4;
+    font-style: italic;
+}
+
+/* Talk-format note shown under the Talks and Schedule headings */
+.wt-format-note {
+    display: inline-block;
+    margin-top: .25rem;
+    padding: .15rem .6rem;
+    border: 1px solid var(--wt-border);
+    border-radius: var(--wt-radius);
+    background: var(--wt-card);
+    color: var(--wt-muted);
+    font-size: var(--wt-fs-sm);
+    font-weight: 600;
+    letter-spacing: .02em;
+}
 
 /* ---------- Workshop / SIG / PWS-SWP blocks ---------- */
 .wt-block {
@@ -493,7 +546,7 @@ html { scroll-behavior: smooth; }
       <ul class="wt-nav__list" id="wt-nav-list">
         <li><a href="#wt-schedule">Schedule</a></li>
         <li><a href="#wt-talks">Talks</a></li>
-        <li><a href="#wt-byod">BYO Device</a></li>
+        <li><a href="#wt-byod">BYD</a></li>
         <li><a href="#wt-workshops">Workshops</a></li>
         <li><a href="#wt-sig">Special Interest Group</a></li>
       </ul>
@@ -553,19 +606,29 @@ html { scroll-behavior: smooth; }
                'color:#b04545;padding:1rem;border-radius:6px;font-size:.875rem">' +
                '<strong>Content failed to load.</strong> ' + esc(msg) + '</div>';
     };
-    var pill;  /* assigned after data loads; uses data.sessionTypes */
-
-    /* ---- Hero ---- */
-    function renderHero() {
-        var t = data.track || {};
-        var chairs = (t.chairs || []).map(function (c) {
+    /* Strip the "Scientific Presentations - " prefix from a schedule title so
+       the matching against talks.yml `session:` can use the bare topic.
+       Tolerant of singular/plural and em/en/hyphen dashes. */
+    var TALK_PREFIX_RE = /^Scientific Presentations?\s*[-–-]\s*/;
+    var topicOf = function (s) { return String(s || '').replace(TALK_PREFIX_RE, ''); };
+    /* Inline-formatted chair list: "Alice (ETH) · Bob (TU Dresden)".
+       Accepts strings or {name, affiliation?, email?} objects. */
+    var fmtChairs = function (arr) {
+        return (arr || []).map(function (c) {
             if (typeof c === 'string') return esc(c);
             var label = esc(c.name || '');
             if (c.email) label = '<a href="mailto:' + esc(c.email) + '">' + label + '</a>';
             if (c.affiliation) label += ' (' + esc(c.affiliation) + ')';
             return label;
         }).join(' · ');
-        // Swap the site chrome's banner image for this page only — keeps
+    };
+    var pill;  /* assigned after data loads; uses data.sessionTypes */
+
+    /* ---- Hero ---- */
+    function renderHero() {
+        var t = data.track || {};
+        var chairs = fmtChairs(t.chairs);
+        // Swap the site chrome's banner image for this page only - keeps
         // the chrome HTML untouched (it's shared across all pages) but
         // shows the wearable-track-specific header here.
         if (t.header) {
@@ -594,9 +657,10 @@ html { scroll-behavior: smooth; }
 
     /* ---- Schedule ---- */
     function renderSchedule() {
+        var status = (data.track || {}).status;
         var html = '<header class="wt-section__head">' +
                      '<h2 id="wt-schedule-h">Program Schedule</h2>' +
-                    //  '<p class="wt-muted">Three days, mixed format: talks, hands-on workshops, BYOD demos, lab secrets, SIG, and a problems-vs-solutions matching session.</p>' +
+                     (status ? '<span class="wt-format-note">' + esc(status) + '</span>' : '') +
                    '</header>';
         (data.schedule || []).forEach(function (day) {
             html += '<div class="wt-day">' +
@@ -604,10 +668,16 @@ html { scroll-behavior: smooth; }
                       '<div class="wt-schedule-wrap"><table class="wt-schedule-table">' +
                         '<thead><tr><th scope="col">Time</th><th scope="col">Type</th><th scope="col">Title</th><th scope="col">Room</th></tr></thead><tbody>';
             (day.sessions || []).forEach(function (s) {
+                var noteLine = s.note
+                    ? '<div class="wt-schedule-note">' + esc(s.note) + '</div>'
+                    : '';
+                var chairLine = (s.chairs && s.chairs.length)
+                    ? '<div class="wt-schedule-chairs">Chairs: ' + fmtChairs(s.chairs) + '</div>'
+                    : '';
                 html += '<tr class="' + (s.type === 'break' ? 'is-break' : '') + '">' +
                           '<td class="wt-col-time">' + esc(s.time) + '</td>' +
                           '<td>' + pill(s.type) + '</td>' +
-                          '<td>' + esc(s.title) + '</td>' +
+                          '<td>' + esc(s.title) + noteLine + chairLine + '</td>' +
                           '<td class="wt-col-room">' + esc(s.room) + '</td>' +
                         '</tr>';
             });
@@ -616,28 +686,64 @@ html { scroll-behavior: smooth; }
         q('wt-schedule').innerHTML = html;
     }
 
-    /* ---- Talks (grouped by day, with jump strip) ---- */
+    /* ---- Talks (grouped by day → session, ordered by `order:`) ---- */
     function renderTalks() {
         var DAY_ORDER  = ['Mon', 'Tue', 'Wed'];
         var DAY_LABEL  = { Mon: 'Monday', Tue: 'Tuesday', Wed: 'Wednesday' };
         var DAY_ANCHOR = { Mon: 'wt-talks-mon', Tue: 'wt-talks-tue', Wed: 'wt-talks-wed' };
+        var DAY_FROM_SCHED = { Monday: 'Mon', Tuesday: 'Tue', Wednesday: 'Wed' };
 
-        var groups = { Mon: [], Tue: [], Wed: [] };
-        (data.talks || []).forEach(function (t) {
-            var d = (t.day && groups[t.day]) ? t.day : 'Wed';
-            groups[d].push(t);
-        });
-        DAY_ORDER.forEach(function (d) {
-            groups[d].sort(function (a, b) {
-                var at = (a.time && a.time !== 'TBA') ? a.time : '99:99';
-                var bt = (b.time && b.time !== 'TBA') ? b.time : '99:99';
-                return at < bt ? -1 : at > bt ? 1 : 0;
+        // Session order + chairs per day, sourced from schedule.yml. The
+        // schedule titles carry a "Scientific Presentations - " prefix
+        // that's stripped via topicOf() so matching against talks.yml
+        // `session:` uses the bare topic ("Transducers 1" etc.).
+        // This guarantees Talks groups mirror the schedule grid 1:1.
+        var sessionInfo = { Mon: [], Tue: [], Wed: [] };  // [{topic, chairs}]
+        (data.schedule || []).forEach(function (day) {
+            var dk = DAY_FROM_SCHED[day.day];
+            if (!dk) return;
+            (day.sessions || []).forEach(function (s) {
+                if (s.type === 'talk' && s.title) {
+                    sessionInfo[dk].push({ topic: topicOf(s.title), chairs: s.chairs || [] });
+                }
             });
         });
-        var activeDays = DAY_ORDER.filter(function (d) { return groups[d].length > 0; });
+        var topicsOnDay = function (d) {
+            return sessionInfo[d].map(function (x) { return x.topic; });
+        };
 
+        // Bucket talks: day → session → [talks]
+        var buckets = { Mon: {}, Tue: {}, Wed: {} };
+        var orphans = { Mon: [], Tue: [], Wed: [] };
+        (data.talks || []).forEach(function (t) {
+            var d = (t.day && buckets[t.day]) ? t.day : 'Wed';
+            if (t.session && topicsOnDay(d).indexOf(t.session) !== -1) {
+                (buckets[d][t.session] = buckets[d][t.session] || []).push(t);
+            } else {
+                orphans[d].push(t);
+            }
+        });
+        // Sort each session bucket by `order:` (talks without order: sink last).
+        DAY_ORDER.forEach(function (d) {
+            Object.keys(buckets[d]).forEach(function (sess) {
+                buckets[d][sess].sort(function (a, b) {
+                    var ao = (typeof a.order === 'number') ? a.order : 9999;
+                    var bo = (typeof b.order === 'number') ? b.order : 9999;
+                    return ao - bo;
+                });
+            });
+        });
+        var dayTotal = function (d) {
+            var n = orphans[d].length;
+            Object.keys(buckets[d]).forEach(function (s) { n += buckets[d][s].length; });
+            return n;
+        };
+        var activeDays = DAY_ORDER.filter(function (d) { return dayTotal(d) > 0; });
+
+        var status = (data.track || {}).status;
         var html = '<header class="wt-section__head">' +
                      '<h2 id="wt-talks-h">Scientific Talks</h2>' +
+                     (status ? '<span class="wt-format-note">' + esc(status) + '</span>' : '') +
                    '</header>';
 
         if (activeDays.length > 1) {
@@ -649,35 +755,68 @@ html { scroll-behavior: smooth; }
             html += '</nav>';
         }
 
+        var renderCard = function (t, d, sessSlug, idx) {
+            var when = esc(t.day || '') + ((t.time && t.time !== 'TBA') ? ' · ' + esc(t.time) : '');
+            var num  = (typeof t.order === 'number') ? esc(t.order) + '. ' : '';
+            return '<article class="wt-card" data-card="' + d + '-' + sessSlug + '-' + idx + '">' +
+                     '<div class="wt-card__time">' + when + '</div>' +
+                     '<h4 class="wt-card__title">' + num + esc(t.title) + '</h4>' +
+                     '<div class="wt-card__speaker">' + esc(t.speaker) + '</div>' +
+                     '<div class="wt-card__affil">' + esc(t.affiliation) + '</div>' +
+                     '<button class="wt-card__abstract-toggle" type="button" aria-expanded="false">Abstract</button>' +
+                     '<div class="wt-card__abstract">' + (t.abstract ? esc(t.abstract) : '<em class="wt-muted">Abstract not yet available.</em>') + '</div>' +
+                   '</article>';
+        };
+
         activeDays.forEach(function (d) {
+            var nTotal = dayTotal(d);
             html += '<section class="wt-talks-day" id="' + DAY_ANCHOR[d] + '" aria-labelledby="' + DAY_ANCHOR[d] + '-h">' +
                       '<h3 id="' + DAY_ANCHOR[d] + '-h" class="wt-talks-day__title">' +
                         esc(DAY_LABEL[d]) +
-                        '<span class="wt-talks-day__count">' + groups[d].length + ' talk' + (groups[d].length === 1 ? '' : 's') + '</span>' +
-                      '</h3>' +
-                      '<div class="wt-grid">';
-            groups[d].forEach(function (t, i) {
-                var when = esc(t.day || '') + ((t.time && t.time !== 'TBA') ? ' · ' + esc(t.time) : '');
-                html += '<article class="wt-card" data-card="' + d + '-' + i + '">' +
-                          '<div class="wt-card__time">' + when + '</div>' +
-                          '<h4 class="wt-card__title">' + esc(t.title) + '</h4>' +
-                          '<div class="wt-card__speaker">' + esc(t.speaker) + '</div>' +
-                          '<div class="wt-card__affil">' + esc(t.affiliation) + '</div>' +
-                          '<button class="wt-card__abstract-toggle" type="button" aria-expanded="false">Abstract</button>' +
-                          '<div class="wt-card__abstract">' + (t.abstract ? esc(t.abstract) : '<em class="wt-muted">Abstract not yet available.</em>') + '</div>' +
-                        '</article>';
+                        '<span class="wt-talks-day__count">' + nTotal + ' talk' + (nTotal === 1 ? '' : 's') + '</span>' +
+                      '</h3>';
+
+            // One sub-section per session (in schedule.yml order), skip empty ones.
+            sessionInfo[d].forEach(function (info) {
+                var sess  = info.topic;
+                var talks = buckets[d][sess];
+                if (!talks || !talks.length) return;
+                var slug = sess.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                var chairsLine = (info.chairs && info.chairs.length)
+                    ? '<div class="wt-talks-session__chairs">Chairs: ' + fmtChairs(info.chairs) + '</div>'
+                    : '';
+                html += '<div class="wt-talks-session">' +
+                          '<h4 class="wt-talks-session__title">' + esc(sess) +
+                            '<span class="wt-talks-session__count">' + talks.length + ' talk' + (talks.length === 1 ? '' : 's') + '</span>' +
+                          '</h4>' +
+                          chairsLine +
+                          '<div class="wt-grid">';
+                talks.forEach(function (t, i) { html += renderCard(t, d, slug, i); });
+                html += '</div></div>';
             });
-            html += '</div></section>';
+
+            // Orphans (talks with missing/unknown session): surface them so nothing vanishes.
+            if (orphans[d].length) {
+                html += '<div class="wt-talks-session">' +
+                          '<h4 class="wt-talks-session__title">Unassigned' +
+                            '<span class="wt-talks-session__count">' + orphans[d].length + ' talk' + (orphans[d].length === 1 ? '' : 's') + ' · set session: in talks.yml</span>' +
+                          '</h4>' +
+                          '<div class="wt-grid">';
+                orphans[d].forEach(function (t, i) { html += renderCard(t, d, 'orphan', i); });
+                html += '</div></div>';
+            }
+
+            html += '</section>';
         });
 
         q('wt-talks').innerHTML = html;
     }
 
-    /* ---- BYOD ---- */
+    /* ---- BYD ---- */
     function renderByod() {
         var b = data.byod || {};
         var html = '<header class="wt-section__head">' +
-                     '<h2 id="wt-byod-h">Bring Your Own Device — Demo Session</h2>' +
+                     '<h2 id="wt-byod-h">Bring Your Own Device (BYD) - Demo Session</h2>' +
                      '<p>' + esc(b.intro || '') + '</p>' +
                    '</header>' +
                    '<h3>Confirmed demos</h3><div class="wt-grid wt-grid--3">';
@@ -861,7 +1000,7 @@ html { scroll-behavior: smooth; }
                 }
                 return '<li>' + esc(s) + '</li>';
             }).join('')
-            : '<li class="wt-muted">Sponsor slots available — contact the chairs.</li>';
+            : '<li class="wt-muted">Sponsor slots available - contact the chairs.</li>';
         q('wt-track-footer').innerHTML =
             '<div class="wt-track-footer__grid">' +
               '<div><h3>Track organizers</h3><ul>' + orgs + '</ul></div>' +
@@ -967,7 +1106,7 @@ html { scroll-behavior: smooth; }
                 return r.text();
             })
             .then(function (txt) { data[pair[1]] = jsyaml.load(txt); })
-            .catch(function (e) { errors[pair[1]] = pair[0] + ' — ' + e.message; });
+            .catch(function (e) { errors[pair[1]] = pair[0] + ' - ' + e.message; });
     })).then(function () {
         pill = function (typeKey) {
             var t = (data.sessionTypes || {})[typeKey] || { label: typeKey, color: '#888' };

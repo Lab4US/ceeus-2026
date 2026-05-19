@@ -1,14 +1,14 @@
 # ============================================================================
 # Workshops. One list item per workshop.
-# Lab Secrets is a separate session — see lab-secret.yml.
+# Lab Secrets is a separate session - see lab-secret.yml.
 # ----------------------------------------------------------------------------
 # Schema:
-#   title      — full workshop title (will appear on the card)
-#   day        — short day label (Mon 22 Jun)
-#   duration   — display string (e.g. "100 min · 13:00–14:40")
-#   abstract   — multi-paragraph description (use '|' to preserve line
+#   title      - full workshop title (will appear on the card)
+#   day        - short day label (Mon 22 Jun)
+#   duration   - display string (e.g. "100 min · 13:00–14:40")
+#   abstract   - multi-paragraph description (use '|' to preserve line
 #                breaks between paragraphs, or '>' for folded prose)
-#   speakers   — list of speakers; each entry: name, title, affiliation,
+#   speakers   - list of speakers; each entry: name, title, affiliation,
 #                photo (optional, relative to conference root)
 # ============================================================================
 
@@ -41,20 +41,20 @@
       affiliation: University of British Columbia, Vancouver, Canada
       photo: assets/wearable/WS-JonasWelsch.jpg
 
-- title: Anatomy of a Wearable Ultrasound System — From Components to Signals
+- title: Anatomy of a Wearable Ultrasound System - From Components to Signals
   day: Tue 23 Jun
-  duration: 100 min · 13:00–14:40
-  abstract: ""   # TODO — fill in abstract
+  duration: 60 min · 13:40–14:40
+  abstract: ""   # TODO - fill in abstract
   speakers:
     - name: Christoph Leitner
       title: Dr.
-      affiliation: Integrated Systems Laboratory, ETH Zürich, Switzerland
+      affiliation: Integrated Systems Laboratory, ETH Zurich, Switzerland
       photo: assets/wearable/WS-ChristophLeitner.jpg
 
-- title: Live Imaging — Hands-on Medical Ultrasound
+- title: Live Imaging - Hands-on Medical Ultrasound
   day: Wed 24 Jun
-  duration: 100 min · 13:00–14:40
-  abstract: ""   # TODO — fill in abstract
+  duration: 60 min · 13:40–14:40
+  abstract: ""   # TODO - fill in abstract
   speakers:
     - name: Moritz Herzog
       title: Dr.
