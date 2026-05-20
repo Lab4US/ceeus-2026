@@ -54,7 +54,7 @@
 - title: Live Imaging - Hands-on Medical Ultrasound
   day: Wed 24 Jun
   duration: 60 min · 13:40–14:40
-  abstract: ""   # TODO - fill in abstract
+  abstract: Developing next-generation wearable ultrasound patches requires a solid grasp of how devices interact with human anatomy in practice. This hands-on workshop bridges the gap between technical design and clinical application for engineers and developers, offering every participant the chance to perform ultrasound scans himself.Moving beyond standard B-mode structural scans, participants will gain direct experience with modalities critical for wearable monitoring like dynamic M-mode imaging for lung tracking or Doppler measurements for fluid flow velocity. By scanning firsthand, attendees will experience the physical realities of acoustic coupling and motion artifacts, gaining vital insights into variables that directly impact signal processing and algorithm design.
   speakers:
     - name: Moritz Herzog
       title: Dr.
