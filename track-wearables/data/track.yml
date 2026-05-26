@@ -38,6 +38,10 @@ location: Warsaw, Poland
 # program is finalised to hide the pill in one place.
 status: Preliminary · subject to change
 
+# Talk-format note. Rendered as a muted pill under the Scientific Talks
+# heading only. Set to an empty string ("") to hide.
+talksFormat: Scientific Talks are 12-minute presentations and 3 minutes of questions by the audience.
+
 chairs:
   - name:        Moritz Herzog
     affiliation: University Hospital Dresden

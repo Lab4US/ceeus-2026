@@ -741,8 +741,10 @@ html { scroll-behavior: smooth; }
         var activeDays = DAY_ORDER.filter(function (d) { return dayTotal(d) > 0; });
 
         var status = (data.track || {}).status;
+        var talksFormat = (data.track || {}).talksFormat;
         var html = '<header class="wt-section__head">' +
                      '<h2 id="wt-talks-h">Scientific Talks</h2>' +
+                     (talksFormat ? '<p class="wt-hero__tagline">' + esc(talksFormat) + '</p>' : '') +
                      (status ? '<span class="wt-format-note">' + esc(status) + '</span>' : '') +
                    '</header>';
 

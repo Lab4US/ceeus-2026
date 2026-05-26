@@ -31,8 +31,8 @@
       title: Scientific Presentations - Transducers 1
       room: TBA
       chairs:
-        - name: TBA
-          affiliation: ""
+        - name: Dr. Chris Stöckel
+          affiliation: Fraunhofer ENAS
         - name: TBA
           affiliation: ""
     - time: 12:00–13:00
@@ -54,8 +54,8 @@
       chairs:
         - name: Dr. Martin Angerer
           affiliation: University of British Columbia
-        - name: Dr. Chris Stöckel
-          affiliation: Fraunhofer ENAS
+        - name: TBA
+          affiliation: ""
     - time: 16:00–16:40
       type: byod
       title: Bring Your Own Device Part 1 (2 demos)
@@ -160,8 +160,8 @@
       title: Scientific Presentations - Applications 2
       room: TBA
       chairs:
-        - name: Dr. Moritz Herzog
-          affiliation: University Hospital Dresden
+        - name: Dr. Bruno Grandi Sgambato
+          affiliation: Imperial College London
         - name: TBA
           affiliation: ""
     - time: 16:00–16:20
