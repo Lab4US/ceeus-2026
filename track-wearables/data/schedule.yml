@@ -54,8 +54,8 @@
       chairs:
         - name: Dr. Martin Angerer
           affiliation: University of British Columbia
-        - name: TBA
-          affiliation: ""
+        - name: Dr. Marc Fournelle
+          affiliation: Fraunhofer IBMT
     - time: 16:00–16:40
       type: byod
       title: Bring Your Own Device Part 1 (2 demos)

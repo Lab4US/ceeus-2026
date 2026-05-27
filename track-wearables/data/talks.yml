@@ -46,6 +46,15 @@
   affiliation: Dept. of ECE, University of British Columbia, Vancouver, Canada
   abstract: ""
 
+- day:     Mon
+  session: Transducers 1
+  order:   4
+  time:    TBA
+  title:   The EFCL as a Catalyst for Wearable Ultrasound Developments
+  speaker: Andrea Cossettini
+  affiliation: ETH Future Computing Laboratory
+  abstract: ""
+
 # ---- MONDAY · Transducers 2 (Piezo arrays & matching) ----------------------
 
 - day:     Mon
