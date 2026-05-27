@@ -84,6 +84,15 @@
   affiliation: Vodafone Chair MCS · EKFZ Dresden · Univ. of Florence
   abstract: ""
 
+- day:     Mon
+  session: Transducers 2
+  order:   4
+  time:    TBA
+  title:   PMUTs Meet Wearables: Miniaturized, Battery-Friendly and performant ultrasound
+  speaker: Chris Stoeckel, Shubham Mulay, Katja Meinel, Sven Voigt, Danny Reuter
+  affiliation: Fraunhofer ENAS
+  abstract: ""
+
 # ---- TUESDAY · Signals & Systems ------------------------------------------
 # Narrative arc: hardware platforms → coded TX → matched filtering →
 # beamforming → applied feature extraction.

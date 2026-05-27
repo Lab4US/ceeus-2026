@@ -100,7 +100,11 @@
       type: break
       title: Coffee Break
       room: ""
-    - time: 15:00–16:40
+    - time: 15:00–15:20
+      type: labsecret
+      title: Lab Secret (Experimental Design for HMI Data Collection)
+      room: TBA
+    - time: 15:20–16:40
       type: talk
       title: Scientific Presentations - Signals & Systems
       room: TBA
