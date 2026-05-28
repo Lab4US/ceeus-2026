@@ -659,7 +659,7 @@ html { scroll-behavior: smooth; }
     function renderSchedule() {
         var status = (data.track || {}).status;
         var html = '<header class="wt-section__head">' +
-                     '<h2 id="wt-schedule-h">Program Schedule</h2>' +
+                     '<h2 id="wt-schedule-h">Program Schedule Overview</h2>' +
                      (status ? '<span class="wt-format-note">' + esc(status) + '</span>' : '') +
                    '</header>';
         (data.schedule || []).forEach(function (day) {

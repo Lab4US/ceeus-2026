@@ -32,7 +32,7 @@
       room: TBA
       chairs:
         - name: Dr. Chris Stöckel
-          affiliation: Fraunhofer ENAS
+          affiliation: Fraunhofer ENAS, GER
         - name: TBA
           affiliation: ""
     - time: 12:00–13:00
@@ -41,7 +41,7 @@
       room: ""
     - time: 13:00–14:40
       type: workshop
-      title: Polymer-Based Micromachined Transducers for Wearable Ultrasound (Dr. M. Angerer & Dr. Jonas Welsch, UBC)
+      title: Polymer-Based Micromachined Transducers for Wearable Ultrasound (Dr. M. Angerer & Dr. Jonas Welsch, University of British Columbia, CAN)
       room: TBA
     - time: 14:40–15:00
       type: break
@@ -53,22 +53,22 @@
       room: TBA
       chairs:
         - name: Dr. Martin Angerer
-          affiliation: University of British Columbia
+          affiliation: University of British Columbia, CAN
         - name: Dr. Marc Fournelle
-          affiliation: Fraunhofer IBMT
+          affiliation: Fraunhofer IBMT, GER
     - time: 16:00–16:40
       type: byod
-      title: Bring Your Own Device Part 1 (2 demos)
+      title: Build-Up and Preperation for Bring Your Own Device Session
       room: TBA
     - time: 16:40–17:00
       type: break
       title: Coffee Break
       room: ""
-    - time: 17:00–18:40
+    - time: 17:00–19:00
       type: byod
-      title: Bring Your Own Device Part 2 (6 demos)
+      title: Bring Your Own Device
       room: TBA
-    - time: 18:40-open
+    - time: 19:00-open
       type: break
       title: Pizza Social
       room: ""
@@ -94,7 +94,7 @@
       room: ""
     - time: 13:40–14:40
       type: workshop
-      title: Anatomy of a Wearable Ultrasound System - From Components to Signals (Dr. Christoph Leitner, ETH Zurich)
+      title: Anatomy of a Wearable Ultrasound System - From Components to Signals (Dr. Christoph Leitner, ETH Zurich, CH)
       room: TBA
     - time: 14:40–15:00
       type: break
@@ -110,9 +110,9 @@
       room: TBA
       chairs:
         - name: Prof. Dr. Christian Kupsch
-          affiliation: Freiberg University of Mining and Technology
+          affiliation: Freiberg University of Mining and Technology, GER
         - name: Dr. Richard Nauber
-          affiliation: Dresden University of Technology
+          affiliation: Dresden University of Technology, GER
     - time: 16:40–17:00
       type: break
       title: Coffee Break
@@ -145,16 +145,16 @@
       room: TBA
       chairs:
         - name: Dr. Erica L. King
-          affiliation: George Mason University
-        - name: TBA
-          affiliation: ""
+          affiliation: George Mason University, USA
+        - name: Prof. Ahmed El Kaffas
+          affiliation: UC San Diego, USA
     - time: 12:40–13:40
       type: break
       title: Lunch
       room: ""
     - time: 13:40–14:40
       type: workshop
-      title: Live Imaging - Hands-on Medical Ultrasound (Dr. Moritz Herzog, University Hospital Dresden)
+      title: Live Imaging - Hands-on Medical Ultrasound (Dr. Moritz Herzog, Dresden University of Technology, GER)
       room: TBA
     - time: 14:40–15:00
       type: break
@@ -165,9 +165,9 @@
       room: TBA
       chairs:
         - name: Dr. Bruno Grandi Sgambato
-          affiliation: Imperial College London
-        - name: TBA
-          affiliation: ""
+          affiliation: Imperial College London, UK
+        - name: Dr. Moritz Herzog
+          affiliation: Dresden University of Technology, GER
     - time: 16:00–16:20
       type: break
       title: Closing and Farewell
