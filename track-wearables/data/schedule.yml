@@ -21,7 +21,7 @@
     - time: 09:00-10:40
       type: talk
       title: Plenary Talks
-      room: TBA
+      room: Room 003
       note: "Wearable-focused speaker: Prof. Sheng Xu (Stanford, USA)"
     - time: 10:40–11:00
       type: break
@@ -29,7 +29,7 @@
     - time: 11:00–12:00
       type: talk
       title: Scientific Presentations - Transducers 1
-      room: TBA
+      room: Room 101
       chairs:
         - name: Dr. Chris Stöckel
           affiliation: Fraunhofer ENAS, GER
@@ -42,7 +42,7 @@
     - time: 13:00–14:40
       type: workshop
       title: Polymer-Based Micromachined Transducers for Wearable Ultrasound (Dr. M. Angerer & Dr. Jonas Welsch, University of British Columbia, CAN)
-      room: TBA
+      room: Room 101
     - time: 14:40–15:00
       type: break
       title: Coffee Break
@@ -50,7 +50,7 @@
     - time: 15:00–16:00
       type: talk
       title: Scientific Presentations - Transducers 2
-      room: TBA
+      room: Room 101
       chairs:
         - name: Dr. Martin Angerer
           affiliation: University of British Columbia, CAN
@@ -59,7 +59,7 @@
     - time: 16:00–16:40
       type: byod
       title: Build-Up and Preperation for Bring Your Own Device Session
-      room: TBA
+      room: Room 003
     - time: 16:40–17:00
       type: break
       title: Coffee Break
@@ -67,7 +67,7 @@
     - time: 17:00–19:00
       type: byod
       title: Bring Your Own Device
-      room: TBA
+      room: Room 003
     - time: 19:00-open
       type: break
       title: Pizza Social
@@ -79,7 +79,7 @@
     - time: 09:00-11:20
       type: talk
       title: Plenary Talks
-      room: TBA
+      room: Room 003
       note: "Wearable-focused speaker: Dr. Sergei Vostrikov (Rheonics, CH)"
     - time: 11:20–11:40
       type: break
@@ -87,7 +87,7 @@
     - time: 11:40–12:40
       type: labsecret
       title: Lab Secrets (Coded Signals, ML Deployment on the Edge, S11 Measurements)
-      room: TBA
+      room: Room 101
     - time: 12:40–13:40
       type: break
       title: Lunch
@@ -95,7 +95,7 @@
     - time: 13:40–14:40
       type: workshop
       title: Anatomy of a Wearable Ultrasound System - From Components to Signals (Dr. Christoph Leitner, ETH Zurich, CH)
-      room: TBA
+      room: Room 101
     - time: 14:40–15:00
       type: break
       title: Coffee Break
@@ -103,11 +103,11 @@
     - time: 15:00–15:20
       type: labsecret
       title: Lab Secret (Experimental Design for HMI Data Collection)
-      room: TBA
+      room: Room 101
     - time: 15:20–16:40
       type: talk
       title: Scientific Presentations - Signals & Systems
-      room: TBA
+      room: Room 101
       chairs:
         - name: Prof. Dr. Christian Kupsch
           affiliation: Freiberg University of Mining and Technology, GER
@@ -120,7 +120,7 @@
     - time: 17:00–18:40
       type: sig
       title: Special Interest Group - Wearable Ultrasound
-      room: TBA
+      room: Room 003
       note: "Discussion · hybrid · free and open to the public"
     - time: 19:00–open
       type: break
@@ -134,7 +134,7 @@
     - time: 09:00-11:20
       type: talk
       title: Plenary Talks
-      room: TBA
+      room: Room 003
       note: "Wearable-focused speakers: Dr. Tiago L. Costa (TU Delft, NL); Prof. Ahmed El Kaffas (UC San Diego, USA)"
     - time: 11:20–11:40
       type: break
@@ -142,7 +142,7 @@
     - time: 11:40–12:40
       type: talk
       title: Scientific Presentations - Applications 1
-      room: TBA
+      room: Room 101
       chairs:
         - name: Dr. Erica L. King
           affiliation: George Mason University, USA
@@ -155,14 +155,14 @@
     - time: 13:40–14:40
       type: workshop
       title: Live Imaging - Hands-on Medical Ultrasound (Dr. Moritz Herzog, Dresden University of Technology, GER)
-      room: TBA
+      room: Room 101
     - time: 14:40–15:00
       type: break
       title: Coffee Break
     - time: 15:00–16:00
       type: talk
       title: Scientific Presentations - Applications 2
-      room: TBA
+      room: Room 101
       chairs:
         - name: Dr. Bruno Grandi Sgambato
           affiliation: Imperial College London, UK

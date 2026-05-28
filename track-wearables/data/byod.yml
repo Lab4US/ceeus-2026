@@ -4,10 +4,11 @@
 # ============================================================================
 
 intro: >
-  Bring Your Own Device (BYD) is a hands-on demo session for working
-  wearable ultrasound hardware. Presenters bring functional systems;
-  attendees interact with each one directly. Two slots: a shorter Part 1
-  (2 demos) and a longer Part 2 (6 demos) on Monday afternoon.
+  Bring Your Own Device (BYD) is a hands-on demo session where
+  presenters bring functional wearable ultrasound systems. Modus:
+  10' per demo (maximum 5 slides + live demo), then 2' change-over
+  to the next station. A timekeeper enforces the cadence. The session
+  runs Monday afternoon, preceded by a build-up and preparation slot.
 
 # Session sponsor. Logo path is relative to the conference root
 # because the page sets <base href=".."> in the chrome <head>.
@@ -20,7 +21,7 @@ sponsor:
 demos:
   - title: PMUT/CMUT live demo - plug-&-play MUT demo for ToF systems and different phantoms
     presenters: Chris Stoeckel
-    affiliation: Fraunhofer Institute for Electronic Nano Systems, Germany
+    affiliation: Fraunhofer Institute for Electronic Nano Systems, GER
 
   - title: Non-invasive Human-Machine Interfaces
     presenters: Bruno Grandi Sgambato
@@ -28,19 +29,19 @@ demos:
 
   - title: ModulUS - A Sandbox for Wearable Ultrasound System Development
     presenters: Marco Giordano, Marc-André Wessner, Michele Magno, Luca Benini, Christoph Leitner
-    affiliation: ETH Zurich, Switzerland
+    affiliation: ETH Zurich, CH
 
   - title: Coded Excitation on Commercial Off-The-Shelf Microcontroller Platforms for Ultrasound Wearables
     presenters: Nele Kirsch, Alessandra Vignoli, Franz Richter, Richard Nauber, Erik Kaiser, Tönnis Trittler, Moritz Herzog
-    affiliation: TU Dresden, Germany
+    affiliation: TU Dresden, GER
 
   - title: WULPUS live demo - Real-Time Wearable Ultrasound for Virtual Reality Interaction
     presenters: Giusy Spacone, Sebastian Frey, Luca Benini, Andrea Cossettini
-    affiliation: ETH Zurich, Switzerland
+    affiliation: ETH Zurich, CH
 
   - title: TinyProbe - Real-time Data Visualization in an Open, Wearable, 32-channel, Wireless Ultrasound Probe
     presenters: Cedric Hirschi, Federico Villani, Luca Benini, Andrea Cossettini
-    affiliation: ETH Zurich, Switzerland
+    affiliation: ETH Zurich, CH
 
   - title: SonoTrak
     presenters: Erica L. King, Ahmed Bashatah, Abhishek Aher, Rahul Kaliki, Siddhartha Sikdar, Parag V. Chitnis
@@ -48,4 +49,8 @@ demos:
 
   - title: Hybrid Single Crystal – CMUT Stack for Wearable Ultrasound Applications
     presenters: Tönnis Trittler
-    affiliation: TU Dresden, Germany
+    affiliation: TU Dresden, GER
+
+  - title: Transcranial Transmission Ultrasound (TUSSr) for acquiring the biosignal brain pulse curve and assessing of intracranial pressure in patients with traumatic brain injury.
+    presenters: Bertram König
+    affiliation: Sonovum GmbH, GER
