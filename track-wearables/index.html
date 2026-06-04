@@ -247,6 +247,26 @@
 .wt-card__abstract-toggle::after { content: " ▾"; }
 .wt-card--demo { padding: var(--wt-sp-2) var(--wt-sp-3); }
 
+/* ---------- Sponsor talk (newspaper-style sponsored content) ---------- */
+.wt-card--sponsor {
+    position: relative;
+    background: #fbf6e8;
+    border-color: #e6d9b3;
+}
+.wt-card--sponsor .wt-card__title,
+.wt-card--sponsor .wt-card__speaker,
+.wt-card--sponsor .wt-card__affil,
+.wt-card--sponsor .wt-card__time { color: #5a4e2a; }
+.wt-card__tag {
+    position: absolute; top: var(--wt-sp-2); right: var(--wt-sp-2);
+    font-size: .65rem; font-weight: 600; letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #8a7340; background: rgba(255,255,255,.6);
+    border: 1px solid #e0d2a8; border-radius: 3px;
+    padding: 2px 6px;
+}
+.wt-card--sponsor.wt-card--demo { padding-top: calc(var(--wt-sp-3) + 1.2rem); }
+
 /* ---------- BYD session sponsor ---------- */
 .wt-byod-sponsor {
     margin-top: var(--wt-sp-4);
@@ -760,7 +780,11 @@ html { scroll-behavior: smooth; }
         var renderCard = function (t, d, sessSlug, idx) {
             var when = esc(t.day || '') + ((t.time && t.time !== 'TBA') ? ' · ' + esc(t.time) : '');
             var num  = (typeof t.order === 'number') ? esc(t.order) + '. ' : '';
-            return '<article class="wt-card" data-card="' + d + '-' + sessSlug + '-' + idx + '">' +
+            var isSponsor = (t.kind === 'sponsor');
+            var cls = 'wt-card' + (isSponsor ? ' wt-card--sponsor' : '');
+            var tag = isSponsor ? '<span class="wt-card__tag">Sponsor Talk</span>' : '';
+            return '<article class="' + cls + '" data-card="' + d + '-' + sessSlug + '-' + idx + '">' +
+                     tag +
                      '<div class="wt-card__time">' + when + '</div>' +
                      '<h4 class="wt-card__title">' + num + esc(t.title) + '</h4>' +
                      '<div class="wt-card__speaker">' + esc(t.speaker) + '</div>' +
@@ -823,7 +847,11 @@ html { scroll-behavior: smooth; }
                    '</header>' +
                    '<h3>Confirmed demos</h3><div class="wt-grid wt-grid--3">';
         (b.demos || []).forEach(function (d) {
-            html += '<article class="wt-card wt-card--demo">' +
+            var isSponsor = (d.kind === 'sponsor');
+            var cls = 'wt-card wt-card--demo' + (isSponsor ? ' wt-card--sponsor' : '');
+            var tag = isSponsor ? '<span class="wt-card__tag">Sponsor Demo</span>' : '';
+            html += '<article class="' + cls + '">' +
+                      tag +
                       '<h4 class="wt-card__title">' + esc(d.title) + '</h4>' +
                       '<div class="wt-card__speaker">' + esc(d.presenters) + '</div>' +
                       '<div class="wt-card__affil">' + esc(d.affiliation) + '</div>' +

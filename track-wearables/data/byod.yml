@@ -31,8 +31,8 @@ demos:
     presenters: Marco Giordano, Marc-André Wessner, Michele Magno, Luca Benini, Christoph Leitner
     affiliation: ETH Zurich, CH
 
-  - title: Coded Excitation on Commercial Off-The-Shelf Microcontroller Platforms for Ultrasound Wearables
-    presenters: Nele Kirsch, Alessandra Vignoli, Franz Richter, Richard Nauber, Erik Kaiser, Tönnis Trittler, Moritz Herzog
+  - title: HybridStack Mini + Raspberry Pi - Coded Excitation on Low-Cost Microcontroller with Hybrid CMUT Single Crystal Sensor Stack for Ultrasound Wearables
+    presenters: Nele Kirsch, Tönnis Trittler, Franz Richter, Alessandra Vignoli, Merit Städler, Erik Kaiser, Richard Nauber, Moritz Herzog
     affiliation: TU Dresden, GER
 
   - title: WULPUS live demo - Real-Time Wearable Ultrasound for Virtual Reality Interaction
@@ -47,10 +47,7 @@ demos:
     presenters: Erica L. King, Ahmed Bashatah, Abhishek Aher, Rahul Kaliki, Siddhartha Sikdar, Parag V. Chitnis
     affiliation: George Mason University & Myokinetics, Inc., USA
 
-  - title: Hybrid Single Crystal – CMUT Stack for Wearable Ultrasound Applications
-    presenters: Tönnis Trittler
-    affiliation: TU Dresden, GER
-
   - title: Transcranial Transmission Ultrasound (TUSSr) for acquiring the biosignal brain pulse curve and assessing of intracranial pressure in patients with traumatic brain injury.
     presenters: Bertram König, Raiko Klemp, Philine Jauch
     affiliation: Sonovum GmbH, GER
+    kind: sponsor

@@ -15,22 +15,7 @@
 - title: "Polymer-Based Micromachined Transducers for Wearable Ultrasound: Design, Integration, and Performance Evaluation"
   day: Mon 22 Jun
   duration: 100 min · 13:00–14:40
-  abstract: |
-    Wearable ultrasound enables continuous, non-invasive monitoring but is
-    often constrained by transducer size, power consumption, and integration
-    complexity. Polymer-based micromachined ultrasonic transducers (polyCMUTs)
-    can address these challenges through miniaturization, design versatility,
-    power efficiency and scalable fabrication.
-
-    This workshop covers the design, integration, and evaluation of polyCMUTs
-    for wearable systems, including acoustic field simulations, fabrication,
-    packaging, and performance analysis. Emphasis is placed on the
-    interpretation of impedance spectroscopy and hydrophone data, closing the
-    loop to the initial predictions.
-
-    Examples of current applications and associated challenges will be
-    presented and discussed to provide attendees with a comprehensive
-    overview of in-house ultrasound wearable design.
+  abstract: Wearable ultrasound enables continuous, non-invasive monitoring but is often constrained by transducer size, power consumption, and integration complexity. Polymer-based micromachined ultrasonic transducers (polyCMUTs) can address these challenges through miniaturization, design versatility, power efficiency and scalable fabrication. This workshop covers the design, integration, and evaluation of polyCMUTs for wearable systems, including acoustic field simulations, fabrication, packaging, and performance analysis. Emphasis is placed on the interpretation of impedance spectroscopy and hydrophone data, closing the loop to the initial predictions. Examples of current applications and associated challenges will be presented and discussed to provide attendees with a comprehensive overview of in-house ultrasound wearable design. 
   speakers:
     - name: Martin Angerer
       title: Dr.
@@ -41,10 +26,10 @@
       affiliation: University of British Columbia, Vancouver, Canada
       photo: assets/wearable/WS-JonasWelsch.jpg
 
-- title: Anatomy of a Wearable Ultrasound System - From Components to Signals
+- title: "Anatomy of a Wearable Ultrasound System: From Components to Signals."
   day: Tue 23 Jun
   duration: 60 min · 13:40–14:40
-  abstract: ""   # TODO - fill in abstract
+  abstract: This workshop dissects a wearable ultrasound system from front-end components to digitized signals, to expose where energy is actually spent and for what. Through a live acquisition on the ModulUS platform and a hands-on Google Colab exploration of the recorded RF and envelope data, attendees will see why receive-channel scaling must be approached carefully in wearable ultrasound. Attendees are asked to bring their laptop to the workshop.
   speakers:
     - name: Christoph Leitner
       title: Dr.
