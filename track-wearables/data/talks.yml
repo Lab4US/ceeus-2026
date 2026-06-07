@@ -12,6 +12,10 @@
 #   time:     left as "TBA" until per-talk slots are finalised
 #   abstract: empty string renders as "Abstract not yet available."
 #
+# Affiliation style (track-wide convention):
+#   "<Institution>, <CC>"  with CC = ISO alpha-2 country code.
+#   Multiple institutions separated by " · ". No city, no department/lab.
+#
 # To reorder a session: change the `order:` integers - entries can stay in
 # any order in this file.
 # To move a talk between sessions: edit `session:` (and `day:` if needed).
@@ -25,7 +29,7 @@
   time:    TBA
   title:   CMUT Array for Deep Vein Thrombosis
   speaker: Sören Köble, Nicolas Lange, Marco Kircher, Uwe Völz, Sandro G. Koch
-  affiliation: Fraunhofer IPMS, Dresden, Germany
+  affiliation: Fraunhofer IPMS, DE
   abstract: ""
 
 - day:     Mon
@@ -34,27 +38,28 @@
   time:    TBA
   title:   Hybrid CMUT and Single Crystal Ultrasonic Transducer Sensor Stack for Muscle Monitoring
   speaker: Tönnis Trittler, Paul Dekan, Julian Kober, Cornelius Kühnöl, Merit Städler, Erik Kaiser, Erhard Landgraf, Richard Nauber, Henning Heuer, Moritz Herzog
-  affiliation: EKFZ, Dresden · Vodafone Chair MCS · Infineon Technologies Dresden · Fraunhofer IKTS
+  affiliation: TU Dresden, DE · Infineon Technologies, DE · Fraunhofer IKTS, DE
   abstract: ""
 
 - day:     Mon
   session: Transducers 1
   order:   3
   time:    TBA
-  title:   Towards Affordable Ultrasound Wearables with Polymer-Based CMUTs
-  speaker: Martin Angerer, Jinhao Lu, Jonas Welsch, Edmond Cretu, Robert Rohling
-  affiliation: Dept. of ECE, University of British Columbia, Vancouver, Canada
+  title:   Towards Transfer Fabrication of Alumina-Epoxy Acoustic Matching Layers for PZT Ultrasound Transducers
+  speaker: Tomasz Zaluska, Christoph Leitner, Younghun Kim, Federico Villani, Butrus Khuri-Yakub, Luca Benini, Todd Coleman, Zhenan Bao
+  affiliation: Stanford University, US · ETH Zurich, CH
   abstract: ""
 
 - day:     Mon
   session: Transducers 1
   order:   4
   time:    TBA
-  kind:    sponsor
-  title:   Beyond the transducer - A lens on computing for wearable ultrasound.
-  speaker: Andrea Cossettini
-  affiliation: ETH Future Computing Laboratory
+  title:   Towards Affordable Ultrasound Wearables with Polymer-Based CMUTs
+  speaker: Martin Angerer, Jinhao Lu, Jonas Welsch, Edmond Cretu, Robert Rohling
+  affiliation: University of British Columbia, CA
   abstract: ""
+
+
 
 # ---- MONDAY · Transducers 2 (Piezo arrays & matching) ----------------------
 
@@ -64,7 +69,7 @@
   time:    TBA
   title:   Acoustic Stack Optimization and Clinical Validation Preparation of a Flexible PMN-PT Ultrasonic Transducer Array for Wearable Blood Pressure Monitoring
   speaker: Syed Turab Haider Zaidi, Jinsoo Park, Lee Youngjin, Byung Chul Lee, Shin Hur
-  affiliation: KIMM, Daejeon · UST · Institute of Science and Technology, Seoul
+  affiliation: KIMM, KR · UST, KR · Institute of Science and Technology, Seoul
   abstract: ""
 
 - day:     Mon
@@ -73,7 +78,7 @@
   time:    TBA
   title:   Automated Filter Design Tool for Impedance Matching of Wearable PVDF Ultrasound Transducers
   speaker: Stephan Thurner, Christoph Leitner, Debkalpa Goswami, Jörg Schröttner, Christian Baumgartner
-  affiliation: Inst. of Health Care Engineering, TU Graz · Integrated Systems Lab, ETH Zurich
+  affiliation: TU Graz, AT · ETH Zurich, CH
   abstract: ""
 
 - day:     Mon
@@ -82,17 +87,18 @@
   time:    TBA
   title:   Towards Optimized Hybrid Sparse Arrays for Wearable Ultrasonic Systems
   speaker: Edgar Dorausch, Cornelius Kühnöl, Nele Kirsch, Tönnis Trittler, Gerhard Fettweis, Alessandro Ramalli, Moritz Herzog, Richard Nauber
-  affiliation: Vodafone Chair MCS · EKFZ Dresden · Univ. of Florence
+  affiliation: TU Dresden, DE · University of Florence, IT
   abstract: ""
 
 - day:     Mon
   session: Transducers 2
   order:   4
   time:    TBA
-  title:   "PMUTs Meet Wearables: Miniaturized, Battery-Friendly and performant ultrasound"
-  speaker: Chris Stoeckel, Shubham Mulay, Katja Meinel, Sven Voigt, Danny Reuter
-  affiliation: Fraunhofer ENAS
+  title:   "PMUTs Meet Wearables: Miniaturized, Battery-Friendly and Performant ultrasound"
+  speaker: Chris Stöckel, Shubham Mulay, Katja Meinel, Sven Voigt, Danny Reuter
+  affiliation: Fraunhofer ENAS, DE
   abstract: ""
+
 
 # ---- TUESDAY · Signals & Systems ------------------------------------------
 # Narrative arc: hardware platforms → coded TX → matched filtering →
@@ -104,43 +110,52 @@
   time:    TBA
   title:   32-ch Portable System as Flexible Platform for Research in Biomedical Ultrasound
   speaker: Marc Fournelle, Daniel Speicher, Christoph Risser, Holger Hewener, Steffen Tretbar
-  affiliation: Fraunhofer IBMT, Sulzbach, Germany
+  affiliation: Fraunhofer IBMT, DE
   abstract: ""
 
 - day:     Tue
   session: Signals & Systems
   order:   2
   time:    TBA
-  title:   Leveraging a Low-Cost RISC-V Microcontroller Board as Wearable Ultrasound Front End
-  speaker: A. Vignoli, N. Kirsch, E. Kaiser, T. Trittler, V. Meacci, A. Ramalli, E. Boni, M. Herzog, R. Nauber
-  affiliation: Univ. of Florence · EKFZ, TU Dresden Faculty of Medicine · Vodafone Chair MCS, TU Dresden
+  title:   Simplifying ultrasound acquisition hardware using low-power coded excitation
+  speaker: Connor Challinor, Frederic Cegla
+  affiliation: CodeAcq Ltd, GB · Imperial College London, GB
   abstract: ""
 
 - day:     Tue
   session: Signals & Systems
   order:   3
   time:    TBA
-  title:   Investigating Binary Coded Excitation Schemes for US Wearables with Low-Complexity Electronics
-  speaker: Nele Kirsch, Franz Richter, Alessandra Vignoli, Edgar Dorausch, Cornelius Kühnöl, Pascal Stöver, Erik Kaiser, Merit Städler, Moritz Herzog, Gerhard Fettweiss, Richard Nauber
-  affiliation: Vodafone Chair MCS, TU Dresden · EKFZ, Dresden · Univ. of Florence
+  title:   Leveraging a Low-Cost RISC-V Microcontroller Board as Wearable Ultrasound Front End
+  speaker: A. Vignoli, N. Kirsch, E. Kaiser, T. Trittler, V. Meacci, A. Ramalli, E. Boni, M. Herzog, R. Nauber
+  affiliation: University of Florence, IT · TU Dresden, DE
   abstract: ""
 
 - day:     Tue
   session: Signals & Systems
   order:   4
   time:    TBA
-  title:   Energy Efficient Implementations of Mismatched Filtering for Wearable Ultrasound on the ARM Ethos-U55
-  speaker: Franz Richter, Nele Kirsch, Erik Kaiser, Edgar Dorausch, Cornelius Kühnöl, Pascal Stöver, Tönnis Trittler, Moritz Herzog, Gerhard Fettweiß, Richard Nauber
-  affiliation: Vodafone Chair MCS, TU Dresden · EKFZ, Dresden
+  title:   Low-Resource Embedded DAS Beamformer for Medical Ultrasound
+  speaker: Federico Villani, Milos Hirsl, Luca Benini, Andrea Cossettini
+  affiliation: ETH Zurich, CH · University of Bologna, IT
   abstract: ""
 
 - day:     Tue
   session: Signals & Systems
   order:   5
   time:    TBA
-  title:   Low-Resource Embedded DAS Beamformer for Medical Ultrasound
-  speaker: Federico Villani, Milos Hirsl, Luca Benini, Andrea Cossettini
-  affiliation: Integrated Systems Lab, ETH Zurich · DEI, Univ. of Bologna
+  title:   Investigating Binary Coded Excitation Schemes for US Wearables with Low-Complexity Electronics
+  speaker: Nele Kirsch, Franz Richter, Alessandra Vignoli, Edgar Dorausch, Cornelius Kühnöl, Pascal Stöver, Erik Kaiser, Merit Städler, Moritz Herzog, Gerhard Fettweis, Richard Nauber
+  affiliation: TU Dresden, DE · University of Florence, IT
+  abstract: ""
+
+- day:     Tue
+  session: Signals & Systems
+  order:   6
+  time:    TBA
+  title:   Energy Efficient Implementations of Mismatched Filtering for Wearable Ultrasound on the ARM Ethos-U55
+  speaker: Franz Richter, Nele Kirsch, Erik Kaiser, Edgar Dorausch, Cornelius Kühnöl, Pascal Stöver, Tönnis Trittler, Moritz Herzog, Gerhard Fettweis, Richard Nauber
+  affiliation: TU Dresden, DE
   abstract: ""
 
 
@@ -152,7 +167,7 @@
   time:    TBA
   title:   Towards Ultrasound-Based Blood Pressure Monitoring - A Hybrid Array Enabling Continuous Chirp Excitation for Increased Axial Resolution
   speaker: Erik Kaiser, Julian Kober, Tönnis Trittler, Nele Kirsch, Franz Richter, Richard Nauber, Gerhard Fettweis, Jochen Hampe, Moritz Herzog
-  affiliation: EKFZ for Digital Health, Dresden · Vodafone Chair for Mobile Communications Systems, Dresden
+  affiliation: TU Dresden, DE
   abstract: ""
 
 - day:     Wed
@@ -161,7 +176,7 @@
   time:    TBA
   title:   Toward Reliable Cuffless Blood Pressure Monitoring Using a Multimodal Ultrasound–ECG Wearable Platform
   speaker: Syed Turab Haider Zaidi, Lee Youngjin, Shin Hur
-  affiliation: KIMM · UST, Daejeon, South Korea
+  affiliation: KIMM, KR · UST, KR
   abstract: ""
 
 - day:     Wed
@@ -170,8 +185,9 @@
   time:    TBA
   title:   Monitoring Bone Fracture Healing Using Guided Acoustic Waves - Towards a Wearable Ultrasound System
   speaker: Jan Lützelberger, Eric N. Link, Klaus Stefan Drese
-  affiliation: ISAT, Coburg Univ. of Applied Sciences, Germany
+  affiliation: Coburg University of Applied Sciences, DE
   abstract: ""
+
 
 
 # ---- WEDNESDAY · Applications 2 (Neuromuscular, skeletal, clinical) -------
@@ -182,7 +198,7 @@
   time:    TBA
   title:   Towards Practical Ultrasound-Based Hand Motion Analysis - Efficient Reference Acquisition and Motion Modeling
   speaker: Christian Kupsch, Nico Schurig, Robert Kunz, Lennart Schierling, David Weik
-  affiliation: MSE Lab, TU Bergakademie Freiberg, Germany
+  affiliation: TU Bergakademie Freiberg, DE
   abstract: ""
 
 - day:     Wed
@@ -191,7 +207,7 @@
   time:    TBA
   title:   Array Selection for Wearable Ultrasound Dysphagia Biofeedback Monitor Device
   speaker: Alessia Bruno, Xanthe Miller, Ourania Varsou, Emma Harris, Sandy Cochran
-  affiliation: James Watt School of Engineering, Univ. of Glasgow · Inst. of Cancer Research, Sutton, UK
+  affiliation: University of Glasgow, GB · Institute of Cancer Research, GB
   abstract: ""
 
 - day:     Wed
@@ -200,5 +216,7 @@
   time:    TBA
   title:   Automated Feature Extraction of Distributed Wearable Ultrasound Signals During Highly Dynamic Physical Activity
   speaker: Erica L. King, Qi Wei, Margaret T. Jones, Siddhartha Sikdar, Parag V. Chitnis
-  affiliation: George Mason University · Center for MedTech Innovation · Myokinetics, Inc.
+  affiliation: George Mason University, US · Myokinetics Inc, US
   abstract: ""
+
+

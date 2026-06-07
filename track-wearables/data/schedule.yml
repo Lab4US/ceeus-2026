@@ -22,7 +22,7 @@
       type: talk
       title: Plenary Talks
       room: Room 003
-      note: "Wearable-focused speaker: Prof. Sheng Xu (Stanford, USA)"
+      note: "Wearable-focused speaker: Prof. Sheng Xu (Stanford University, US)"
     - time: 10:40–11:00
       type: break
       title: Coffee Break
@@ -32,17 +32,22 @@
       room: Room 101
       chairs:
         - name: Dr. Chris Stöckel
-          affiliation: Fraunhofer ENAS, GER
-        - name: TBA
-          affiliation: ""
+          affiliation: Fraunhofer ENAS, DE
+        - name: Dr. Christoph Leitner
+          affiliation: ETH Zurich, CH
     - time: 12:00–13:00
       type: break
       title: Lunch
       room: ""
-    - time: 13:00–14:40
+    - time: 13:00–14:20
       type: workshop
-      title: Polymer-Based Micromachined Transducers for Wearable Ultrasound (Dr. M. Angerer & Dr. Jonas Welsch, University of British Columbia, CAN)
+      title: Polymer-Based Micromachined Transducers for Wearable Ultrasound (Dr. M. Angerer & Dr. Jonas Welsch, University of British Columbia, CA)
       room: Room 101
+    - time: 14:20–14:40
+      type: byod
+      title: Sponsor Talk - Beyond the Transducer - A Lens on Computing for Wearable Ultrasound (Andrea Cossettini, EFCL, CH)
+      room: Room 101
+      note: "Warm-up for the BYD session"
     - time: 14:40–15:00
       type: break
       title: Coffee Break
@@ -53,12 +58,12 @@
       room: Room 101
       chairs:
         - name: Dr. Martin Angerer
-          affiliation: University of British Columbia, CAN
+          affiliation: University of British Columbia, CA
         - name: Dr. Marc Fournelle
-          affiliation: Fraunhofer IBMT, GER
+          affiliation: Fraunhofer IBMT, DE
     - time: 16:00–16:40
       type: byod
-      title: Build-Up and Preperation for Bring Your Own Device Session
+      title: Build-Up and Preparation for Bring Your Own Device Session
       room: Room 003
     - time: 16:40–17:00
       type: break
@@ -80,7 +85,7 @@
       type: talk
       title: Plenary Talks
       room: Room 003
-      note: "Wearable-focused speaker: Dr. Sergei Vostrikov (Rheonics, CH)"
+      note: "Wearable-focused speakers: Dr. Sergei Vostrikov (Rheonics, CH); Dr. Tiago L. Costa (TU Delft, NL)"
     - time: 11:20–11:40
       type: break
       title: Coffee Break
@@ -92,32 +97,32 @@
       type: break
       title: Lunch
       room: ""
-    - time: 13:40–14:40
-      type: workshop
-      title: Anatomy of a Wearable Ultrasound System - From Components to Signals (Dr. Christoph Leitner, ETH Zurich, CH)
-      room: Room 101
-    - time: 14:40–15:00
-      type: break
-      title: Coffee Break
-      room: ""
-    - time: 15:00–15:20
+    - time: 13:40–14:00
       type: labsecret
       title: Lab Secret (Experimental Design for HMI Data Collection)
       room: Room 101
-    - time: 15:20–16:40
+    - time: 14:00–15:20
+      type: workshop
+      title: Anatomy of a Wearable Ultrasound System - From Components to Signals (Dr. Christoph Leitner, ETH Zurich, CH)
+      room: Room 101
+    - time: 15:20–15:40
+      type: break
+      title: Coffee Break
+      room: ""
+    - time: 15:40–17:20
       type: talk
       title: Scientific Presentations - Signals & Systems
       room: Room 101
       chairs:
         - name: Prof. Dr. Christian Kupsch
-          affiliation: Freiberg University of Mining and Technology, GER
+          affiliation: TU Bergakademie Freiberg, DE
         - name: Dr. Richard Nauber
-          affiliation: Dresden University of Technology, GER
-    - time: 16:40–17:00
+          affiliation: TU Dresden, DE
+    - time: 17:20–17:40
       type: break
       title: Coffee Break
       room: ""
-    - time: 17:00–18:40
+    - time: 17:40–19:00
       type: sig
       title: Special Interest Group - Wearable Ultrasound
       room: Room 003
@@ -135,7 +140,7 @@
       type: talk
       title: Plenary Talks
       room: Room 003
-      note: "Wearable-focused speakers: Dr. Tiago L. Costa (TU Delft, NL); Prof. Ahmed El Kaffas (UC San Diego, USA)"
+      note: "Wearable-focused speaker: Prof. Ahmed El Kaffas (UC San Diego, US)"
     - time: 11:20–11:40
       type: break
       title: Coffee Break
@@ -145,16 +150,16 @@
       room: Room 101
       chairs:
         - name: Dr. Erica L. King
-          affiliation: George Mason University, USA
+          affiliation: George Mason University, US
         - name: Prof. Ahmed El Kaffas
-          affiliation: UC San Diego, USA
+          affiliation: UC San Diego, US
     - time: 12:40–13:40
       type: break
       title: Lunch
       room: ""
     - time: 13:40–14:40
       type: workshop
-      title: Live Imaging - Hands-on Medical Ultrasound (Dr. Moritz Herzog, Dresden University of Technology, GER)
+      title: Live Imaging - Hands-on Medical Ultrasound (Dr. Moritz Herzog, TU Dresden, DE)
       room: Room 101
     - time: 14:40–15:00
       type: break
@@ -165,9 +170,9 @@
       room: Room 101
       chairs:
         - name: Dr. Bruno Grandi Sgambato
-          affiliation: Imperial College London, UK
-        - name: Dr. Moritz Herzog
-          affiliation: Dresden University of Technology, GER
+          affiliation: Imperial College London, GB
+        - name: Dr. Sergei Vostrikov
+          affiliation: Rheonics, CH
     - time: 16:00–16:20
       type: break
       title: Closing and Farewell

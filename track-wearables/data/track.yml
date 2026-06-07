@@ -44,13 +44,13 @@ talksFormat: Scientific Talks are 12-minute presentations and 3 minutes of quest
 
 chairs:
   - name:        Moritz Herzog
-    affiliation: University Hospital Dresden
+    affiliation: TU Dresden, DE
     email:       moritz.herzog@tu-dresden.de
   - name:        Erik Kaiser
-    affiliation: TU Dresden
+    affiliation: TU Dresden, DE
     email:       erik.kaiser@tu-dresden.de
   - name:        Christoph Leitner
-    affiliation: ETH Zurich
+    affiliation: ETH Zurich, CH
     email:       christoph.leitner@iis.ee.ethz.ch
 
 cta:

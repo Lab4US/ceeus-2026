@@ -8,13 +8,13 @@
 
 organizers:
   - name:        Moritz Herzog
-    affiliation: University Hospital Dresden
+    affiliation: TU Dresden, DE
     email:       moritz.herzog@tu-dresden.de
   - name:        Erik Kaiser
-    affiliation: TU Dresden
+    affiliation: TU Dresden, DE
     email:       erik.kaiser@tu-dresden.de
   - name:        Christoph Leitner
-    affiliation: ETH Zurich
+    affiliation: ETH Zurich, CH
     email:       christoph.leitner@iis.ee.ethz.ch
 
 contact:     wearable-track@ceeus2026.org
@@ -23,6 +23,6 @@ mainSiteUrl: "."
 # Sponsors: object form for logo+link, string form for plain text.
 # Logo path is relative to the conference root (see <base href=".."> note).
 sponsors:
-  - name: ETH Zurich Future Computing Lab
+  - name: ETH Future Computing Laboratory (EFCL)
     logo: assets/logo-efcl-400.png
     url:  https://efcl.ethz.ch/

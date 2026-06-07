@@ -14,26 +14,35 @@ intro: >
 # because the page sets <base href=".."> in the chrome <head>.
 sponsor:
   label: BYD session sponsored by
-  name:  ETH Zurich Future Computing Lab
+  name:  ETH Future Computing Laboratory (EFCL)
   logo:  assets/logo-efcl-400.png
   url:   https://efcl.ethz.ch/
 
 demos:
+  # Session warm-up talk. Not a demo - it runs Mon 14:20-14:40 (see schedule.yml),
+  # rendered first in the grid with a "Warm-up Talk" tag and its own time line.
+  - title: Beyond the Transducer - A Lens on Computing for Wearable Ultrasound
+    presenters: Andrea Cossettini
+    affiliation: ETH Future Computing Laboratory (EFCL), CH
+    kind: sponsor
+    tag:  Warm-up Talk
+    time: Mon · 14:20–14:40 · Room 101
+
   - title: PMUT/CMUT live demo - plug-&-play MUT demo for ToF systems and different phantoms
-    presenters: Chris Stoeckel
-    affiliation: Fraunhofer Institute for Electronic Nano Systems, GER
+    presenters: Chris Stöckel
+    affiliation: Fraunhofer ENAS, DE
 
   - title: Non-invasive Human-Machine Interfaces
     presenters: Bruno Grandi Sgambato
-    affiliation: Imperial College London, UK
+    affiliation: Imperial College London, GB
 
-  - title: ModulUS - A Sandbox for Wearable Ultrasound System Development
-    presenters: Marco Giordano, Marc-André Wessner, Michele Magno, Luca Benini, Christoph Leitner
+  - title: Ultrasound Watch 
+    presenters: Marc-André Wessner, Marco Giordano, Federico Villani, Michele Magno, Luca Benini, Christoph Leitner
     affiliation: ETH Zurich, CH
 
   - title: HybridStack Mini + Raspberry Pi - Coded Excitation on Low-Cost Microcontroller with Hybrid CMUT Single Crystal Sensor Stack for Ultrasound Wearables
     presenters: Nele Kirsch, Tönnis Trittler, Franz Richter, Alessandra Vignoli, Merit Städler, Erik Kaiser, Richard Nauber, Moritz Herzog
-    affiliation: TU Dresden, GER
+    affiliation: TU Dresden, DE
 
   - title: WULPUS live demo - Real-Time Wearable Ultrasound for Virtual Reality Interaction
     presenters: Giusy Spacone, Sebastian Frey, Luca Benini, Andrea Cossettini
@@ -45,9 +54,13 @@ demos:
 
   - title: SonoTrak
     presenters: Erica L. King, Ahmed Bashatah, Abhishek Aher, Rahul Kaliki, Siddhartha Sikdar, Parag V. Chitnis
-    affiliation: George Mason University & Myokinetics, Inc., USA
+    affiliation: George Mason University, US · Myokinetics Inc, US
+  
+  - title: Simplifying ultrasound acquisition hardware using low-power coded excitation
+    presenters: Connor Challinor, Frederic Cegla
+    affiliation: CodeAcq Ltd, GB · Imperial College London, GB
 
   - title: Transcranial Transmission Ultrasound (TUSSr) for acquiring the biosignal brain pulse curve and assessing of intracranial pressure in patients with traumatic brain injury.
     presenters: Bertram König, Raiko Klemp, Philine Jauch
-    affiliation: Sonovum GmbH, GER
+    affiliation: Sonovum GmbH, DE
     kind: sponsor

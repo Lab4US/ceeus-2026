@@ -19,21 +19,21 @@
   speakers:
     - name: Martin Angerer
       title: Dr.
-      # affiliation: University of British Columbia, Vancouver, Canada
+      affiliation: University of British Columbia, CA
       photo: assets/wearable/WS-MartinAngerer.jpg
     - name: Jonas Welsch
       title: ""
-      affiliation: University of British Columbia, Vancouver, Canada
+      affiliation: University of British Columbia, CA
       photo: assets/wearable/WS-JonasWelsch.jpg
 
 - title: "Anatomy of a Wearable Ultrasound System: From Components to Signals."
   day: Tue 23 Jun
-  duration: 60 min · 13:40–14:40
+  duration: 80 min · 14:00–15:20
   abstract: This workshop dissects a wearable ultrasound system from front-end components to digitized signals, to expose where energy is actually spent and for what. Through a live acquisition on the ModulUS platform and a hands-on Google Colab exploration of the recorded RF and envelope data, attendees will see why receive-channel scaling must be approached carefully in wearable ultrasound. Attendees are asked to bring their laptop to the workshop.
   speakers:
     - name: Christoph Leitner
       title: Dr.
-      affiliation: Integrated Systems Laboratory, ETH Zurich, Switzerland
+      affiliation: ETH Zurich, CH
       photo: assets/wearable/WS-ChristophLeitner.jpg
 
 - title: Live Imaging - Hands-on Medical Ultrasound
@@ -43,5 +43,5 @@
   speakers:
     - name: Moritz Herzog
       title: Dr.
-      affiliation: University Hospital Dresden, Germany
+      affiliation: TU Dresden, DE
       photo: assets/wearable/WS-MoritzHerzog.jpg
