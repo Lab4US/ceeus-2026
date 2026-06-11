@@ -28,39 +28,39 @@ demos:
     tag:  Warm-up Talk
     time: Mon · 14:20–14:40 · Room 101
 
-  - title: TinyProbe - Real-time Data Visualization in an Open, Wearable, 32-channel, Wireless Ultrasound Probe
+  - title: 1. TinyProbe - Real-time Data Visualization in an Open, Wearable, 32-channel, Wireless Ultrasound Probe
     presenters: Cedric Hirschi, Federico Villani, Luca Benini, Andrea Cossettini
     affiliation: ETH Zurich, CH
 
-  - title: PMUT/CMUT live demo - plug-&-play MUT demo for ToF systems and different phantoms
+  - title: 2. PMUT/CMUT live demo - plug-&-play MUT demo for ToF systems and different phantoms
     presenters: Chris Stöckel
     affiliation: Fraunhofer ENAS, DE
   
-  - title: Simplifying ultrasound acquisition hardware using low-power coded excitation
+  - title: 3. Simplifying ultrasound acquisition hardware using low-power coded excitation
     presenters: Connor Challinor, Frederic Cegla
     affiliation: CodeAcq Ltd, GB · Imperial College London, GB
 
-  - title: HybridStack Mini + Raspberry Pi - Coded Excitation on Low-Cost Microcontroller with Hybrid CMUT Single Crystal Sensor Stack for Ultrasound Wearables
+  - title: 4. HybridStack Mini + Raspberry Pi - Coded Excitation on Low-Cost Microcontroller with Hybrid CMUT Single Crystal Sensor Stack for Ultrasound Wearables
     presenters: Nele Kirsch, Tönnis Trittler, Franz Richter, Alessandra Vignoli, Merit Städler, Erik Kaiser, Richard Nauber, Moritz Herzog
     affiliation: TU Dresden, DE
 
-  - title: SonoTrak
+  - title: 5. SonoTrak
     presenters: Erica L. King, Ahmed Bashatah, Abhishek Aher, Rahul Kaliki, Siddhartha Sikdar, Parag V. Chitnis
     affiliation: George Mason University, US · Myokinetics Inc, US
 
-  - title: Non-invasive Human-Machine Interfaces
+  - title: 6. Non-invasive Human-Machine Interfaces
     presenters: Bruno Grandi Sgambato
     affiliation: Imperial College London, GB
 
-  - title: WULPUS live demo - Real-Time Wearable Ultrasound for Virtual Reality Interaction
+  - title: 7. WULPUS live demo - Real-Time Wearable Ultrasound for Virtual Reality Interaction
     presenters: Giusy Spacone, Sebastian Frey, Luca Benini, Andrea Cossettini
     affiliation: ETH Zurich, CH
 
-  - title: Ultrasound Watch 
+  - title: 8. Ultrasound Watch 
     presenters: Marc-André Wessner, Marco Giordano, Michele Magno, Luca Benini, Christoph Leitner
     affiliation: ETH Zurich, CH
 
-  - title: Transcranial Transmission Ultrasound (TUSSr) for acquiring the biosignal brain pulse curve and assessing of intracranial pressure in patients with traumatic brain injury.
+  - title: 9. Transcranial Transmission Ultrasound (TUSSr) for acquiring the biosignal brain pulse curve and assessing of intracranial pressure in patients with traumatic brain injury.
     presenters: Bertram König, Raiko Klemp, Philine Jauch
     affiliation: Sonovum GmbH, DE
     kind: sponsor
