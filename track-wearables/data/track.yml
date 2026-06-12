@@ -36,7 +36,7 @@ location: Warsaw, Poland
 # Program status. Rendered as a muted pill under both the Program Schedule
 # and Scientific Talks headings. Set to an empty string ("") when the
 # program is finalised to hide the pill in one place.
-status: Preliminary · subject to change
+status: ""
 
 # Talk-format note. Rendered as a muted pill under the Scientific Talks
 # heading only. Set to an empty string ("") to hide.
