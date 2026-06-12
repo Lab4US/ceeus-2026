@@ -31,6 +31,7 @@
   speaker: Sören Köble, Nicolas Lange, Marco Kircher, Uwe Völz, Sandro G. Koch
   affiliation: Fraunhofer IPMS, DE
   abstract: ""
+  pdf:     "track-wearables/abstracts/Transducers 1/Köble - CMUT Array for Deep Vein Thrombosis.pdf"
 
 - day:     Mon
   session: Transducers 1
@@ -40,6 +41,7 @@
   speaker: Tönnis Trittler, Paul Dekan, Julian Kober, Cornelius Kühnöl, Merit Städler, Erik Kaiser, Erhard Landgraf, Richard Nauber, Henning Heuer, Moritz Herzog
   affiliation: TU Dresden, DE · Infineon Technologies, DE · Fraunhofer IKTS, DE
   abstract: ""
+  pdf:     "track-wearables/abstracts/Transducers 1/Trittler - Hybrid CMUT and Single Crystal Ultrasonic Transducer Sensor Stack for Muscle Monitoring.pdf"
 
 - day:     Mon
   session: Transducers 1
@@ -49,6 +51,7 @@
   speaker: Tomasz Zaluska, Christoph Leitner, Younghun Kim, Federico Villani, Butrus Khuri-Yakub, Luca Benini, Todd Coleman, Zhenan Bao
   affiliation: Stanford University, US · ETH Zurich, CH
   abstract: ""
+  pdf:     "track-wearables/abstracts/Transducers 1/Zaluska - Towards Transfer Fabrication of Alumina-Epoxy Acoustic Matching Layers for PZT Ultrasound Transducers.pdf"
 
 - day:     Mon
   session: Transducers 1
@@ -58,6 +61,7 @@
   speaker: Martin Angerer, Jinhao Lu, Jonas Welsch, Edmond Cretu, Robert Rohling
   affiliation: University of British Columbia, CA
   abstract: ""
+  pdf:     "track-wearables/abstracts/Transducers 1/Angerer - Towards Affordable Ultrasound Wearables with Polymer-Based CMUTs.pdf"
 
 
 
@@ -71,6 +75,7 @@
   speaker: Syed Turab Haider Zaidi, Jinsoo Park, Lee Youngjin, Byung Chul Lee, Shin Hur
   affiliation: KIMM, KR · UST, KR · Institute of Science and Technology, Seoul
   abstract: ""
+  pdf:     "track-wearables/abstracts/Transducers 2/Zaidi - Acoustic Stack Optimization and Clinical Validation Preparation of a Flexible PMN-PT Ultrasonic Transducer Array for Wearable Blood Pressure Monitoring.pdf"
 
 - day:     Mon
   session: Transducers 2
@@ -80,6 +85,7 @@
   speaker: Stephan Thurner, Christoph Leitner, Debkalpa Goswami, Jörg Schröttner, Christian Baumgartner
   affiliation: TU Graz, AT · ETH Zurich, CH
   abstract: ""
+  pdf:     "track-wearables/abstracts/Transducers 2/Thurner - Automated Filter Design Tool for Impedance Matching of Wearable PVDF Ultrasound Transducers.pdf"
 
 - day:     Mon
   session: Transducers 2
@@ -89,6 +95,7 @@
   speaker: Edgar Dorausch, Cornelius Kühnöl, Nele Kirsch, Tönnis Trittler, Gerhard Fettweis, Alessandro Ramalli, Moritz Herzog, Richard Nauber
   affiliation: TU Dresden, DE · University of Florence, IT
   abstract: ""
+  pdf:     "track-wearables/abstracts/Transducers 2/Dorausch - Towards Optimized Hybrid Sparse Arrays for Wearable Ultrasonic Systems.pdf"
 
 - day:     Mon
   session: Transducers 2
@@ -98,6 +105,7 @@
   speaker: Chris Stöckel, Shubham Mulay, Katja Meinel, Sven Voigt, Danny Reuter
   affiliation: Fraunhofer ENAS, DE
   abstract: ""
+  pdf:     "track-wearables/abstracts/Transducers 2/Stöckel - PMUTs Meet Wearables - Miniaturized, Battery-Friendly and Performant ultrasound.pdf"
 
 
 # ---- TUESDAY · Signals & Systems ------------------------------------------
@@ -112,6 +120,7 @@
   speaker: Marc Fournelle, Daniel Speicher, Christoph Risser, Holger Hewener, Steffen Tretbar
   affiliation: Fraunhofer IBMT, DE
   abstract: ""
+  pdf:     "track-wearables/abstracts/Signals & Systems/Fournelle - 32-ch Portable System as Flexible Platform for Research in Biomedical Ultrasound.pdf"
 
 - day:     Tue
   session: Signals & Systems
@@ -121,6 +130,7 @@
   speaker: Connor Challinor, Frederic Cegla
   affiliation: CodeAcq Ltd, GB · Imperial College London, GB
   abstract: ""
+  pdf:     "track-wearables/abstracts/Signals & Systems/Challinor - Simplifying ultrasound acquisition hardware using low-power coded excitation.pdf"
 
 - day:     Tue
   session: Signals & Systems
@@ -130,6 +140,7 @@
   speaker: A. Vignoli, N. Kirsch, E. Kaiser, T. Trittler, V. Meacci, A. Ramalli, E. Boni, M. Herzog, R. Nauber
   affiliation: University of Florence, IT · TU Dresden, DE
   abstract: ""
+  pdf:     "track-wearables/abstracts/Signals & Systems/Vignoli - Leveraging a Low-Cost RISC-V Microcontroller Board as Wearable Ultrasound Front End.pdf"
 
 - day:     Tue
   session: Signals & Systems
@@ -139,6 +150,7 @@
   speaker: Federico Villani, Milos Hirsl, Luca Benini, Andrea Cossettini
   affiliation: ETH Zurich, CH · University of Bologna, IT
   abstract: ""
+  pdf:     "track-wearables/abstracts/Signals & Systems/Villani - Low-Resource Embedded DAS Beamformer for Medical Ultrasound.pdf"
 
 - day:     Tue
   session: Signals & Systems
@@ -148,6 +160,7 @@
   speaker: Nele Kirsch, Franz Richter, Alessandra Vignoli, Edgar Dorausch, Cornelius Kühnöl, Pascal Stöver, Erik Kaiser, Merit Städler, Moritz Herzog, Gerhard Fettweis, Richard Nauber
   affiliation: TU Dresden, DE · University of Florence, IT
   abstract: ""
+  pdf:     "track-wearables/abstracts/Signals & Systems/Kirsch - Investigating Binary Coded Excitation Schemes for US Wearables with Low-Complexity Electronics.pdf"
 
 - day:     Tue
   session: Signals & Systems
@@ -157,6 +170,7 @@
   speaker: Franz Richter, Nele Kirsch, Erik Kaiser, Edgar Dorausch, Cornelius Kühnöl, Pascal Stöver, Tönnis Trittler, Moritz Herzog, Gerhard Fettweis, Richard Nauber
   affiliation: TU Dresden, DE
   abstract: ""
+  pdf:     "track-wearables/abstracts/Signals & Systems/Richter - Energy Efficient Implementations of Mismatched Filtering for Wearable Ultrasound on the ARM Ethos-U55.pdf"
 
 
 # ---- WEDNESDAY · Applications 1 (Cardiovascular) --------------------------
@@ -169,6 +183,7 @@
   speaker: Erik Kaiser, Julian Kober, Tönnis Trittler, Nele Kirsch, Franz Richter, Richard Nauber, Gerhard Fettweis, Jochen Hampe, Moritz Herzog
   affiliation: TU Dresden, DE
   abstract: ""
+  pdf:     "track-wearables/abstracts/Applications 1/Kaiser - Towards Ultrasound-Based Blood Pressure Monitoring - A Hybrid Array Enabling Continuous Chirp Excitation for Increased Axial Resolution.pdf"
 
 - day:     Wed
   session: Applications 1
@@ -178,6 +193,7 @@
   speaker: Syed Turab Haider Zaidi, Lee Youngjin, Shin Hur
   affiliation: KIMM, KR · UST, KR
   abstract: ""
+  pdf:     "track-wearables/abstracts/Applications 1/Zaidi - Toward Reliable Cuffless Blood Pressure Monitoring Using a Multimodal Ultrasound–ECG Wearable Platform.pdf"
 
 - day:     Wed
   session: Applications 1
@@ -187,6 +203,7 @@
   speaker: Jan Lützelberger, Eric N. Link, Klaus Stefan Drese
   affiliation: Coburg University of Applied Sciences, DE
   abstract: ""
+  pdf:     "track-wearables/abstracts/Applications 1/Lützelberger - Monitoring Bone Fracture Healing Using Guided Acoustic Waves - Towards a Wearable Ultrasound System.pdf"
 
 
 
@@ -200,6 +217,7 @@
   speaker: Christian Kupsch, Nico Schurig, Robert Kunz, Lennart Schierling, David Weik
   affiliation: TU Bergakademie Freiberg, DE
   abstract: ""
+  pdf:     "track-wearables/abstracts/Applications 2/Kupsch - Towards Practical Ultrasound-Based Hand Motion Analysis - Efficient Reference Acquisition and Motion Modeling.pdf"
 
 - day:     Wed
   session: Applications 2
@@ -209,6 +227,7 @@
   speaker: Alessia Bruno, Xanthe Miller, Ourania Varsou, Emma Harris, Sandy Cochran
   affiliation: University of Glasgow, GB · Institute of Cancer Research, GB
   abstract: ""
+  pdf:     "track-wearables/abstracts/Applications 2/Bruno - Array Selection for Wearable Ultrasound Dysphagia Biofeedback Monitor Device.pdf"
 
 - day:     Wed
   session: Applications 2
@@ -218,5 +237,6 @@
   speaker: Erica L. King, Qi Wei, Margaret T. Jones, Siddhartha Sikdar, Parag V. Chitnis
   affiliation: George Mason University, US · Myokinetics Inc, US
   abstract: ""
+  pdf:     "track-wearables/abstracts/Applications 2/King - Automated Feature Extraction of Distributed Wearable Ultrasound Signals During Highly Dynamic Physical Activity.pdf"
 
 

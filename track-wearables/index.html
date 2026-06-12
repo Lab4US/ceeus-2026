@@ -245,6 +245,11 @@
 .wt-card.is-open .wt-card__abstract { display: block; }
 .wt-card.is-open .wt-card__abstract-toggle::after { content: " ▴"; }
 .wt-card__abstract-toggle::after { content: " ▾"; }
+.wt-card__abstract-link {
+    display: inline-block; margin-top: var(--wt-sp-2);
+    color: var(--wt-accent); font-size: var(--wt-fs-sm);
+    text-decoration: underline;
+}
 .wt-card--demo { padding: var(--wt-sp-2) var(--wt-sp-3); }
 
 /* ---------- Sponsor talk (newspaper-style sponsored content) ---------- */
@@ -783,14 +788,19 @@ html { scroll-behavior: smooth; }
             var isSponsor = (t.kind === 'sponsor');
             var cls = 'wt-card' + (isSponsor ? ' wt-card--sponsor' : '');
             var tag = isSponsor ? '<span class="wt-card__tag">Sponsor Talk</span>' : '';
+            // With a pdf: path, the "Abstract" control links to the PDF (new tab);
+            // otherwise fall back to the inline toggle showing abstract text.
+            var abstract = t.pdf
+                ? '<a class="wt-card__abstract-link" href="' + esc(encodeURI(t.pdf)) + '" target="_blank" rel="noopener">Abstract (PDF) &#8599;</a>'
+                : '<button class="wt-card__abstract-toggle" type="button" aria-expanded="false">Abstract</button>' +
+                  '<div class="wt-card__abstract">' + (t.abstract ? esc(t.abstract) : '<em class="wt-muted">Abstract not yet available.</em>') + '</div>';
             return '<article class="' + cls + '" data-card="' + d + '-' + sessSlug + '-' + idx + '">' +
                      tag +
                      '<div class="wt-card__time">' + when + '</div>' +
                      '<h4 class="wt-card__title">' + num + esc(t.title) + '</h4>' +
                      '<div class="wt-card__speaker">' + esc(t.speaker) + '</div>' +
                      '<div class="wt-card__affil">' + esc(t.affiliation) + '</div>' +
-                     '<button class="wt-card__abstract-toggle" type="button" aria-expanded="false">Abstract</button>' +
-                     '<div class="wt-card__abstract">' + (t.abstract ? esc(t.abstract) : '<em class="wt-muted">Abstract not yet available.</em>') + '</div>' +
+                     abstract +
                    '</article>';
         };
 
