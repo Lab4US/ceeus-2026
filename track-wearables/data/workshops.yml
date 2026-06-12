@@ -35,6 +35,10 @@
       title: Dr.
       affiliation: ETH Zurich, CH
       photo: assets/wearable/WS-ChristophLeitner.jpg
+    - name: Marco Giordano
+      title: ""
+      affiliation: ETH Zurich, CH
+      photo: assets/wearable/WS-MarcoGiordano.jpg
 
 - title: Live Imaging - Hands-on Medical Ultrasound
   day: Wed 24 Jun
