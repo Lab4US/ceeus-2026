@@ -171,6 +171,8 @@
 .wt-section:first-of-type { border-top: 0; }
 .wt-section__head { margin-bottom: var(--wt-sp-4); }
 .wt-section__head .wt-muted { margin-top: -.25rem; }
+.wt-section__lead { font-size: var(--wt-fs-sm); color: var(--wt-muted); margin-top: .25rem; }
+.wt-section__lead a { color: var(--wt-accent); }
 
 /* ---------- Hero ---------- */
 .wt-hero { padding-top: var(--wt-sp-5); }
@@ -647,6 +649,15 @@ html { scroll-behavior: smooth; }
             return label;
         }).join(' · ');
     };
+    /* Section lead line: reads track.responsibles[key] = {name, email}. */
+    var fmtResponsible = function (key) {
+        var r = (((data.track || {}).responsibles) || {})[key];
+        if (!r || !r.name) return '';
+        var who = r.email
+            ? '<a href="mailto:' + esc(r.email) + '">' + esc(r.name) + '</a>'
+            : esc(r.name);
+        return '<p class="wt-section__lead"><strong>Coordination:</strong> ' + who + '</p>';
+    };
     var pill;  /* assigned after data loads; uses data.sessionTypes */
 
     /* ---- Hero ---- */
@@ -771,6 +782,7 @@ html { scroll-behavior: smooth; }
                      '<h2 id="wt-talks-h">Scientific Talks</h2>' +
                      (talksFormat ? '<p class="wt-hero__tagline">' + esc(talksFormat) + '</p>' : '') +
                      (status ? '<span class="wt-format-note">' + esc(status) + '</span>' : '') +
+                     fmtResponsible('talks') +
                    '</header>';
 
         if (activeDays.length > 1) {
@@ -854,6 +866,7 @@ html { scroll-behavior: smooth; }
         var html = '<header class="wt-section__head">' +
                      '<h2 id="wt-byod-h">Bring Your Own Device (BYD) - Demo Session</h2>' +
                      '<p>' + esc(b.intro || '') + '</p>' +
+                     fmtResponsible('byod') +
                    '</header>' +
                    '<h3>Confirmed demos</h3><div class="wt-grid wt-grid--3">';
         (b.demos || []).forEach(function (d) {
@@ -892,6 +905,7 @@ html { scroll-behavior: smooth; }
         var html = '<header class="wt-section__head">' +
                      '<h2 id="wt-workshops-h">Workshops & Lab Secrets</h2>' +
                      '<p class="wt-muted"><strong>How to participate:</strong> Open to all registered conference attendees.</p>' +
+                     fmtResponsible('workshops') +
                    '</header>';
         (data.workshops || []).forEach(function (w, wi) {
             var hasAbstract = w.abstract && String(w.abstract).trim().length > 0;
@@ -1006,6 +1020,7 @@ html { scroll-behavior: smooth; }
             '<header class="wt-section__head">' +
               '<h2 id="wt-sig-h">Special Interest Group</h2>' +
               '<p class="wt-muted">' + esc(s.when || '') + '</p>' +
+              fmtResponsible('sig') +
             '</header>' +
             '<article class="wt-block">' +
               '<h3>' + esc(s.title || '') + '</h3>' +

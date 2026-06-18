@@ -53,6 +53,13 @@ chairs:
     affiliation: ETH Zurich, CH
     email:       christoph.leitner@iis.ee.ethz.ch
 
+# Section lead / responsible shown under each section heading (name + contact email).
+responsibles:
+  talks:     { name: Christoph Leitner, email: christoph.leitner@iis.ee.ethz.ch }
+  byod:      { name: Erik Kaiser,       email: erik.kaiser@tu-dresden.de }
+  workshops: { name: Christoph Leitner, email: christoph.leitner@iis.ee.ethz.ch }
+  sig:       { name: Moritz Herzog,     email: moritz.herzog@tu-dresden.de }
+
 cta:
   label: Register
   url:   "https://live.eventtia.com/en/ceeus/"   # quoted: '#' would otherwise start a YAML comment
